@@ -23,7 +23,7 @@ namespace FlappyBird
 
 		public static Collectibles collectible;
 
-		public static Platform[] platforms;
+		private static Platform[] platforms;
 
 				
 		public static void Main (string[] args)
@@ -76,11 +76,6 @@ namespace FlappyBird
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			
-			//Create the background.
-			background = new Background(gameScene);
-
-			//Create an enemy
-			enemy = new Enemy(gameScene);
 			LoadLevel(0);
 			
 			

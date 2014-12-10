@@ -43,6 +43,7 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="TextureManager.cs" />
     <Compile Include="Collectible.cs" />
+    <Compile Include="Platform.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -66,5 +67,6 @@
     <Content Include="textures\bird1.png" />
     <Content Include="textures\bird2.png" />
     <Content Include="textures\bird3.png" />
+    <Content Include="textures\Platform.png" />
   </ItemGroup>
 </Project>
