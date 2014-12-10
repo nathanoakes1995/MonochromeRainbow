@@ -41,6 +41,7 @@
     <Compile Include="AppMain.cs" />
     <Compile Include="Background.cs" />
     <Compile Include="Enemy.cs" />
+    <Compile Include="Platform.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -61,5 +62,6 @@
     <Content Include="textures\toppipe.png" />
     <Content Include="textures\background%280%25%29.png" />
     <Content Include="textures\GenericTexture.png" />
+    <Content Include="textures\Platform.png" />
   </ItemGroup>
 </Project>

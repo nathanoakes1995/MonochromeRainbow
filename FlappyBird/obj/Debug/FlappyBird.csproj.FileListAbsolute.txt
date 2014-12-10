@@ -115,3 +115,5 @@ C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird.psdp
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\GenericTexture.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\GenericTexture.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\Platform.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\Platform.png
