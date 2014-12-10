@@ -19,10 +19,12 @@ namespace FlappyBird
 		public float extraHeight;
 		public float startHeight;
 		public int spawnPos;
+		public bool movingUp;
 		
 		
 		public Collectibles (Scene scene)
 		{
+			movingUp = true;
 			position = decideSpawnPos();
 			extraHeight = 0.0f;
 			startHeight = position.Y;
@@ -62,9 +64,26 @@ namespace FlappyBird
 		
 		public void Update()
 		{
-			extraHeight += 0.1f;
-			position = new Vector2(200.0f, startHeight + extraHeight);
+			if (movingUp)
+			{
+				extraHeight += 0.1f;
+				if (position.Y >= startHeight + 10)
+				{
+				movingUp = false;	
+				}
+			}
+			else
+			{
+				extraHeight -= 0.1f;
+				if (position.Y <= startHeight)
+				{
+				movingUp = true;	
+				}
+			}
+			position.Y = (startHeight + extraHeight);
 			sprite.Position = position;
+			
+			
 		}
 		
 		public void Draw() 
