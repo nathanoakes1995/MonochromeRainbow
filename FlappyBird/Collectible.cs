@@ -18,14 +18,14 @@ namespace FlappyBird
 		public int type;
 		public float extraHeight;
 		public float startHeight;
+		public int spawnPos;
 		
 		
 		public Collectibles (Scene scene)
 		{
-			//sprites	= new SpriteUV[];
-			startHeight = 200.0f;
+			position = decideSpawnPos();
 			extraHeight = 0.0f;
-			position = new Vector2(200.0f,startHeight + extraHeight);
+			startHeight = position.Y;
 			type = decideCollectible();
 			if (type == 0)
 			{
@@ -63,7 +63,7 @@ namespace FlappyBird
 		public void Update()
 		{
 			extraHeight += 0.1f;
-			position = new Vector2(200.0f,startHeight + extraHeight);
+			position = new Vector2(200.0f, startHeight + extraHeight);
 			sprite.Position = position;
 		}
 		
@@ -72,15 +72,43 @@ namespace FlappyBird
 			
 		}
 		
+		public Vector2 decideSpawnPos()
+		{
+			var randGen = new Random(Guid.NewGuid().GetHashCode());
+			int randInt = randGen.Next (4);
+			
+			if (randInt == 0)
+			{
+				Vector2 posVec = new Vector2(240.0f,136.0f);
+				return posVec;
+			}
+			else if (randInt == 1)
+			{
+				Vector2 posVec = new Vector2(720.0f,136.0f);
+				return posVec;
+			}
+			else if (randInt == 2)
+			{
+				Vector2 posVec = new Vector2(240.0f,408.0f);
+				return posVec;
+			}
+			else
+			{
+				Vector2 posVec = new Vector2(720.0f,408.0f);
+				return posVec;
+			}
+						
+		}
+		
+		
 		public int decideCollectible()
 		{
 			//int playerHealth = 10;
 			//int playerAmmo = 100;	
 			//bool multiplierActive = false;
 			//int numberSinceLetter = 5;
-			var randGen = new Random(Guid.NewGuid().GetHashCode());;
+			var randGen = new Random(Guid.NewGuid().GetHashCode());
 			int randInt = randGen.Next (100);
-						
 
 				if (randInt <= 39)
 				{

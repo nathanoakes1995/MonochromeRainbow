@@ -20,6 +20,7 @@ namespace FlappyBird
 		
 		private static Background	background;
 		public static Enemy enemy;
+		public static Collectibles collectible;
 				
 		public static void Main (string[] args)
 		{
@@ -77,6 +78,9 @@ namespace FlappyBird
 			//Create an enemy
 			enemy = new Enemy(gameScene);
 			
+			//Create a collectible
+			collectible = new Collectibles(gameScene);
+			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
@@ -84,6 +88,7 @@ namespace FlappyBird
 		public static void Update()
 		{
 			//background.Update (0.0f);
+			collectible.Update();
 		}
 		
 	}

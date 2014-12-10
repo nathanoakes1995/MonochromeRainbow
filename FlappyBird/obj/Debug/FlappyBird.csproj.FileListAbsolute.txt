@@ -123,3 +123,9 @@ C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\obj\Debug\shader
 C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\obj\Debug\app.exe
 C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\obj\Debug\app.pdb
+C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bird1.png
+C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bird2.png
+C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bird3.png
+C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bird1.png
+C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bird2.png
+C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bird3.png
