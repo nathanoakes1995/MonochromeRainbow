@@ -11,20 +11,27 @@ namespace FlappyBird
 {
 	public class Enemy
 	{
-		public Vector2 position;
-		public TextureManager textureManager;
 		
-		public Enemy (Scene scene)
+		
+		private 	SpriteUV 	sprite;
+		private	 	TextureInfo	textureInfo;
+		
+		public Enemy (Scene scene, Vector2 pos)
 		{
-			Initialise (scene);	
-		}
-		public void Initialise(Scene pointerScene)
-		{
-			position = new Vector2(100.0f,100.0f);
-			textureManager = new TextureManager("/Application/textures/GenericTexture.png", pointerScene);
 			
+			sprite	= new SpriteUV();
 			
+			textureInfo	= new TextureInfo("/Application/textures/GenericTexture.png");
+			
+			sprite			= new SpriteUV(textureInfo);
+			sprite.Quad.S	= textureInfo.TextureSizef;
+			sprite.Position = pos;
+			
+			scene.AddChild(sprite);
+			
+			//Update();
 		}
+		
 		
 		public void Update()
 		{

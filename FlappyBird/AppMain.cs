@@ -75,7 +75,7 @@ namespace FlappyBird
 			background = new Background(gameScene);
 
 			//Create an enemy
-			enemy = new Enemy(gameScene);
+			enemy = new Enemy(gameScene, new Vector2(100,100));
 			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
