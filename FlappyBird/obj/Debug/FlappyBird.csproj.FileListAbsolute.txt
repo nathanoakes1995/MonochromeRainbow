@@ -1,0 +1,86 @@
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe.mdb
+E:\TGP\FlappyBird\FlappyBird\obj\Debug\shaders\shaders\Texture.cgx
+E:\TGP\FlappyBird\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
+E:\TGP\FlappyBird\FlappyBird\obj\Debug\app.exe
+E:\TGP\FlappyBird\FlappyBird\obj\Debug\app.pdb
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.info
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\shaders\Texture.cgx
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Json.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Xml.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Runtime.Serialization.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Core.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.ServiceModel.Web.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.ServiceModel.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bottompipe.png
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bird.png
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\toppipe.png
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\background.png
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.info
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\shaders\Texture.cgx
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.exe
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Json.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Xml.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Runtime.Serialization.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Core.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.ServiceModel.Web.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.ServiceModel.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.exe.mdb
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bottompipe.png
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bird.png
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\toppipe.png
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\background.png
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird.psdp
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+E:\TGP\FlappyBird\FlappyBird\bin\Debug\FlappyBird-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Core.dll
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\obj\Debug\shaders\shaders\Texture.cgx
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\obj\Debug\app.exe
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\obj\Debug\app.pdb
+H:\MonochromeRainbow\FlappyBird\obj\Debug\shaders\shaders\Texture.cgx
+H:\MonochromeRainbow\FlappyBird\obj\Debug\app.exe
+H:\MonochromeRainbow\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
+H:\MonochromeRainbow\FlappyBird\obj\Debug\app.pdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\obj\Debug\shaders\shaders\Texture.cgx
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\obj\Debug\app.exe
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\obj\Debug\app.pdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.info
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\shaders\Texture.cgx
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Json.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Xml.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Runtime.Serialization.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.Core.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.ServiceModel.Web.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\System.ServiceModel.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\app.exe.mdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bottompipe.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bird.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\toppipe.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\background%280%25%29.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.info
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\shaders\Texture.cgx
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.exe
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Json.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Xml.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Runtime.Serialization.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.Core.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.ServiceModel.Web.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\System.ServiceModel.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\Sce.PlayStation.HighLevel.UI.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\app.exe.mdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bottompipe.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bird.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\toppipe.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\background%280%25%29.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird.psdp
