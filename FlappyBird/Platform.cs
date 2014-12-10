@@ -9,36 +9,22 @@ using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 
 namespace FlappyBird
 {
-	public class Enemy
+	public class Platform
 	{
 		private 	SpriteUV 	sprite;
 		private	 	TextureInfo	textureInfo;
 		
-		public Enemy (Scene scene, Vector2 pos)
+		public Platform (Scene scene, Vector2 pos)
 		{
-			
 			sprite	= new SpriteUV();
 			
-			textureInfo	= new TextureInfo("/Application/textures/GenericTexture.png");
+			textureInfo	= new TextureInfo("/Application/textures/Platform.png");
 			
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
 			sprite.Position = pos;
 			
 			scene.AddChild(sprite);
-			
-			//Update();
-		}
-		
-		
-		public void Update()
-		{
-			
-		}
-		
-		public void Draw()
-		{
-			
 		}
 	}
 }

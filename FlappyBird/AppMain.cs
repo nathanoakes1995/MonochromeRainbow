@@ -20,7 +20,11 @@ namespace FlappyBird
 		
 		private static Background	background;
 		public static Enemy enemy;
+
 		public static Collectibles collectible;
+
+		public static Platform[] platforms;
+
 				
 		public static void Main (string[] args)
 		{
@@ -77,6 +81,8 @@ namespace FlappyBird
 
 			//Create an enemy
 			enemy = new Enemy(gameScene);
+			LoadLevel(0);
+			
 			
 			//Create a collectible
 			collectible = new Collectibles(gameScene);
@@ -89,6 +95,34 @@ namespace FlappyBird
 		{
 			//background.Update (0.0f);
 			collectible.Update();
+		}
+		public void DecideLevel()
+		{
+			
+		}
+		public static void LoadLevel(int level)
+		{
+			if (level == 0)
+			{
+				//Create the background.
+				background = new Background(gameScene);
+
+				//Create an enemy
+				enemy = new Enemy(gameScene, new Vector2(100,100));	
+				
+				//Hardcoded platform locations
+				platforms = new Platform[9];
+				platforms[0] = new Platform(gameScene, new Vector2(0, 136));
+				platforms[1] = new Platform(gameScene, new Vector2(0, 272));
+				platforms[2] = new Platform(gameScene, new Vector2(0, 408));
+				platforms[3] = new Platform(gameScene, new Vector2(380, 200));
+				platforms[4] = new Platform(gameScene, new Vector2(380, 340));
+				platforms[5] = new Platform(gameScene, new Vector2(380, 60));
+				platforms[6] = new Platform(gameScene, new Vector2(760, 136));
+				platforms[7] = new Platform(gameScene, new Vector2(760, 272));
+				platforms[8] = new Platform(gameScene, new Vector2(760, 408));
+				
+			}
 		}
 		
 	}
