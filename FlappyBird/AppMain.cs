@@ -143,29 +143,35 @@ namespace FlappyBird
 			
 			
 			//background.Update (0.0f);
-			collectible.Update();
+			if (collectibleActive)
+			{
+				collectible.Update();
+			}
 			score += 1 * multiplier;
 			scoreLabel.Text = "" + score;
 
-				if (!collectibleActive)
+			if (!collectibleActive)
+			{
+				if (accumulatedDeltaTime >= 20000)
 				{
-					if (accumulatedDeltaTime >= 20000)
-					{
-						Console.WriteLine("Spawn");
-						collectibleActive = true;
-						accumulatedDeltaTime = 0.0f;
-					}
+					//Create a collectible
+					collectible = new Collectibles(gameScene, specMoveProg);
+					collectibleActive = true;
+					accumulatedDeltaTime = 0.0f;
 				}
-				else
+			}
+			else
+			{
+				if (accumulatedDeltaTime >= 10000)
 				{
-					if (accumulatedDeltaTime >= 10000)
-					{
-						Console.WriteLine("Despawn");
-						collectibleActive = false;
-						accumulatedDeltaTime = 0.0f;
-					}
+					//Despawn Collectible
+					collectible.delete();
+					collectible = null;
+					collectibleActive = false;
+					accumulatedDeltaTime = 0.0f;
 				}
-				
+			}
+			
 				
 		}
 		public void DecideLevel()
@@ -187,10 +193,7 @@ namespace FlappyBird
 				
 				//Value for progress through collecting letters for special move
 				specMoveProg = 0;
-			
-				//Create a collectible
-				collectible = new Collectibles(gameScene, specMoveProg);
-				
+							
 				//Hardcoded platform locations
 				platforms = new Platform[9];
 				platforms[0] = new Platform(gameScene, new Vector2(0, 136));

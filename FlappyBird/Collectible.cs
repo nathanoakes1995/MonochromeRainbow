@@ -152,28 +152,32 @@ namespace FlappyBird
 			var randGen = new Random(Guid.NewGuid().GetHashCode());
 			int randInt = randGen.Next (100);
 
-				if (randInt <= 39)
-				{
-					return 0;
-					//Health	
-				}
-				else if (randInt <= 79)
-				{
-					return 1;
-					//Ammo	
-				}
-				else if (randInt <= 94)
-				{
-					return 2;
-					//Multiplier	
-				}
-				else
-				{
-					return 3;
-					//Letters	
-				}
-			
-				
+			if (randInt <= 39)
+			{
+				return 0;
+				//Health	
+			}
+			else if (randInt <= 79)
+			{
+				return 1;
+				//Ammo	
+			}
+			else if (randInt <= 94)
+			{
+				return 2;
+				//Multiplier	
+			}
+			else
+			{
+				return 3;
+				//Letters	
+			}
+		}
+		
+		public void delete()
+		{
+			//Delete texture
+			textureInfo = null;
 		}
 	}
 }
