@@ -17,16 +17,28 @@ namespace FlappyBird
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
 		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
+		private static Sce.PlayStation.HighLevel.UI.Label				healthLabel;
+		private static Sce.PlayStation.HighLevel.UI.Label				ammoLabel;
+		private static Sce.PlayStation.HighLevel.UI.Label				multiplierLabel;
 		
 		private static	Background	background;
+		private static Platform[] platforms;
+		
+		private static Timer timer;
+		private static float previousTime;
+		private static float currentTime;
+		private static float accumulatedDeltaTime;
+		private static bool collectibleActive;
 		
 		public static Player player;
 		public static Enemy enemy;
 
 		public static Collectibles collectible;
-				public static int specMoveProg;
+		public static int specMoveProg;
+		public static int score;
+		public static int multiplier;
 
-		private static Platform[] platforms;
+
 
 				
 		public static void Main (string[] args)
@@ -68,29 +80,93 @@ namespace FlappyBird
 			Panel panel  = new Panel();
 			panel.Width  = Director.Instance.GL.Context.GetViewport().Width;
 			panel.Height = Director.Instance.GL.Context.GetViewport().Height;
+			//Health label data
+			healthLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			healthLabel.HorizontalAlignment = HorizontalAlignment.Center;
+			healthLabel.VerticalAlignment = VerticalAlignment.Top;
+			healthLabel.SetPosition(
+				Director.Instance.GL.Context.GetViewport().Width/2 - healthLabel.Width/2,
+				Director.Instance.GL.Context.GetViewport().Height*0.1f - healthLabel.Height/2);
+			panel.AddChildLast(healthLabel);
+			//Ammo label data
+			ammoLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			ammoLabel.HorizontalAlignment = HorizontalAlignment.Left;
+			ammoLabel.VerticalAlignment = VerticalAlignment.Top;
+			ammoLabel.SetPosition(
+				200 - ammoLabel.Width/2,
+				Director.Instance.GL.Context.GetViewport().Height*0.1f - ammoLabel.Height/2);
+			panel.AddChildLast(ammoLabel);
+			//Multiplier lable data
+			multiplierLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			multiplierLabel.HorizontalAlignment = HorizontalAlignment.Right;
+			multiplierLabel.VerticalAlignment = VerticalAlignment.Top;
+			multiplierLabel.SetPosition(
+				Director.Instance.GL.Context.GetViewport().Width - 200 - multiplierLabel.Width/2,
+				Director.Instance.GL.Context.GetViewport().Height*0.1f - multiplierLabel.Height/2 + 20);
+			panel.AddChildLast(multiplierLabel);
+			//Score label data
 			scoreLabel = new Sce.PlayStation.HighLevel.UI.Label();
-			scoreLabel.HorizontalAlignment = HorizontalAlignment.Center;
+			scoreLabel.HorizontalAlignment = HorizontalAlignment.Right;
 			scoreLabel.VerticalAlignment = VerticalAlignment.Top;
 			scoreLabel.SetPosition(
-				Director.Instance.GL.Context.GetViewport().Width/2 - scoreLabel.Width/2,
+				Director.Instance.GL.Context.GetViewport().Width - 200 - scoreLabel.Width/2,
 				Director.Instance.GL.Context.GetViewport().Height*0.1f - scoreLabel.Height/2);
-			scoreLabel.Text = "0";
 			panel.AddChildLast(scoreLabel);
+			
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			
 			LoadLevel(0);
 			
-
+			score = 0;
+			multiplier = 1;
+			collectibleActive = false;
 			
+			healthLabel.Text = "Health: " + Player.Health;
+			scoreLabel.Text = "" + score;
+			ammoLabel.Text = "Ammo: " + Player.Ammo;
+			multiplierLabel.Text = "Mutiplier: x" + multiplier;
+			
+			timer = new Timer();
+			previousTime = (float)timer.Milliseconds();
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
 		
 		public static void Update()
 		{
+			currentTime = (float)timer.Milliseconds();
+			float elapsedTime = currentTime - previousTime;
+			previousTime = currentTime;
+			
+			accumulatedDeltaTime += elapsedTime;
+			
+			
 			//background.Update (0.0f);
 			collectible.Update();
+			score += 1 * multiplier;
+			scoreLabel.Text = "" + score;
+
+				if (!collectibleActive)
+				{
+					if (accumulatedDeltaTime >= 20000)
+					{
+						Console.WriteLine("Spawn");
+						collectibleActive = true;
+						accumulatedDeltaTime = 0.0f;
+					}
+				}
+				else
+				{
+					if (accumulatedDeltaTime >= 10000)
+					{
+						Console.WriteLine("Despawn");
+						collectibleActive = false;
+						accumulatedDeltaTime = 0.0f;
+					}
+				}
+				
+				
 		}
 		public void DecideLevel()
 		{
@@ -109,7 +185,8 @@ namespace FlappyBird
 				//Create an enemy
 				enemy = new Enemy(gameScene, new Vector2(100,100));	
 				
-							specMoveProg = 0;
+				//Value for progress through collecting letters for special move
+				specMoveProg = 0;
 			
 				//Create a collectible
 				collectible = new Collectibles(gameScene, specMoveProg);

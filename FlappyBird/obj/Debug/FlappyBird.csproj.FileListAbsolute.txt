@@ -243,3 +243,5 @@ D:\Users\Vincent Tenebrae\Documents\MonochromeRainbow\FlappyBird\obj\Debug\app.e
 D:\Users\Vincent Tenebrae\Documents\MonochromeRainbow\FlappyBird\obj\Debug\app.pdb
 D:\Users\Vincent Tenebrae\Documents\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\Player.png
 D:\Users\Vincent Tenebrae\Documents\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\Player.png
+C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\Player.png
+C:\Users\Zac\Documents\Monochrome2\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\Player.png
