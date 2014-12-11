@@ -29,21 +29,25 @@ namespace FlappyBird
 			extraHeight = 0.0f;
 			startHeight = position.Y;
 			type = decideCollectible();
+			//Health Collectible Texture
 			if (type == 0)
 			{
 				textureInfo = new TextureInfo("/Application/textures/Health.png");
 			}
+			//Ammo Collectible Texture
 			else if (type == 1)
 			{
 				textureInfo = new TextureInfo("/Application/textures/Ammo.png");
 			}
-			
+			//Mutiplier Collectible Texture
 			else if (type == 2)
 			{
 				textureInfo = new TextureInfo("/Application/textures/Multiplier.png");
 			}
+			//Finisher Move Collectible Textures
 			else
 			{
+				//Different texture depending on which letter was collected last
 				switch (specMoveProg)
 				{
     			case 0:
@@ -69,24 +73,19 @@ namespace FlappyBird
         		break;
 				}
 			}
-			//Left
 			sprite 			= new SpriteUV(textureInfo);
 			sprite.Quad.S 	= textureInfo.TextureSizef;
 			sprite.Position = position;
 			//Get sprite bounds.
 			Bounds2 b = sprite.Quad.Bounds2();
-			
-			
+						
 			//Add to the current scene.
-			//foreach(SpriteUV sprite in sprites)
-				scene.AddChild(sprite);
-
+			scene.AddChild(sprite);
 		}
-		
-		
-		
+				
 		public void Update()
 		{
+			//Float up
 			if (movingUp)
 			{
 				extraHeight += 0.1f;
@@ -95,6 +94,7 @@ namespace FlappyBird
 				movingUp = false;	
 				}
 			}
+			//Float down
 			else
 			{
 				extraHeight -= 0.1f;
@@ -105,8 +105,6 @@ namespace FlappyBird
 			}
 			position.Y = (startHeight + extraHeight);
 			sprite.Position = position;
-			
-			
 		}
 		
 		public void Draw() 
@@ -116,39 +114,40 @@ namespace FlappyBird
 		
 		public Vector2 decideSpawnPos()
 		{
+			//Randomly decide on of 4 spawn positions
 			var randGen = new Random(Guid.NewGuid().GetHashCode());
 			int randInt = randGen.Next (4);
 			
-			if (randInt == 0)
+			if (randInt == 2)
 			{
 				Vector2 posVec = new Vector2(110.0f,180.0f);
 				return posVec;
+				//Bottom Left
 			}
 			else if (randInt == 1)
 			{
 				Vector2 posVec = new Vector2(850.0f,180.0f);
 				return posVec;
+				//Bottom Right
 			}
 			else if (randInt == 2)
 			{
 				Vector2 posVec = new Vector2(110.0f,450.0f);
 				return posVec;
+				//Top Right
 			}
 			else
 			{
 				Vector2 posVec = new Vector2(850.0f,450.0f);
 				return posVec;
+				//Top Left
 			}
 						
 		}
 		
-		
 		public int decideCollectible()
 		{
-			//int playerHealth = 10;
-			//int playerAmmo = 100;	
-			//bool multiplierActive = false;
-			//int numberSinceLetter = 5;
+			//Randomly decide which collectible to spawn
 			var randGen = new Random(Guid.NewGuid().GetHashCode());
 			int randInt = randGen.Next (100);
 
