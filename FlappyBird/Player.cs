@@ -13,9 +13,15 @@ namespace FlappyBird
 		private	static SpriteUV		player;
 		private	static TextureInfo	textureInfo;
 		
+		public static int Health;
+		public static int Ammo;
+		
 		public Player (Scene scene)
 		{
 			textureInfo	= new TextureInfo("/Application/textures/Player.png");
+			
+			Health = 10;
+			Ammo = 100;
 			
 			player			= new SpriteUV(textureInfo);	
 			player.Quad.S 	= textureInfo.TextureSizef;
