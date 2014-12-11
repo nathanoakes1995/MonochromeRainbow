@@ -44,6 +44,7 @@
     <Compile Include="TextureManager.cs" />
     <Compile Include="Collectible.cs" />
     <Compile Include="Platform.cs" />
+    <Compile Include="Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -74,5 +75,6 @@
     <Content Include="textures\Ammo.png" />
     <Content Include="textures\Health.png" />
     <Content Include="textures\Multiplier.png" />
+    <Content Include="textures\Player.png" />
   </ItemGroup>
 </Project>

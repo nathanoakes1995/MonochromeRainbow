@@ -18,7 +18,9 @@ namespace FlappyBird
 		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
 		
-		private static Background	background;
+		private static	Background	background;
+		
+		public static Player player;
 		public static Enemy enemy;
 
 		public static Collectibles collectible;
@@ -100,14 +102,17 @@ namespace FlappyBird
 			{
 				//Create the background.
 				background = new Background(gameScene);
+				
+				//Create the player
+				player = new Player(gameScene);
 
 				//Create an enemy
 				enemy = new Enemy(gameScene, new Vector2(100,100));	
 				
 							specMoveProg = 0;
 			
-			//Create a collectible
-			collectible = new Collectibles(gameScene, specMoveProg);
+				//Create a collectible
+				collectible = new Collectibles(gameScene, specMoveProg);
 				
 				//Hardcoded platform locations
 				platforms = new Platform[9];
