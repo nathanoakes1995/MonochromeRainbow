@@ -22,6 +22,7 @@ namespace FlappyBird
 		public static Enemy enemy;
 
 		public static Collectibles collectible;
+				public static int specMoveProg;
 
 		private static Platform[] platforms;
 
@@ -78,9 +79,7 @@ namespace FlappyBird
 			
 			LoadLevel(0);
 			
-			
-			//Create a collectible
-			collectible = new Collectibles(gameScene);
+
 			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
@@ -104,6 +103,11 @@ namespace FlappyBird
 
 				//Create an enemy
 				enemy = new Enemy(gameScene, new Vector2(100,100));	
+				
+							specMoveProg = 0;
+			
+			//Create a collectible
+			collectible = new Collectibles(gameScene, specMoveProg);
 				
 				//Hardcoded platform locations
 				platforms = new Platform[9];

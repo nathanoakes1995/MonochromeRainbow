@@ -22,7 +22,7 @@ namespace FlappyBird
 		public bool movingUp;
 		
 		
-		public Collectibles (Scene scene)
+		public Collectibles (Scene scene, int specMoveProg)
 		{
 			movingUp = true;
 			position = decideSpawnPos();
@@ -31,20 +31,43 @@ namespace FlappyBird
 			type = decideCollectible();
 			if (type == 0)
 			{
-				textureInfo = new TextureInfo("/Application/textures/bird.png");
+				textureInfo = new TextureInfo("/Application/textures/Health.png");
 			}
 			else if (type == 1)
 			{
-				textureInfo = new TextureInfo("/Application/textures/bird1.png");
+				textureInfo = new TextureInfo("/Application/textures/Ammo.png");
 			}
 			
 			else if (type == 2)
 			{
-				textureInfo = new TextureInfo("/Application/textures/bird2.png");
+				textureInfo = new TextureInfo("/Application/textures/Multiplier.png");
 			}
 			else
 			{
-				textureInfo = new TextureInfo("/Application/textures/bird3.png");
+				switch (specMoveProg)
+				{
+    			case 0:
+					textureInfo = new TextureInfo("/Application/textures/1-R.png");
+        		break;
+    			case 1:
+					textureInfo = new TextureInfo("/Application/textures/2-A.png");
+       			break;
+				case 2:
+					textureInfo = new TextureInfo("/Application/textures/3-I.png");
+        		break;
+				case 3:
+					textureInfo = new TextureInfo("/Application/textures/4-N.png");
+        		break;
+				case 4:
+					textureInfo = new TextureInfo("/Application/textures/5-B.png");
+        		break;
+				case 5:
+					textureInfo = new TextureInfo("/Application/textures/6-O.png");
+        		break;
+ 				default:
+					textureInfo = new TextureInfo("/Application/textures/7-W.png");
+        		break;
+				}
 			}
 			//Left
 			sprite 			= new SpriteUV(textureInfo);
@@ -98,22 +121,22 @@ namespace FlappyBird
 			
 			if (randInt == 0)
 			{
-				Vector2 posVec = new Vector2(240.0f,136.0f);
+				Vector2 posVec = new Vector2(110.0f,180.0f);
 				return posVec;
 			}
 			else if (randInt == 1)
 			{
-				Vector2 posVec = new Vector2(720.0f,136.0f);
+				Vector2 posVec = new Vector2(850.0f,180.0f);
 				return posVec;
 			}
 			else if (randInt == 2)
 			{
-				Vector2 posVec = new Vector2(240.0f,408.0f);
+				Vector2 posVec = new Vector2(110.0f,450.0f);
 				return posVec;
 			}
 			else
 			{
-				Vector2 posVec = new Vector2(720.0f,408.0f);
+				Vector2 posVec = new Vector2(850.0f,450.0f);
 				return posVec;
 			}
 						

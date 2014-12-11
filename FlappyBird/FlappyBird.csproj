@@ -60,13 +60,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="textures\bottompipe.png" />
-    <Content Include="textures\bird.png" />
     <Content Include="textures\toppipe.png" />
     <Content Include="textures\background%280%25%29.png" />
     <Content Include="textures\GenericTexture.png" />
-    <Content Include="textures\bird1.png" />
-    <Content Include="textures\bird2.png" />
-    <Content Include="textures\bird3.png" />
     <Content Include="textures\Platform.png" />
+    <Content Include="textures\1-R.png" />
+    <Content Include="textures\2-A.png" />
+    <Content Include="textures\3-I.png" />
+    <Content Include="textures\4-N.png" />
+    <Content Include="textures\5-B.png" />
+    <Content Include="textures\6-O.png" />
+    <Content Include="textures\7-W.png" />
+    <Content Include="textures\Ammo.png" />
+    <Content Include="textures\Health.png" />
+    <Content Include="textures\Multiplier.png" />
   </ItemGroup>
 </Project>
