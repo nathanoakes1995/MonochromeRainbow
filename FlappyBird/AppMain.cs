@@ -62,8 +62,6 @@ namespace FlappyBird
 				Director.Instance.PostSwap();
 			}
 			
-
-			
 			background.Dispose();
 			
 			Director.Terminate();
@@ -145,8 +143,11 @@ namespace FlappyBird
 			score += 1 * multiplier;
 			scoreLabel.Text = "" + score;
 			
-			//player update
+			//Player update
 			Player.Update(elapsedTime);
+			
+			//Background update
+			background.Update(gameScene, Player.health);
 		}
 		
 		public void DecideLevel()

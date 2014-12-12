@@ -76,5 +76,15 @@
     <Content Include="textures\Health.png" />
     <Content Include="textures\Multiplier.png" />
     <Content Include="textures\Player.png" />
+    <Content Include="textures\background%28-100%25%29.png" />
+    <Content Include="textures\background%28-90%25%29.png" />
+    <Content Include="textures\background%28-80%25%29.png" />
+    <Content Include="textures\background%28-70%25%29.png" />
+    <Content Include="textures\background%28-60%25%29.png" />
+    <Content Include="textures\background%28-50%25%29.png" />
+    <Content Include="textures\background%28-40%25%29.png" />
+    <Content Include="textures\background%28-30%25%29.png" />
+    <Content Include="textures\background%28-20%25%29.png" />
+    <Content Include="textures\background%28-10%25%29.png" />
   </ItemGroup>
 </Project>
