@@ -171,8 +171,13 @@ namespace FlappyBird
 					return 3;
 					//Letters	
 				}
-			
-				
+		}
+		
+		public void delete()
+		{
+			position.X = 1000;
+			sprite.Position = position;
+			textureInfo = null;
 		}
 	}
 }

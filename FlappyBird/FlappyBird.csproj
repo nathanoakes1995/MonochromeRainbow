@@ -41,10 +41,10 @@
     <Compile Include="AppMain.cs" />
     <Compile Include="Background.cs" />
     <Compile Include="Enemy.cs" />
-    <Compile Include="TextureManager.cs" />
     <Compile Include="Collectible.cs" />
     <Compile Include="Platform.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />

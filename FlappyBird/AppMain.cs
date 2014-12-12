@@ -31,11 +31,14 @@ namespace FlappyBird
 		public static int specMoveProg;
 		public static int score;
 		public static int multiplier;
-		public static int playerHealth;
+		public static int playerHealth;		
+		private static bool collectibleActive;
+		
 		
 		public static float previousTime; 
 		public static float currentTime;
 		public static float elapsedTime;
+		private static float accumulatedDeltaTime;
 
 
 		private static Platform[] platforms;
@@ -138,10 +141,40 @@ namespace FlappyBird
 			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
 			
+			accumulatedDeltaTime += elapsedTime;
+			
 			//background.Update (0.0f);
-			collectible.Update();
+			
+			//Collectible update
+			if (collectibleActive)
+			{
+				collectible.Update();
+			}
+			
 			score += 1 * multiplier;
 			scoreLabel.Text = "" + score;
+			
+			if (!collectibleActive)
+			{
+				if (accumulatedDeltaTime >= 20000)
+				{
+					//Create a collectible
+					collectible = new Collectibles(gameScene, specMoveProg);
+					collectibleActive = true;
+					accumulatedDeltaTime = 0.0f;
+				}
+			}
+			else
+			{
+				if (accumulatedDeltaTime >= 10000)
+				{
+					//Delete collectible
+					collectible.delete();
+					collectible = null;
+					collectibleActive = false;
+					accumulatedDeltaTime = 0.0f;
+				}
+			}
 			
 			//Player update
 			Player.Update(elapsedTime);
@@ -172,9 +205,6 @@ namespace FlappyBird
 				
 				//Value for progress through collecting letters for special move
 				specMoveProg = 0;
-			
-				//Create a collectible
-				collectible = new Collectibles(gameScene, specMoveProg);
 				
 				//Hardcoded platform locations
 				platforms = new Platform[9];
