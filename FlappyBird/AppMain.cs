@@ -217,9 +217,12 @@ namespace FlappyBird
 				{
 					if(player.bounds.Overlaps(platforms[i].bounds))
 					{
-						player.playerPos.Y = (platforms[i].position.Y +20f);
+						player.playerPos.Y = (platforms[i].position.Y +19f);
 						player.player.Position = player.playerPos;
+						player.onGround = true;
 					}
+					else
+						player.onGround=false;
 				}
 			}
 			
