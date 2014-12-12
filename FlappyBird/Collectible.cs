@@ -10,17 +10,16 @@ namespace FlappyBird
 {
 	public class Collectibles
 	{
-		
-		public Vector2 position;
-		
-		private SpriteUV 	sprite;
 		private TextureInfo	textureInfo;
-		public int type;
-		public float extraHeight;
-		public float startHeight;
-		public int spawnPos;
-		public bool movingUp;
 		
+		public int		type;
+		public int		spawnPos;
+		public float	extraHeight;
+		public float	startHeight;
+		public bool		movingUp;
+		
+		public Vector2	position;
+		public SpriteUV sprite;
 		
 		public Collectibles (Scene scene, int specMoveProg)
 		{
