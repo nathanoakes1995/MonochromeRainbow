@@ -15,13 +15,15 @@ namespace FlappyBird
 		private	 	TextureInfo	textureInfo;
 		private 	float		width;
 		private		int			saturation;
-
+		private		TextureInfo[] textures;
 		//Public functions.
 		public Background (Scene scene)
 		{
 			background	= new SpriteUV();
 			
 			textureInfo	= new TextureInfo("/Application/textures/background(0%).png");
+			textures = new TextureInfo[11];
+			
 			
 			background			= new SpriteUV(textureInfo);
 			background.Quad.S	= textureInfo.TextureSizef;
@@ -34,56 +36,70 @@ namespace FlappyBird
 			scene.AddChild(background);
 		}	
 		
+		public void SetTextureArray()
+		{
+			textures[0] = new TextureInfo("/Application/textures/background(0%).png");	
+			textures[1] = new TextureInfo("/Application/textures/background(-10%).png");
+			textures[2]= new TextureInfo("/Application/textures/background(-20%).png");	
+			textures[3]= new TextureInfo("/Application/textures/background(-30%).png");	
+			textures[4]= new TextureInfo("/Application/textures/background(-40%).png");	
+			textures[5]= new TextureInfo("/Application/textures/background(-50%).png");	
+			textures[6]= new TextureInfo("/Application/textures/background(-60%).png");	
+			textures[7]= new TextureInfo("/Application/textures/background(-70%).png");	
+			textures[8]= new TextureInfo("/Application/textures/background(-80%).png");	
+			textures[9]= new TextureInfo("/Application/textures/background(-90%).png");	
+			textures[10]= new TextureInfo("/Application/textures/background(-100%).png");	
+		}
+		
 		public void Update(Scene scene, int saturation)
 		{
 			//saturation = Player.health;
 			
 			if (saturation == 0)		
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(0%).png");
+				textureInfo	= textures[0];
 			}
 			else if (saturation == -1)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-10%).png");
+				textureInfo	= textures[1];
 			}
 			else if (saturation == -2)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-20%).png");
+				textureInfo	= textures[2];
 			}
 			else if (saturation == -3)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-30%).png");
+				textureInfo	= textures[3];
 			}
 			else if (saturation == -4)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-40%).png");
+				textureInfo	= textures[4];
 			}
 			else if (saturation == -5)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-50%).png");
+				textureInfo	= textures[5];
 			}
 			else if (saturation == -6)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-60%).png");
+				textureInfo	= textures[6];
 			}
 			else if (saturation == -7)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-70%).png");
+				textureInfo	= textures[7];
 			}
 			else if (saturation == -8)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-80%).png");
+				textureInfo	= textures[8];
 			}
 			else if (saturation == -9)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-90%).png");
+				textureInfo	= textures[9];
 			}
 			else if (saturation == -10)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/background(-100%).png");
+				textureInfo	= textures[10];
 			}
 			
-			scene.AddChild(background);
 		}
 	
 		public void Dispose()
