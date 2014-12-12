@@ -13,12 +13,11 @@ namespace FlappyBird
 	{
 		private 	SpriteUV 	sprite;
 		private	 	TextureInfo	textureInfo;
-		public Bounds2 bounds;
+		
 		public Enemy (Scene scene, Vector2 pos)
 		{
 			
 			sprite	= new SpriteUV();
-			bounds = new Bounds2();
 			
 			textureInfo	= new TextureInfo("/Application/textures/GenericTexture.png");
 			

@@ -124,13 +124,12 @@ namespace FlappyBird
 			
 			score = 0;
 			multiplier = 10;
-			//playerHealth = health;
 			
 			healthLabel.Text = "Health: " + playerHealth;
 			scoreLabel.Text = "" + score;
 			ammoLabel.Text = "Ammo: " + 100;
 			multiplierLabel.Text = "Mutiplier: x" + multiplier;
-					int i = 0;
+					
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
@@ -148,22 +147,10 @@ namespace FlappyBird
 			
 			//player update
 			Player.Update(elapsedTime);
-			CheckCollision();
 		}
 		
 		public void DecideLevel()
 		{	
-		}
-		
-		public static void CheckCollision()
-		{
-			for(int i=0; i<9; i++)
-			{
-				if(!platforms[i].bounds.IsEmpty ())
-				{
-					 
-				}
-			}
 		}
 		
 		public static void LoadLevel(int level)
@@ -175,7 +162,7 @@ namespace FlappyBird
 				
 				//Create the player
 				player = new Player(gameScene, new Vector2(100,100));
-				
+
 				//Create an enemy
 				enemy = new Enemy(gameScene, new Vector2(100,100));	
 				

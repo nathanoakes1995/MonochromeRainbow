@@ -14,7 +14,7 @@ namespace FlappyBird
 		private 	SpriteUV 	background;
 		private	 	TextureInfo	textureInfo;
 		private 	float		width;
-		//private	int			saturation;
+		private		int			saturation;
 
 		//Public functions.
 		public Background (Scene scene)
@@ -30,14 +30,10 @@ namespace FlappyBird
 			Bounds2 b = background.Quad.Bounds2();
 			width     = b.Point10.X;
 			
-			//saturation = 0;
-			
-			//170959
+			saturation = Player.health;
 			
 			//Add to the current scene.
 			scene.AddChild(background);
-			
-			//Update();
 		}	
 		
 		//public void Update()
