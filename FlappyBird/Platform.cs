@@ -11,11 +11,15 @@ namespace FlappyBird
 {
 	public class Platform
 	{
-		private 	SpriteUV 	sprite;
+		public 	SpriteUV 	sprite;
 		private	 	TextureInfo	textureInfo;
+		public Bounds2 bounds;
+		public Vector2 position;
 		
 		public Platform (Scene scene, Vector2 pos)
 		{
+			position = new Vector2();
+			position = pos;
 			sprite	= new SpriteUV();
 			
 			textureInfo	= new TextureInfo("/Application/textures/Platform.png");

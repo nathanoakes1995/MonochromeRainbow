@@ -192,9 +192,31 @@ namespace FlappyBird
 				enemy[i].RunAI (Player.playerPos);
 				enemy[i].Update ();
 			}
+			CheckCollision();
 		}
 		public void DecideLevel()
 		{	
+		}
+		
+		public static void CheckCollision()
+		{
+			for(int i = 0; i < 20; i++)
+			{
+				enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
+				for(int k = 0; k< 9; k++)
+				{
+					platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);	
+					if(enemy[i].bounds.Overlaps(platforms[k].bounds))
+					{
+						enemy[i].position.Y = (platforms[k].position.Y + 20);
+						enemy[i].sprite.Position= enemy[i].position;
+					}
+				}
+				
+			}
+			
+			
+			
 		}
 		
 		public static void LoadLevel(int level)
