@@ -204,7 +204,7 @@ namespace FlappyBird
 				player = new Player(gameScene, new Vector2(100,100));
 
 				//Create an enemy
-				enemy = new Enemy(gameScene, new Vector2(100,100));	
+				enemy = new Enemy(gameScene);	
 				
 				//Create a bullet
 				bullet = new Bullet(gameScene, new Vector2(300,300), 1);
