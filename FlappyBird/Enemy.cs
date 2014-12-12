@@ -13,10 +13,10 @@ namespace FlappyBird
 	{
 		private 	SpriteUV 	sprite;
 		private	 	TextureInfo	textureInfo;
-		
+		private Vector2 position;
 		public Enemy (Scene scene, Vector2 pos)
 		{
-			
+			position = pos;
 			sprite	= new SpriteUV();
 			
 			textureInfo	= new TextureInfo("/Application/textures/GenericTexture.png");
@@ -27,7 +27,7 @@ namespace FlappyBird
 			
 			scene.AddChild(sprite);
 			
-			//Update();
+			
 		}
 		
 		
@@ -35,11 +35,18 @@ namespace FlappyBird
 		{
 			
 		}
-		
-		public void Draw()
+		public void RunAI(Vector2 playerLocation)
 		{
-			
+			if (position.X < playerLocation.X)
+			{
+				position.X -= 0.1f;	
+			}
+			if (position.X > playerLocation.X)
+			{
+				position.X += 0.1f;	
+			}
 		}
+	
 	}
 }
 
