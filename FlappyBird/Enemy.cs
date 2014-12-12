@@ -11,7 +11,6 @@ namespace FlappyBird
 {
 	public class Enemy
 	{
-		private	SpriteUV	sprite;
 		private	TextureInfo	textureInfo;
 		
 		public float 		yVelocity;
@@ -19,6 +18,7 @@ namespace FlappyBird
 		public Bounds2		bounds;
 		public Vector2		position;
 		public Vector2[]	spawnPositions;
+		public SpriteUV	sprite;
 		
 		public Enemy (Scene scene)
 		{
