@@ -12,14 +12,14 @@ namespace FlappyBird
 	{
 		private	static SpriteUV		player;
 		private	static TextureInfo	textureInfo;
-		
+		public Bounds2 b;
 		public static int Health;
 		public static int Ammo;
 		
 		public Player (Scene scene)
 		{
 			textureInfo	= new TextureInfo("/Application/textures/Player.png");
-			
+			b = new Bounds2();
 			Health = 10;
 			Ammo = 100;
 			

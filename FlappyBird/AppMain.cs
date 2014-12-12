@@ -134,7 +134,7 @@ namespace FlappyBird
 		}
 		
 		public static void Update()
-		{
+		{	
 			currentTime = (float)timer.Milliseconds();
 			float elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
@@ -171,12 +171,22 @@ namespace FlappyBird
 					accumulatedDeltaTime = 0.0f;
 				}
 			}
-			
+			CheckCollision();
 				
 		}
-		public void DecideLevel()
+		
+		public void CheckCollision()
 		{
 			
+			for (int i = 0; i < 9; i++)
+			{
+				
+			}
+		}
+		
+		public void DecideLevel()
+		{
+			//I will add code here that switches the level.  I'll probably come up with a better way of doing it once the menus are up though [nathan]
 		}
 		public static void LoadLevel(int level)
 		{

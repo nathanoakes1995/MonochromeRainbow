@@ -27,16 +27,11 @@ namespace FlappyBird
 			
 			scene.AddChild(sprite);
 			
-			//Update();
+			
 		}
 		
 		
 		public void Update()
-		{
-			
-		}
-		
-		public void Draw()
 		{
 			
 		}
