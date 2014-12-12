@@ -21,7 +21,7 @@ namespace FlappyBird
 		private static bool		onGround;
 		
 		public static int		health;
-		public static Vector2	playerPosition;         
+		public static Vector2	playerPos;         
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
@@ -29,7 +29,7 @@ namespace FlappyBird
 			
 			player			= new SpriteUV(textureInfo);	
 			player.Quad.S 	= textureInfo.TextureSizef;
-			player.Position = playerPosition;
+			playerPos = playerPosition;
 			
 			health = 10;
 			mayJumpAgain = true;
@@ -105,33 +105,33 @@ namespace FlappyBird
 			}
 			
 			//Update player position.
-    		playerPosition.Y += yVelocity;
-			playerPosition.X += xVelocity;
+    		playerPos.Y += yVelocity;
+			playerPos.X += xVelocity;
 			
 			//Check if player is on the ground.
-            if (playerPosition.Y != 0)
+            if (playerPos.Y != 0)
 			{
 				onGround = false;
     		}
 			
 			//Check if player has hit the ground.
-			if (playerPosition.Y < 0.0f)
+			if (playerPos.Y < 0.0f)
 			{
-				playerPosition.Y = 0.0f;
+				playerPos.Y = 0.0f;
 				onGround = true;
 			}
 			
 			//Check if player has hit the wall.
-			if (playerPosition.X > Director.Instance.GL.Context.GetViewport().Width - player.Quad.S.X)
+			if (playerPos.X > Director.Instance.GL.Context.GetViewport().Width - player.Quad.S.X)
 			{
-				playerPosition.X = Director.Instance.GL.Context.GetViewport().Width - player.Quad.S.X;
+				playerPos.X = Director.Instance.GL.Context.GetViewport().Width - player.Quad.S.X;
 			}
-			else if (playerPosition.X < 0.0f)
+			else if (playerPos.X < 0.0f)
 			{
-				playerPosition.X = 0.0f;
+				playerPos.X = 0.0f;
 			}
 			
-			player.Position = playerPosition;
+			player.Position = playerPos;
 		}
 	}
 }

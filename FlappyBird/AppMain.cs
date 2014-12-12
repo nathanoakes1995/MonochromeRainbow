@@ -148,6 +148,9 @@ namespace FlappyBird
 			
 			//Background update
 			background.Update(gameScene, Player.health);
+			
+			//Update EnemyAI
+			enemy.RunAI (Player.playerPos);
 		}
 		
 		public void DecideLevel()
