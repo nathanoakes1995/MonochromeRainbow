@@ -11,22 +11,22 @@ namespace FlappyBird
 {
 	public class Player
 	{
-		public SpriteUV		player;
-		private TextureInfo	textureInfo;
-		private GamePadData	gamePadData;
-		public Bounds2 bounds;
-		private float	xVelocity;
-		public  float	yVelocity;
-		private bool		mayJumpAgain;
-		private bool		onGround;
-		public Rectangle bottom;
+		private	static SpriteUV		player;
+		private	static TextureInfo	textureInfo;
+		private static GamePadData	gamePadData;
+		
+		private static float	xVelocity;
+		private static float	yVelocity;
+		private static bool		mayJumpAgain;
+		private static bool		onGround;
+		
 		public int		health;
-		public Vector2	playerPos;         
+		public static Vector2	playerPos;         
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
 			textureInfo		= new TextureInfo("/Application/textures/Player.png");
-			bounds = new Bounds2();
+			
 			player			= new SpriteUV(textureInfo);	
 			player.Quad.S 	= textureInfo.TextureSizef;
 			playerPos = playerPosition;
@@ -34,15 +34,14 @@ namespace FlappyBird
 			health = 10;
 			mayJumpAgain = true;
 			onGround = true;
-			bottom = new Rectangle(player.Position.X, player.Position.Y,player.TextureInfo.Texture.Width, 0);
-
+			
 			scene.AddChild(player);
 		}
 		public int GetHealth()
 		{
 			return health;	
 		}
-		public void Update (float elapsedTime)
+		public static void Update (float elapsedTime)
 		{
         	//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
