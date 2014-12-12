@@ -31,13 +31,16 @@ namespace FlappyBird
 			player.Quad.S 	= textureInfo.TextureSizef;
 			playerPos = playerPosition;
 			
-			health = 10;
+			health = -10;
 			mayJumpAgain = true;
 			onGround = true;
 			
 			scene.AddChild(player);
 		}
-		
+		public int GetHealth()
+		{
+			return health;	
+		}
 		public static void Update (float elapsedTime)
 		{
         	//Get gamepad input.

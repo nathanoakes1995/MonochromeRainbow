@@ -178,9 +178,9 @@ namespace FlappyBird
 			
 			//Player update
 			Player.Update(elapsedTime);
-			
+			int health = player.GetHealth ();
 			//Background update
-			background.Update(gameScene, Player.health);
+			background.Update(gameScene, health);
 			
 			//Update EnemyAI
 			enemy.RunAI (Player.playerPos);

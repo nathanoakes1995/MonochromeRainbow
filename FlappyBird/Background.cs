@@ -12,18 +12,20 @@ namespace FlappyBird
 	{	
 		//Private variables.
 		private 	SpriteUV 	background;
+		public 		SpriteUV	secondBackground;
 		private	 	TextureInfo	textureInfo;
 		private 	float		width;
-		private		int			saturation;
+		
 		private		TextureInfo[] textures;
 		//Public functions.
 		public Background (Scene scene)
 		{
-			background	= new SpriteUV();
+			SetTextureArray ();
 			
-			textureInfo	= new TextureInfo("/Application/textures/background(0%).png");
-			textures = new TextureInfo[11];
+			textureInfo = new TextureInfo();
+			textureInfo = textures[0];
 			
+			//textureInfo = new TextureInfo("/Application/textures/background(0%).png");	
 			
 			background			= new SpriteUV(textureInfo);
 			background.Quad.S	= textureInfo.TextureSizef;
@@ -38,6 +40,7 @@ namespace FlappyBird
 		
 		public void SetTextureArray()
 		{
+			textures = new TextureInfo[11];
 			textures[0] = new TextureInfo("/Application/textures/background(0%).png");	
 			textures[1] = new TextureInfo("/Application/textures/background(-10%).png");
 			textures[2]= new TextureInfo("/Application/textures/background(-20%).png");	
@@ -53,11 +56,12 @@ namespace FlappyBird
 		
 		public void Update(Scene scene, int saturation)
 		{
-			//saturation = Player.health;
+			saturation = Player.health;
 			
 			if (saturation == 0)		
 			{
 				textureInfo	= textures[0];
+				
 			}
 			else if (saturation == -1)
 			{
@@ -99,7 +103,7 @@ namespace FlappyBird
 			{
 				textureInfo	= textures[10];
 			}
-			
+		
 		}
 	
 		public void Dispose()
