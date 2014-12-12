@@ -173,11 +173,9 @@ namespace FlappyBird
 				}
 		}
 		
-		public void delete()
+		public void delete(Scene scene)
 		{
-			position.X = 1000;
-			sprite.Position = position;
-			textureInfo = null;
+			scene.RemoveChild(sprite, true);
 		}
 	}
 }
