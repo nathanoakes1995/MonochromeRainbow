@@ -21,14 +21,8 @@ namespace FlappyBird
 		private static Sce.PlayStation.HighLevel.UI.Label				ammoLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				multiplierLabel;
 		
-		private static	Background	background;
-		private static Platform[] platforms;
-		
+		private static Background background;
 		private static Timer timer;
-		private static float previousTime;
-		private static float currentTime;
-		private static float accumulatedDeltaTime;
-		private static bool collectibleActive;
 		
 		public static Player player;
 		public static Enemy enemy;
@@ -37,19 +31,28 @@ namespace FlappyBird
 		public static int specMoveProg;
 		public static int score;
 		public static int multiplier;
+		public static int playerHealth;
+		
+		public static float previousTime; 
+		public static float currentTime;
+		public static float elapsedTime;
 
 
+		private static Platform[] platforms;
 
 				
 		public static void Main (string[] args)
 		{
 			Initialize();
 			
+			timer = new Timer();
+			previousTime = (float)timer.Milliseconds();
+			
 			//Game loop
 			bool quitGame = false;
 			while (!quitGame) 
 			{
-				Update ();
+				Update();
 				
 				Director.Instance.Update();
 				Director.Instance.Render();
@@ -59,10 +62,11 @@ namespace FlappyBird
 				Director.Instance.PostSwap();
 			}
 			
+
 			
 			background.Dispose();
 			
-			Director.Terminate ();
+			Director.Terminate();
 		}
 
 		public static void Initialize ()
@@ -119,75 +123,37 @@ namespace FlappyBird
 			LoadLevel(0);
 			
 			score = 0;
-			multiplier = 1;
-			collectibleActive = false;
+			multiplier = 10;
+			//playerHealth = health;
 			
-			healthLabel.Text = "Health: " + Player.Health;
+			healthLabel.Text = "Health: " + playerHealth;
 			scoreLabel.Text = "" + score;
-			ammoLabel.Text = "Ammo: " + Player.Ammo;
+			ammoLabel.Text = "Ammo: " + 100;
 			multiplierLabel.Text = "Mutiplier: x" + multiplier;
-			
-			timer = new Timer();
-			previousTime = (float)timer.Milliseconds();
+					
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
 		
 		public static void Update()
-		{	
+		{
 			currentTime = (float)timer.Milliseconds();
-			float elapsedTime = currentTime - previousTime;
+			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
 			
-			accumulatedDeltaTime += elapsedTime;
-			
-			
 			//background.Update (0.0f);
-			if (collectibleActive)
-			{
-				collectible.Update();
-			}
+			collectible.Update();
 			score += 1 * multiplier;
 			scoreLabel.Text = "" + score;
-
-			if (!collectibleActive)
-			{
-				if (accumulatedDeltaTime >= 20000)
-				{
-					//Create a collectible
-					collectible = new Collectibles(gameScene, specMoveProg);
-					collectibleActive = true;
-					accumulatedDeltaTime = 0.0f;
-				}
-			}
-			else
-			{
-				if (accumulatedDeltaTime >= 10000)
-				{
-					//Despawn Collectible
-					collectible.delete();
-					collectible = null;
-					collectibleActive = false;
-					accumulatedDeltaTime = 0.0f;
-				}
-			}
-			CheckCollision();
-				
-		}
-		
-		public void CheckCollision()
-		{
 			
-			for (int i = 0; i < 9; i++)
-			{
-				
-			}
+			//player update
+			Player.Update(elapsedTime);
 		}
 		
 		public void DecideLevel()
-		{
-			//I will add code here that switches the level.  I'll probably come up with a better way of doing it once the menus are up though [nathan]
+		{	
 		}
+		
 		public static void LoadLevel(int level)
 		{
 			if (level == 0)
@@ -196,14 +162,17 @@ namespace FlappyBird
 				background = new Background(gameScene);
 				
 				//Create the player
-				player = new Player(gameScene);
+				player = new Player(gameScene, new Vector2(100,100));
 
 				//Create an enemy
 				enemy = new Enemy(gameScene, new Vector2(100,100));	
 				
 				//Value for progress through collecting letters for special move
 				specMoveProg = 0;
-							
+			
+				//Create a collectible
+				collectible = new Collectibles(gameScene, specMoveProg);
+				
 				//Hardcoded platform locations
 				platforms = new Platform[9];
 				platforms[0] = new Platform(gameScene, new Vector2(0, 136));
