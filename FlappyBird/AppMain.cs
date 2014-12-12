@@ -130,7 +130,7 @@ namespace FlappyBird
 			scoreLabel.Text = "" + score;
 			ammoLabel.Text = "Ammo: " + 100;
 			multiplierLabel.Text = "Mutiplier: x" + multiplier;
-					
+					int i = 0;
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
