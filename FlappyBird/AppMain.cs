@@ -25,7 +25,7 @@ namespace FlappyBird
 		private static Timer timer;
 		
 		public static Player player;
-		public static Enemy enemy;
+		public static Enemy[] enemy;
 		public static Bullet bullet;
 
 		public static Collectibles collectible;
@@ -121,7 +121,7 @@ namespace FlappyBird
 			
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
-			
+			enemy = new Enemy[20];
 			LoadLevel(0);
 			
 			score = 0;
@@ -186,9 +186,12 @@ namespace FlappyBird
 			
 			
 			//Update EnemyAI
-			enemy.RunAI (Player.playerPos);
-		}
+			for(int i = 0; i< 20; i++)
+			{
+				enemy[i].RunAI (Player.playerPos);
 		
+			}
+		}
 		public void DecideLevel()
 		{	
 		}
@@ -204,8 +207,10 @@ namespace FlappyBird
 				player = new Player(gameScene, new Vector2(100,100));
 
 				//Create an enemy
-				enemy = new Enemy(gameScene);	
-				
+				for(int i = 0; i< 20; i++)
+				{
+					enemy[i] = new Enemy(gameScene);	
+				}	
 				//Create a bullet
 				bullet = new Bullet(gameScene, new Vector2(300,300), 1);
 				
