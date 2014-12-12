@@ -13,10 +13,10 @@ namespace FlappyBird
 		//Private variables.
 		private 	SpriteUV 	background;
 		public 		SpriteUV	secondBackground;
-		private	 	TextureInfo	textureInfo;
+		public	 	TextureInfo	textureInfo;
 		private 	float		width;
 		
-		private		TextureInfo[] textures;
+		public		TextureInfo[] textures;
 		//Public functions.
 		public Background (Scene scene)
 		{
@@ -56,7 +56,7 @@ namespace FlappyBird
 		
 		public void Update(Scene scene, int saturation)
 		{
-			saturation = Player.health;
+			
 			
 			if (saturation == 0)		
 			{
@@ -103,7 +103,9 @@ namespace FlappyBird
 			{
 				textureInfo	= textures[10];
 			}
-		
+			
+			background.TextureInfo = textureInfo;
+			background.Draw();
 		}
 	
 		public void Dispose()

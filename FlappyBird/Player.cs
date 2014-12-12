@@ -20,7 +20,7 @@ namespace FlappyBird
 		private static bool		mayJumpAgain;
 		private static bool		onGround;
 		
-		public static int		health;
+		public int		health;
 		public static Vector2	playerPos;         
 		
 		public Player (Scene scene, Vector2 playerPosition)

@@ -184,6 +184,7 @@ namespace FlappyBird
 			//Background update
 			background.Update(gameScene, health);
 			
+			
 			//Update EnemyAI
 			enemy.RunAI (Player.playerPos);
 		}
