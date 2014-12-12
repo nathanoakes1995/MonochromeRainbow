@@ -21,30 +21,24 @@ namespace FlappyBird
 		private static Sce.PlayStation.HighLevel.UI.Label				ammoLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				multiplierLabel;
 		
-		private static Background background;
-		private static Timer timer;
+		public static int	specMoveProg;
+		public static int	score;
+		public static int	multiplier;
+		public static int	playerHealth;		
+		public static float	previousTime; 
+		public static float	currentTime;
+		public static float	elapsedTime;
+		public static float	accumulatedDeltaTime;
+		public static bool	collectibleActive;
 		
-		public static Player player;
-		public static Enemy[] enemy;
-		public static Bullet bullet;
+		public static Background	background;
+		public static Collectibles	collectible;
+		public static Platform[]	platforms;
+		public static Timer			timer;
+		public static Player		player;
+		public static Enemy[]		enemy;
+		public static Bullet		bullet;
 
-		public static Collectibles collectible;
-		public static int specMoveProg;
-		public static int score;
-		public static int multiplier;
-		public static int playerHealth;		
-		private static bool collectibleActive;
-		
-		
-		public static float previousTime; 
-		public static float currentTime;
-		public static float elapsedTime;
-		private static float accumulatedDeltaTime;
-
-
-		private static Platform[] platforms;
-
-				
 		public static void Main (string[] args)
 		{
 			Initialize();
@@ -179,7 +173,7 @@ namespace FlappyBird
 			}
 			
 			//Player update
-			Player.Update(elapsedTime);
+			Player.Update();
 			int health = player.GetHealth ();
 			//Background update
 			background.Update(gameScene, health);

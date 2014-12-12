@@ -15,10 +15,11 @@ namespace FlappyBird
 		
 		public float 		yVelocity;
 		public bool 		onGround;
+		
 		public Bounds2		bounds;
 		public Vector2		position;
 		public Vector2[]	spawnPositions;
-		public SpriteUV	sprite;
+		public SpriteUV		sprite;
 		
 		public Enemy (Scene scene)
 		{

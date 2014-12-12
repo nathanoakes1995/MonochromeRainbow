@@ -11,7 +11,6 @@ namespace FlappyBird
 {
 	public class Player
 	{
-		private	SpriteUV	player;
 		private	TextureInfo	textureInfo;
 		private GamePadData	gamePadData;
 		
@@ -20,7 +19,9 @@ namespace FlappyBird
 		public float	yVelocity;
 		public bool		mayJumpAgain;
 		public bool		onGround;
-		public Vector2	playerPos;         
+		
+		public Vector2	playerPos; 
+		public SpriteUV	player;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
@@ -40,7 +41,7 @@ namespace FlappyBird
 		{
 			return health;	
 		}
-		public static void Update (float elapsedTime)
+		public static void Update()
 		{
         	//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
