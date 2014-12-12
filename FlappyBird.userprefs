@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\..\..\Program Files (x86)\MSBuild\Sce\Sce.Psm.Common.targets">
     <Files>
-      <File FileName="FlappyBird\AppMain.cs" Line="85" Column="19" />
+      <File FileName="FlappyBird\AppMain.cs" Line="159" Column="3" />
       <File FileName="FlappyBird\Player.cs" Line="127" Column="5" />
       <File FileName="FlappyBird\Collectible.cs" Line="83" Column="4" />
-      <File FileName="FlappyBird\Enemy.cs" Line="25" Column="30" />
+      <File FileName="FlappyBird\Enemy.cs" Line="22" Column="4" />
+      <File FileName="..\..\..\..\..\..\Program Files (x86)\MSBuild\Sce\Sce.Psm.Common.targets" Line="193" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

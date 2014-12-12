@@ -154,6 +154,11 @@ namespace FlappyBird
 		{	
 		}
 		
+		public void CheckCollision()
+		{
+		
+		}
+		
 		public static void LoadLevel(int level)
 		{
 			if (level == 0)
