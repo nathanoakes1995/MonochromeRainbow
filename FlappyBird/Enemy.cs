@@ -15,6 +15,8 @@ namespace FlappyBird
 		private	 	TextureInfo	textureInfo;
 		private		Vector2 	position;
 		private 	Vector2[] 	spawnPositions;
+		private 	float 		yVelocity = 5f;
+		bool 		onGround = false;
 		public Enemy (Scene scene)
 		{
 			spawnPositions = new Vector2[9];
@@ -34,15 +36,15 @@ namespace FlappyBird
 		{
 			//Create array of potential spawn positions (set to the platform XY positions.
 			//Added 20 to each one because of Y0 being at the bottom.
-			spawnPositions[8] = new Vector2(20,138);
-			spawnPositions[0] = new Vector2(20,272);
-			spawnPositions[1] = new Vector2(20,408);
-			spawnPositions[2] = new Vector2(400,200);
-			spawnPositions[3] = new Vector2(400,340);
-			spawnPositions[4] = new Vector2(400,60);
-			spawnPositions[5] = new Vector2(780, 136);
-			spawnPositions[6] = new Vector2(780, 272);
-			spawnPositions[7] = new Vector2(780, 408);
+			spawnPositions[8] = new Vector2(0,158);
+			spawnPositions[0] = new Vector2(0,292);
+			spawnPositions[1] = new Vector2(0,428);
+			spawnPositions[2] = new Vector2(380,220);
+			spawnPositions[3] = new Vector2(380,360);
+			spawnPositions[4] = new Vector2(380,80);
+			spawnPositions[5] = new Vector2(760, 156);
+			spawnPositions[6] = new Vector2(760, 292);
+			spawnPositions[7] = new Vector2(760, 428);
 		}
 		
 		public void DecideSpawnLocation()
@@ -56,23 +58,56 @@ namespace FlappyBird
 			//set the position to that item in the array
 			sprite.Position = new Vector2();
 			sprite.Position = randPos;
+			position = randPos;
+			
 			
 		}
 		
 		public void Update()
 		{
+			//bit of simple gravity so that the enemies aren't anchored to the platforms
 			
+			//if enemy is on ground, velocity = 0
+			if(onGround == false)
+			{
+				yVelocity = 5.0f;
+			}
+			else if (onGround == true)
+			{
+				yVelocity = 0.0f;
+			}	
+			
+			//checks if enemy is on the ground
+			if (position.Y < 0.0f)
+			{
+				position.Y = 0.0f;
+				onGround = true;
+			}
+			
+			//moves the enemy down if not on the ground
+			if(onGround == false)
+			{
+				position.Y -= yVelocity;	
+			}
+			
+			//update position every frame
+			sprite.Position = position;
 		}
 		public void RunAI(Vector2 playerLocation)
 		{
+			
+			//simple AI for now that just follows the player around the X axis
 			if (position.X < playerLocation.X)
 			{
-				position.X -= 0.1f;	
+				position.X += 0.5f;	
+				sprite.Position = position;
 			}
 			if (position.X > playerLocation.X)
 			{
-				position.X += 0.1f;	
+				position.X -= 0.5f;	
+				sprite.Position = position;
 			}
+			
 		}
 	
 	}

@@ -188,8 +188,9 @@ namespace FlappyBird
 			//Update EnemyAI
 			for(int i = 0; i< 20; i++)
 			{
+				
 				enemy[i].RunAI (Player.playerPos);
-		
+				enemy[i].Update ();
 			}
 		}
 		public void DecideLevel()
