@@ -173,7 +173,7 @@ namespace FlappyBird
 			}
 			
 			//Player update
-			Player.Update();
+			player.Update();
 			int health = player.GetHealth ();
 			//Background update
 			background.Update(gameScene, health);
@@ -183,7 +183,7 @@ namespace FlappyBird
 			for(int i = 0; i< 20; i++)
 			{
 				
-				enemy[i].RunAI (Player.playerPos);
+				enemy[i].RunAI (player.playerPos);
 				enemy[i].Update ();
 			}
 			CheckCollision();
@@ -207,6 +207,20 @@ namespace FlappyBird
 					}
 				}
 				
+			}
+			
+			for(int i = 0; i < 9; i++)
+			{
+				platforms[i].sprite.GetContentWorldBounds (ref platforms[i].bounds);
+				player.player.GetContentWorldBounds (ref player.bounds);
+				if(player.yVelocity!=0)
+				{
+					if(player.bounds.Overlaps(platforms[i].bounds))
+					{
+						player.playerPos.Y = (platforms[i].position.Y +20f);
+						player.player.Position = player.playerPos;
+					}
+				}
 			}
 			
 			

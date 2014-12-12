@@ -19,7 +19,7 @@ namespace FlappyBird
 		public float	yVelocity;
 		public bool		mayJumpAgain;
 		public bool		onGround;
-		
+		public Bounds2 bounds;
 		public Vector2	playerPos; 
 		public SpriteUV	player;
 		
@@ -30,7 +30,7 @@ namespace FlappyBird
 			player			= new SpriteUV(textureInfo);	
 			player.Quad.S 	= textureInfo.TextureSizef;
 			playerPos = playerPosition;
-			
+			bounds = new Bounds2();
 			health = 1;
 			mayJumpAgain = true;
 			onGround = true;
@@ -41,7 +41,7 @@ namespace FlappyBird
 		{
 			return health;	
 		}
-		public static void Update()
+		public void Update()
 		{
         	//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
