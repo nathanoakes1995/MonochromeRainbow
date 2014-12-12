@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FlappyBird\Player.cs">
     <Files>
-      <File FileName="FlappyBird\AppMain.cs" Line="208" Column="5" />
-      <File FileName="FlappyBird\Player.cs" Line="45" Column="4" />
-      <File FileName="FlappyBird\Collectible.cs" Line="83" Column="4" />
-      <File FileName="FlappyBird\Enemy.cs" Line="37" Column="36" />
-      <File FileName="FlappyBird\Background.cs" Line="86" Column="30" />
+      <File FileName="FlappyBird\AppMain.cs" Line="192" Column="13" />
+      <File FileName="FlappyBird\Player.cs" Line="18" Column="22" />
+      <File FileName="FlappyBird\Collectible.cs" Line="17" Column="24" />
+      <File FileName="FlappyBird\Enemy.cs" Line="20" Column="28" />
+      <File FileName="FlappyBird\Background.cs" Line="22" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

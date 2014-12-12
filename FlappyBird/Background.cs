@@ -11,12 +11,13 @@ namespace FlappyBird
 	public class Background
 	{	
 		//Private variables.
-		private 	SpriteUV 	background;
-		public 		SpriteUV	secondBackground;
-		public	 	TextureInfo	textureInfo;
-		private 	float		width;
+		private SpriteUV 		background;
+		private SpriteUV		secondBackground;
+		private TextureInfo		textureInfo;
+		private TextureInfo[]	textures;
 		
-		public		TextureInfo[] textures;
+		public float	width;
+
 		//Public functions.
 		public Background (Scene scene)
 		{
