@@ -160,3 +160,5 @@ C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\FlappyBird\obj\Debug\shaders
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\FlappyBird\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\FlappyBird\obj\Debug\app.exe
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\FlappyBird\obj\Debug\app.pdb
+C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\bullet.png
+C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\bullet.png

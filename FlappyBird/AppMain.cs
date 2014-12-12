@@ -26,6 +26,7 @@ namespace FlappyBird
 		
 		public static Player player;
 		public static Enemy enemy;
+		public static Bullet bullet;
 
 		public static Collectibles collectible;
 		public static int specMoveProg;
@@ -169,10 +170,11 @@ namespace FlappyBird
 				if (accumulatedDeltaTime >= 10000)
 				{
 					//Delete collectible
-					collectible.delete();
+					collectible.delete(gameScene);
 					collectible = null;
 					collectibleActive = false;
 					accumulatedDeltaTime = 0.0f;
+
 				}
 			}
 			
@@ -199,6 +201,9 @@ namespace FlappyBird
 
 				//Create an enemy
 				enemy = new Enemy(gameScene, new Vector2(100,100));	
+				
+				//Create a bullet
+				bullet = new Bullet(gameScene, new Vector2(300,300), 1);
 				
 				//Value for progress through collecting letters for special move
 				specMoveProg = 0;
