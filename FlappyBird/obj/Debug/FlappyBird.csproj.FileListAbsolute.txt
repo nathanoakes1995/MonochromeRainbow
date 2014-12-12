@@ -166,3 +166,5 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\obj\Debug\app.exe
 D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\obj\Debug\app.pdb
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\Enemytex.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\Enemytex.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-unsigned\Application\textures\Enemytex.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\FlappyBird\bin\Debug\FlappyBird-signed\Application\textures\Enemytex.png

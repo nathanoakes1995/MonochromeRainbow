@@ -221,8 +221,6 @@ namespace FlappyBird
 						player.player.Position = player.playerPos;
 						player.onGround = true;
 					}
-					else
-						player.onGround=false;
 				}
 			}
 			
