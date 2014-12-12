@@ -28,7 +28,7 @@ namespace FlappyBird
 			spawnPositions = new Vector2[9];
 			SetSpawnLocations();
 			sprite	= new SpriteUV();
-			textureInfo	= new TextureInfo("/Application/textures/GenericTexture.png");
+			textureInfo	= new TextureInfo("/Application/textures/Enemytex.png");
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
 			DecideSpawnLocation ();
