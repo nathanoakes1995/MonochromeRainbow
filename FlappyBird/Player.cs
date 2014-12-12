@@ -14,7 +14,7 @@ namespace FlappyBird
 		private	static SpriteUV		player;
 		private	static TextureInfo	textureInfo;
 		private static GamePadData	gamePadData;
-		
+		public Bounds2 bounds;
 		private static int		health;
 		private static float	xVelocity;
 		private static float	yVelocity;
@@ -29,7 +29,7 @@ namespace FlappyBird
 			player			= new SpriteUV(textureInfo);	
 			player.Quad.S 	= textureInfo.TextureSizef;
 			player.Position = playerPosition;
-			
+			bounds = new Bounds2();
 			health = 10;
 			mayJumpAgain = true;
 			onGround = true;

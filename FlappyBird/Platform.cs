@@ -13,12 +13,15 @@ namespace FlappyBird
 	{
 		private 	SpriteUV 	sprite;
 		private	 	TextureInfo	textureInfo;
-		
+		public Bounds2 bounds;
 		public Platform (Scene scene, Vector2 pos)
 		{
 			sprite	= new SpriteUV();
 			
 			textureInfo	= new TextureInfo("/Application/textures/Platform.png");
+			bounds = new Bounds2();
+			Rectangle rect;
+			
 			
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
