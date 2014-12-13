@@ -96,7 +96,7 @@ namespace FlappyBird
 			}
 			
 			//Slow down player if button is held.
-			if ((gamePadData.Buttons & GamePadButtons.Cross) != 0 && !onGround && yVelocity > 0)
+			if ((gamePadData.Buttons & GamePadButtons.Cross) != 0 & !onGround && yVelocity > 0)
 			{
         		yVelocity += 0.1f;
 			}
