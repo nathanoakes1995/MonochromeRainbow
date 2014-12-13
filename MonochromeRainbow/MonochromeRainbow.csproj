@@ -46,6 +46,7 @@
     <Compile Include="Player.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="AudioManager.cs" />
+    <Compile Include="LevelManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -99,5 +100,6 @@
     <Content Include="sounds\bgm\One Sly Move.mp3" />
     <Content Include="sounds\bgm\Mining by Moonlight.mp3" />
     <Content Include="sounds\bgm\Son Of A Rocket.mp3" />
+    <Content Include="textures\MenuScreen.png" />
   </ItemGroup>
 </Project>

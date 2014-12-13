@@ -15,6 +15,7 @@ namespace MonochromeRainbow
 		private GamePadData	gamePadData;
 		
 		public int		health;
+		public int		level;
 		public float	xVelocity;
 		public float	yVelocity;
 		public bool		mayJumpAgain;
@@ -43,7 +44,12 @@ namespace MonochromeRainbow
 			return health;	
 		}
 		
-		public void Update()
+		public int ReturnLevel()
+		{
+			return level;
+		}
+		
+		public void Update(int level)
 		{
         	//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
@@ -87,6 +93,11 @@ namespace MonochromeRainbow
         	{
         		xVelocity = 3.0f;
         	}
+			
+			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && level == 0)
+			{
+				level = 1;
+			}
 			
 			//Check if player is off the ground.
 			if (!onGround)

@@ -7,8 +7,10 @@ namespace MonochromeRainbow
 {
 	public class AudioManager
 	{
-		private static BgmPlayer 	BGMPlayer;
-  		private static Bgm[]		BGM;
+		private BgmPlayer	BGMPlayer;
+  		private Bgm[]		BGM;
+		
+		public bool	BGMPlaying;
 		
 		public AudioManager ()
 		{
@@ -46,11 +48,15 @@ namespace MonochromeRainbow
 		{
 			BGMPlayer.Loop = true;
 			BGMPlayer.Play();
+			
+			BGMPlaying = true;
 		}
 		
 		public void StopBGM()
 		{
 			BGMPlayer.Stop();
+			
+			BGMPlaying = false;
 		}
 		 
 		public void Dispose()
