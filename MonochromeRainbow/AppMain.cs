@@ -134,6 +134,8 @@ namespace MonochromeRainbow
 			
 			score = 0;
 			multiplier = 1;
+			collectibleActive = false;
+			bulletActive = false;
 			
 			healthLabel.Text = "Health: " + player.health;
 			scoreLabel.Text = "" + score;
@@ -190,9 +192,10 @@ namespace MonochromeRainbow
 			
 			//Player update
 			player.Update(levelManager.GetLevel(), gameScene);
-			
+			if (bulletActive)
+			{
 			player.bullet.Update();
-			
+			}
 
 			int health = player.health;
 			
