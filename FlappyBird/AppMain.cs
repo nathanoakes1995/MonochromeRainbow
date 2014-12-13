@@ -213,19 +213,16 @@ namespace FlappyBird
 			{
 				platforms[i].sprite.GetContentWorldBounds (ref platforms[i].bounds);
 				player.player.GetContentWorldBounds (ref player.bounds);
-				if(player.yVelocity!=0)
+				if(player.yVelocity != 0)
 				{
-					if(player.bounds.Overlaps(platforms[i].bounds))
+					if(player.playerPos.Y >= (platforms[i].position.Y))
 					{
 						player.playerPos.Y = (platforms[i].position.Y +19f);
 						player.player.Position = player.playerPos;
 						player.onGround = true;
 					}
 				}
-			}
-			
-			
-			
+			}	
 		}
 		
 		public static void LoadLevel(int level)

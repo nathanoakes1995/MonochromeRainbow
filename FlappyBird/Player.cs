@@ -66,8 +66,6 @@ namespace FlappyBird
 					{
                 		yVelocity = 10.0f;
                 		mayJumpAgain = false;
-						
-						Console.Write (yVelocity);
 					}
         		}
         		else
