@@ -35,8 +35,6 @@ namespace MonochromeRainbow
 		
 		public void Update(int level)
 		{
-			gamePadData = GamePad.GetData(0);
-			
 		}
 	}
 }
