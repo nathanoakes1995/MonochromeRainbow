@@ -215,9 +215,9 @@ namespace FlappyBird
 				player.player.GetContentWorldBounds (ref player.bounds);
 				if(player.yVelocity != 0)
 				{
-					if(player.playerPos.Y >= (platforms[i].position.Y))
+					if(player.yVelocity < 0 && player.bounds.Overlaps(platforms[i].bounds))
 					{
-						player.playerPos.Y = (platforms[i].position.Y +19f);
+						player.playerPos.Y = (platforms[i].position.Y + platforms[i].platformHeight);
 						player.player.Position = player.playerPos;
 						player.onGround = true;
 					}

@@ -11,10 +11,13 @@ namespace FlappyBird
 {
 	public class Platform
 	{
-		public 	SpriteUV 	sprite;
-		private	 	TextureInfo	textureInfo;
-		public Bounds2 bounds;
-		public Vector2 position;
+		private TextureInfo	textureInfo;
+		
+		public SpriteUV	sprite;
+		public Bounds2	bounds;
+		public Vector2	position;
+		public float	platformHeight;
+		public float	platformWidth;
 		
 		public Platform (Scene scene, Vector2 pos)
 		{
@@ -27,6 +30,9 @@ namespace FlappyBird
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
 			sprite.Position = pos;
+			
+			platformHeight	= sprite.Quad.S.Y;
+			platformWidth	= sprite.Quad.S.X;
 			
 			scene.AddChild(sprite);
 		}
