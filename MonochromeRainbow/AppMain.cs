@@ -28,13 +28,14 @@ namespace MonochromeRainbow
 		public static int	score;
 		public static int	multiplier;
 		public static int	playerHealth;
+		public static int	level;
 		public static float	previousTime; 
 		public static float	currentTime;
 		public static float	elapsedTime;
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
 		
-		//public static Menu 			menu;
+		public static Menu 			menu;
 		public static Background	background;
 		public static AudioManager	audioManager;
 		public static LevelManager	levelManager;
@@ -44,7 +45,6 @@ namespace MonochromeRainbow
 		public static Player		player;
 		public static Enemy[]		enemy;
 		public static Bullet		bullet;
-		public static int 			level = 0;
 			
 		public static void Main (string[] args)
 		{					
@@ -131,16 +131,18 @@ namespace MonochromeRainbow
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			
-			//menu = new Menu(gameScene, level);
 			enemy = new Enemy[20];
-			
 			
 			score = 0;
 			multiplier = 1;
+			level = 0;
 			
-			
-			
+			menu = new Menu(gameScene, level);
 			LoadLevel(level);		
+			
+			AppMain.audioManager.SetBGM(level);
+			AppMain.audioManager.PlayBGM();
+			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
@@ -203,6 +205,8 @@ namespace MonochromeRainbow
 					enemy[i].RunAI (player.playerPos);
 					enemy[i].Update ();
 				}
+				
+				level = levelManager.level;
 				
 				CheckCollision();
 			}
@@ -319,8 +323,6 @@ namespace MonochromeRainbow
 			//Create up audio
 			audioManager = new AudioManager();
 			
-			
-			
 			if(level == 0)
 			{
 				//menu = new Menu(gameScene, level);
@@ -340,9 +342,6 @@ namespace MonochromeRainbow
 				{
 					enemy[i] = new Enemy(gameScene);	
 				}	
-				
-				audioManager.SetBGM(levelManager.GetLevel());
-				audioManager.PlayBGM();
 				
 				//Create a bullet
 				bullet = new Bullet(gameScene, new Vector2(300,300), 1);
