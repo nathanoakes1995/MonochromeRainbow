@@ -20,6 +20,7 @@ namespace MonochromeRainbow
 		private static Sce.PlayStation.HighLevel.UI.Label				healthLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				ammoLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				multiplierLabel;
+		private static Sce.PlayStation.HighLevel.UI.Label				rainbowLabel;
 		
 		public static GamePadData	gamePadData;
 		
@@ -116,6 +117,14 @@ namespace MonochromeRainbow
 				Director.Instance.GL.Context.GetViewport().Width - 200 - scoreLabel.Width/2,
 				Director.Instance.GL.Context.GetViewport().Height*0.1f - scoreLabel.Height/2);
 			panel.AddChildLast(scoreLabel);
+			//Rainbow label data
+			rainbowLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			rainbowLabel.HorizontalAlignment = HorizontalAlignment.Right;
+			rainbowLabel.VerticalAlignment = VerticalAlignment.Top;
+			rainbowLabel.SetPosition(
+				90 - rainbowLabel.Width/2,
+				Director.Instance.GL.Context.GetViewport().Height*0.1f - rainbowLabel.Height/2 + 20);
+			panel.AddChildLast(rainbowLabel);
 			
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
@@ -129,6 +138,7 @@ namespace MonochromeRainbow
 			scoreLabel.Text = "" + score;
 			ammoLabel.Text = "Ammo: " + player.ammo;
 			multiplierLabel.Text = "Mutiplier: x" + multiplier;
+			rainbowLabel.Text = "";
 					
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
@@ -259,10 +269,39 @@ namespace MonochromeRainbow
 							multiplierLabel.Text = "Multiplier: x" + multiplier;
         				break;
 						case 3:
-	        				Console.WriteLine("Rainbow");
-        				break;
-    					default:
-        				break;
+							if (specMoveProg < 8)
+							{
+		        				specMoveProg++;
+							}
+							switch (specMoveProg)
+							{
+    						case 1:
+								rainbowLabel.Text = "R";
+        					break;
+    						case 2:
+								rainbowLabel.Text = "RA";
+       						break;
+							case 3:
+								rainbowLabel.Text = "RAI";
+        					break;
+							case 4:
+								rainbowLabel.Text = "RAIN";
+        					break;
+							case 5:
+								rainbowLabel.Text = "RAINB";
+        					break;
+							case 6:
+								rainbowLabel.Text = "RAINBO";
+        					break;
+ 							default:
+								rainbowLabel.Text = "RAINBOW";
+        					break;
+							}
+						break;
+						default:
+												
+						break;
+					
 					}
 				}
 			}

@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Collectible.cs">
     <Files>
-      <File FileName="MonochromeRainbow\AppMain.cs" Line="126" Column="18" />
+      <File FileName="MonochromeRainbow\AppMain.cs" Line="288" Column="33" />
       <File FileName="MonochromeRainbow\Player.cs" Line="38" Column="13" />
-      <File FileName="MonochromeRainbow\Collectible.cs" Line="181" Column="16" />
+      <File FileName="MonochromeRainbow\Collectible.cs" Line="154" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
