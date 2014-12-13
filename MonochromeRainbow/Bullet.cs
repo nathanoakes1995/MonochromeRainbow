@@ -13,10 +13,11 @@ namespace MonochromeRainbow
 	{
 		private 	SpriteUV 	sprite;
 		private	 	TextureInfo	textureInfo;
+		public 		int 		bulletDirection;
 		
 		public Bullet (Scene scene, Vector2 position, int direction)
 		{
-			
+			bulletDirection = direction;
 			sprite	= new SpriteUV();
 			
 			textureInfo	= new TextureInfo("/Application/textures/bullet.png");

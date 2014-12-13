@@ -20,6 +20,7 @@ namespace MonochromeRainbow
 		private static Sce.PlayStation.HighLevel.UI.Label				healthLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				ammoLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				multiplierLabel;
+		private static Sce.PlayStation.HighLevel.UI.Label				rainbowLabel;
 		
 		public static GamePadData	gamePadData;
 		
@@ -116,6 +117,14 @@ namespace MonochromeRainbow
 				Director.Instance.GL.Context.GetViewport().Width - 200 - scoreLabel.Width/2,
 				Director.Instance.GL.Context.GetViewport().Height*0.1f - scoreLabel.Height/2);
 			panel.AddChildLast(scoreLabel);
+			//Rainbow label data
+			rainbowLabel = new Sce.PlayStation.HighLevel.UI.Label();
+			rainbowLabel.HorizontalAlignment = HorizontalAlignment.Right;
+			rainbowLabel.VerticalAlignment = VerticalAlignment.Top;
+			rainbowLabel.SetPosition(
+				90 - rainbowLabel.Width/2,
+				Director.Instance.GL.Context.GetViewport().Height*0.1f - rainbowLabel.Height/2 + 20);
+			panel.AddChildLast(rainbowLabel);
 			
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
@@ -123,12 +132,13 @@ namespace MonochromeRainbow
 			LoadLevel(0);
 			
 			score = 0;
-			multiplier = 10;
+			multiplier = 1;
 			
-			healthLabel.Text = "Health: " + playerHealth;
+			healthLabel.Text = "Health: " + player.health;
 			scoreLabel.Text = "" + score;
-			ammoLabel.Text = "Ammo: " + 100;
+			ammoLabel.Text = "Ammo: " + player.ammo;
 			multiplierLabel.Text = "Mutiplier: x" + multiplier;
+			rainbowLabel.Text = "";
 					
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
@@ -156,7 +166,7 @@ namespace MonochromeRainbow
 			
 			if (!collectibleActive)
 			{
-				if (accumulatedDeltaTime >= 20000)
+				if (accumulatedDeltaTime >= 2000)
 				{
 					//Create a collectible
 					collectible = new Collectibles(gameScene, specMoveProg);
@@ -224,7 +234,77 @@ namespace MonochromeRainbow
 						player.onGround = true;
 					}
 				}
-			}	
+			}
+			if (collectibleActive)
+			{
+				collectible.sprite.GetContentWorldBounds (ref collectible.bounds);
+				player.player.GetContentWorldBounds (ref player.bounds);
+				if(player.yVelocity < 0 && player.bounds.Overlaps(collectible.bounds))
+				{
+					int collectibleType = collectible.getType();
+					collectible.delete(gameScene);
+					collectible = null;
+					collectibleActive = false;
+					accumulatedDeltaTime = 0.0f;
+					switch (collectibleType)
+					{
+    					case 0:
+							player.health += 2;
+							if (player.health > 10)
+							{
+								player.health = 10;	
+							}
+							healthLabel.Text = "Health: " + player.health;
+        				break;
+    					case 1:
+							player.ammo += 10;
+							if (player.ammo > 100)
+							{
+								player.ammo = 100;	
+							}
+							ammoLabel.Text = "Ammo: " + player.ammo;
+        				break;
+						case 2:
+	        				multiplier++;
+							multiplierLabel.Text = "Multiplier: x" + multiplier;
+        				break;
+						case 3:
+							if (specMoveProg < 8)
+							{
+		        				specMoveProg++;
+							}
+							switch (specMoveProg)
+							{
+    						case 1:
+								rainbowLabel.Text = "R";
+        					break;
+    						case 2:
+								rainbowLabel.Text = "RA";
+       						break;
+							case 3:
+								rainbowLabel.Text = "RAI";
+        					break;
+							case 4:
+								rainbowLabel.Text = "RAIN";
+        					break;
+							case 5:
+								rainbowLabel.Text = "RAINB";
+        					break;
+							case 6:
+								rainbowLabel.Text = "RAINBO";
+        					break;
+ 							default:
+								rainbowLabel.Text = "RAINBOW";
+        					break;
+							}
+						break;
+						default:
+												
+						break;
+					
+					}
+				}
+			}
 		}
 		
 		public static void LoadLevel(int level)

@@ -12,17 +12,19 @@ namespace MonochromeRainbow
 	{
 		private TextureInfo	textureInfo;
 		
-		public int		type;
-		public int		spawnPos;
-		public float	extraHeight;
-		public float	startHeight;
-		public bool		movingUp;
-		
-		public Vector2	position;
-		public SpriteUV sprite;
+		public int			type;
+		public int			spawnPos;
+		public float		extraHeight;
+		public float		startHeight;
+		public bool			movingUp;
+		public Bounds2		bounds;
+		public Vector2		position;
+		public SpriteUV 	sprite;
+		public int 			specMove;
 		
 		public Collectibles (Scene scene, int specMoveProg)
 		{
+			specMove = specMoveProg;
 			movingUp = true;
 			position = decideSpawnPos();
 			extraHeight = 0.0f;
@@ -47,7 +49,7 @@ namespace MonochromeRainbow
 			else
 			{
 				//Different texture depending on which letter was collected last
-				switch (specMoveProg)
+				switch (specMove)
 				{
     			case 0:
 					textureInfo = new TextureInfo("/Application/textures/1-R.png");
@@ -149,8 +151,9 @@ namespace MonochromeRainbow
 			//Randomly decide which collectible to spawn
 			var randGen = new Random(Guid.NewGuid().GetHashCode());
 			int randInt = randGen.Next (100);
-
-				if (randInt <= 39)
+			if (specMove < 7)
+			{
+			if (randInt <= 39)
 				{
 					return 0;
 					//Health	
@@ -170,11 +173,34 @@ namespace MonochromeRainbow
 					return 3;
 					//Letters	
 				}
+			}
+			else			
+			{
+			if (randInt <= 39)
+				{
+					return 0;
+					//Health	
+				}
+				else if (randInt <= 79)
+				{
+					return 1;
+					//Ammo	
+				}
+				else
+				{
+					return 2;
+					//Multiplier	
+				}
+			}
 		}
 		
 		public void delete(Scene scene)
 		{
 			scene.RemoveChild(sprite, true);
+		}
+		public int getType()
+		{
+			return type;	
 		}
 	}
 }
