@@ -1,12 +1,14 @@
 using System;
+using System.Threading;
 
 using Sce.PlayStation.Core;
 using Sce.PlayStation.Core.Graphics;
 using Sce.PlayStation.Core.Input;
-using System.Threading;
 using Sce.PlayStation.Core.Environment;
+
 using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
+using Sce.PlayStation.HighLevel.UI;
 
 namespace MonochromeRainbow
 {
@@ -14,7 +16,7 @@ namespace MonochromeRainbow
 	{
 		private	TextureInfo	textureInfo;
 		private SpriteUV sprite;
-		public Button newGame;
+		public Button startButton;
 		
 		public Menu (Scene scene, int level)
 		{
@@ -22,11 +24,15 @@ namespace MonochromeRainbow
 			sprite = new SpriteUV(textureInfo);
 			sprite.Quad.S = textureInfo.TextureSizef;
 			scene.AddChild (sprite);
+			Label label = new Label();
+			label.SetPosition(0.0f, 0.0f);
+			label.text = "woop".
+			customButton.Text = "Start";
 			
 			LoadMenus (level, scene);
 		}
 		
-		public void LoadMenus(int level, Scene scene)
+		public void LoadMenus(Scene scene, int level)
 		{
 			if(level == 0)
 			{
@@ -36,20 +42,6 @@ namespace MonochromeRainbow
 		
 		public void Update(int level)
 		{
-			foreach (var touchData in Touch.GetData (0))
-			{
-				if(touchData.Status == TouchStatus.Down)
-				{
-					Bounds2 tempBounds = new Bounds2();
-					tempBounds.Min = new Vector2((touchData.X - 1), (touchData.Y -1));
-					tempBounds.Max = new Vector2((touchData.X + 1), (touchData.Y + 1));
-					
-					if( tempBounds.Overlaps (newGame.bounds))
-					{
-						//AppMain.levelManager.level = 4;	
-					}
-				}	
-			}
 		}
 	}
 }

@@ -81,7 +81,6 @@
     <Content Include="textures\Ammo.png" />
     <Content Include="textures\Health.png" />
     <Content Include="textures\Multiplier.png" />
-    <Content Include="textures\Player.png" />
     <Content Include="textures\background%28-100%25%29.png" />
     <Content Include="textures\background%28-90%25%29.png" />
     <Content Include="textures\background%28-80%25%29.png" />

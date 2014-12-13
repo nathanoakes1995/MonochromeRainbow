@@ -29,7 +29,7 @@ namespace MonochromeRainbow
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
-			textureInfo		= new TextureInfo("/Application/textures/Player.png");
+			textureInfo		= new TextureInfo("/Application/textures/playerSheet.png");
 			
 			player			= new SpriteUV(textureInfo);	
 			player.Quad.S 	= textureInfo.TextureSizef;
@@ -42,6 +42,23 @@ namespace MonochromeRainbow
 			
 			scene.AddChild(player);
 		}
+
+		//public void SetTextureArray()
+		//{
+		//	textures = new TextureInfo[12];
+		//	textures[0]		= new TextureInfo("/Application/textures/MenuScreen.png");
+		//	textures[1]		= new TextureInfo("/Application/textures/background(-100%).png");
+		//	textures[2]		= new TextureInfo("/Application/textures/background(-90%).png");
+		//	textures[3]		= new TextureInfo("/Application/textures/background(-80%).png");	
+		//	textures[4]		= new TextureInfo("/Application/textures/background(-70%).png");	
+		//	textures[5]		= new TextureInfo("/Application/textures/background(-60%).png");	
+		//	textures[6]		= new TextureInfo("/Application/textures/background(-50%).png");
+		//	textures[7]		= new TextureInfo("/Application/textures/background(-40%).png");	
+		//	textures[8]		= new TextureInfo("/Application/textures/background(-30%).png");	
+		//	textures[9]		= new TextureInfo("/Application/textures/background(-20%).png");	
+		//	textures[10]	= new TextureInfo("/Application/textures/background(-10%).png");	
+		//	textures[11]	= new TextureInfo("/Application/textures/background(0%).png");
+		//}
 		
 		public void Update(int level, Scene gameScene)
 		{

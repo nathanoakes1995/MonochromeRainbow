@@ -15,7 +15,7 @@ namespace MonochromeRainbow
 		public SpriteUV sprite;
 		public Bounds2 bounds;
 		
-		public Button (Scene scene, String path, Vector2 position)
+		public Button (Scene scene, Vector2 position)
 		{
 			bounds = new Bounds2();
 			texture = new TextureInfo(path);
