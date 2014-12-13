@@ -134,7 +134,7 @@ namespace MonochromeRainbow
 			enemy = new Enemy[20];
 			
 			score = 0;
-			level = 1;
+			level = 0;
 			multiplier = 1;
 			
 			LoadLevel(level);		
@@ -342,7 +342,7 @@ namespace MonochromeRainbow
 				menu = new Menu(gameScene, level);
 			}
 			
-			if(level == 1)
+			if(level == 4)
 			{
 				//Create the background.
 				background = new Background(gameScene);

@@ -46,10 +46,8 @@ namespace MonochromeRainbow
 					
 					if( tempBounds.Overlaps (newGame.bounds))
 					{
-						//AppMain.levelManager.level = 1;	
+						//AppMain.levelManager.level = 4;	
 					}
-					
-					
 				}	
 			}
 		}
