@@ -25,7 +25,7 @@ namespace MonochromeRainbow
 		public Bounds2 			bounds;
 		public Vector2			playerPos; 
 		public SpriteUV			player;
-		public Bullet			bullet;
+		public Bullet	bullet;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
@@ -59,8 +59,15 @@ namespace MonochromeRainbow
 			//Check if player is on ground.
         	if (onGround)
 			{
-        		//Apply friction.
-        		xVelocity *= 0.9f;
+        		yVelocity = 0;
+				
+				xVelocity *= 0.9f;
+				
+				//Apply friction.
+        		if ((gamePadData.Buttons & GamePadButtons.Left) == 0)
+				{
+					xVelocity *= 0.65f;
+        		}
 				
 				//Check if cross is pressed.
 				if ((gamePadData.Buttons & GamePadButtons.Cross) != 0)
@@ -81,13 +88,13 @@ namespace MonochromeRainbow
 			//Left movement.
         	if ((gamePadData.Buttons & GamePadButtons.Left) != 0)
         	{
-        		xVelocity = -3.0f;
+        		xVelocity = -4.0f;
         	}
 			
 			//Right movement.
         	if ((gamePadData.Buttons & GamePadButtons.Right) != 0)
         	{
-        		xVelocity = 3.0f;
+        		xVelocity = 4.0f;
         	}
 			
 			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && level == 0)
@@ -129,7 +136,7 @@ namespace MonochromeRainbow
 			playerPos.X += xVelocity;
 			
 			//Check if player is on the ground.
-            if (playerPos.Y != 0)
+            if (yVelocity != -5.0f)
 			{
 				onGround = false;
     		}
@@ -137,7 +144,7 @@ namespace MonochromeRainbow
 			//Check if player has hit the ground.
 			if (playerPos.Y < 0.0f)
 			{
-				playerPos.Y = 0.0f;
+				playerPos.Y = -5.0f;
 				onGround = true;
 			}
 			

@@ -36,7 +36,6 @@ namespace MonochromeRainbow
 		
 		public void Update(int level)
 		{
-				
 		}
 	}
 }

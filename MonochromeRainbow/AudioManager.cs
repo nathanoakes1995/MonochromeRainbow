@@ -17,8 +17,6 @@ namespace MonochromeRainbow
 			SetBGMArray();
 			
 			BGMPlayer = BGM[0].CreatePlayer();
-			
-			Console.Write(BGMPlayer.Status);
 		}
 		
 		public void SetBGMArray()

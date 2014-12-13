@@ -44,6 +44,7 @@ namespace MonochromeRainbow
 		public static Timer			timer;
 		public static Player		player;
 		public static Enemy[]		enemy;
+		public static Bullet		bullet;
 			
 		public static void Main (string[] args)
 		{					
@@ -133,10 +134,9 @@ namespace MonochromeRainbow
 			enemy = new Enemy[20];
 			
 			score = 0;
+			level = 1;
 			multiplier = 1;
-			level = 0;
 			
-			menu = new Menu(gameScene, level);
 			LoadLevel(level);		
 			
 			AppMain.audioManager.SetBGM(level);
@@ -225,20 +225,31 @@ namespace MonochromeRainbow
 						enemy[i].sprite.Position= enemy[i].position;
 					}
 				}
-				
 			}
 			
 			for(int i = 0; i < 9; i++)
 			{
 				platforms[i].sprite.GetContentWorldBounds (ref platforms[i].bounds);
 				player.player.GetContentWorldBounds (ref player.bounds);
-				if(player.yVelocity != 0)
+				if(player.yVelocity < 0)
 				{
-					if(player.yVelocity < 0 && player.bounds.Overlaps(platforms[i].bounds))
+					if((player.playerPos.X + player.player.Quad.S.X) > (platforms[i].position.X + 20.0f) && player.playerPos.X < (platforms[i].position.X + platforms[i].platformWidth - 18.0f))
 					{
-						player.playerPos.Y = (platforms[i].position.Y + platforms[i].platformHeight);
-						player.player.Position = player.playerPos;
-						player.onGround = true;
+						if(player.bounds.Overlaps(platforms[i].bounds))
+						{
+
+								player.playerPos.Y = (platforms[i].position.Y + platforms[i].platformHeight) - 4.0f;
+								player.player.Position = player.playerPos;
+								player.onGround = true;
+							
+						}
+					}
+				}
+				if(player.yVelocity == 0)
+				{
+					if(!player.bounds.Overlaps(platforms[i].bounds) && player.playerPos.Y != -5.0f)
+					{
+						player.onGround = false;
 					}
 				}
 			}
@@ -308,7 +319,6 @@ namespace MonochromeRainbow
 						default:
 												
 						break;
-					
 					}
 				}
 			}
@@ -324,26 +334,13 @@ namespace MonochromeRainbow
 			
 			if(level == 0)
 			{
-				//menu = new Menu(gameScene, level);
+				menu = new Menu(gameScene, level);
 			}
-			
-			
-			//Create the background.
 			
 			if(level == 1)
 			{
+				//Create the background.
 				background = new Background(gameScene);
-				//Create the player
-				player = new Player(gameScene, new Vector2(100,100));
-	
-				//Create an enemy
-				for(int i = 0; i< 20; i++)
-				{
-					enemy[i] = new Enemy(gameScene);	
-				}	
-				
-				//Value for progress through collecting letters for special move
-				specMoveProg = 0;
 				
 				//Hardcoded platform locations
 				platforms = new Platform[9];
@@ -356,13 +353,29 @@ namespace MonochromeRainbow
 				platforms[6] = new Platform(gameScene, new Vector2(760, 136));
 				platforms[7] = new Platform(gameScene, new Vector2(760, 272));
 				platforms[8] = new Platform(gameScene, new Vector2(760, 408));
+
+				//Create the player
+				player = new Player(gameScene, new Vector2(0,0));
+	
+				//Create an enemy
+				for(int i = 0; i< 20; i++)
+				{
+					enemy[i] = new Enemy(gameScene);	
+				}	
+				
+				//Create a bullet
+				bullet = new Bullet(gameScene, new Vector2(300,300), 1);
+				
+									
+				//Value for progress through collecting letters for special move
+				specMoveProg = 0;	
+				
 				healthLabel.Text = "Health: " + player.health;
-			scoreLabel.Text = "" + score;
-			ammoLabel.Text = "Ammo: " + player.ammo;
-			multiplierLabel.Text = "Mutiplier: x" + multiplier;
-			rainbowLabel.Text = "";
+				scoreLabel.Text = "" + score;
+				ammoLabel.Text = "Ammo: " + player.ammo;
+				multiplierLabel.Text = "Mutiplier: x" + multiplier;
+				rainbowLabel.Text = "";
 			}
-		}
-		
+		}	
 	}
 }
