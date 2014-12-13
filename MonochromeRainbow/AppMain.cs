@@ -262,6 +262,9 @@ namespace MonochromeRainbow
 				enemy[i] = new Enemy(gameScene);	
 			}	
 			
+			audioManager.SetBGM(levelManager.GetLevel());
+			audioManager.PlayBGM();
+			
 			//Create a bullet
 			bullet = new Bullet(gameScene, new Vector2(300,300), 1);
 			
