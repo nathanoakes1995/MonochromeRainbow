@@ -178,7 +178,16 @@ namespace FlappyBird
 		public void RunAIType2(Vector2 playerLocation)
 		{
 			//flying AI
-			
+			if (position.X < playerLocation.X)
+			{
+				position.X += 0.5f;	
+				sprite.Position = position;
+			}
+			if (position.X > playerLocation.X)
+			{
+				position.X -= 0.5f;	
+				sprite.Position = position;
+			}
 		}
 		
 		public void RunAIType3(Vector2 playerLocation)
