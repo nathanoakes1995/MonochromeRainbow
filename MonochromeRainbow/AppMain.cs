@@ -44,6 +44,7 @@ namespace MonochromeRainbow
 		public static Player		player;
 		public static Enemy[]		enemy;
 		public static Bullet		bullet;
+		public static int 			level = 0;
 			
 		public static void Main (string[] args)
 		{					
@@ -129,7 +130,7 @@ namespace MonochromeRainbow
 			
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
-			int level = 0;
+			
 			//menu = new Menu(gameScene, level);
 			enemy = new Enemy[20];
 			
@@ -137,13 +138,9 @@ namespace MonochromeRainbow
 			score = 0;
 			multiplier = 1;
 			
-			healthLabel.Text = "Health: " + player.health;
-			scoreLabel.Text = "" + score;
-			ammoLabel.Text = "Ammo: " + player.ammo;
-			multiplierLabel.Text = "Mutiplier: x" + multiplier;
-			rainbowLabel.Text = "";
-			levelManager = new LevelManager();
-			LoadLevel(levelManager.level);		
+			
+			
+			LoadLevel(level);		
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
@@ -158,54 +155,57 @@ namespace MonochromeRainbow
 			
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
-			
-			//Collectible update
-			if (collectibleActive)
+			if(level == 1)
 			{
-				collectible.Update();
-			}
 			
-			score += 1 * multiplier;
-			scoreLabel.Text = "" + score;
-			
-			if (!collectibleActive)
-			{
-				if (accumulatedDeltaTime >= 2000)
+				//Collectible update
+				if (collectibleActive)
 				{
-					//Create a collectible
-					collectible = new Collectibles(gameScene, specMoveProg);
-					collectibleActive = true;
-					accumulatedDeltaTime = 0.0f;
+					collectible.Update();
 				}
-			}
-			else
-			{
-				if (accumulatedDeltaTime >= 10000)
+				
+				score += 1 * multiplier;
+				scoreLabel.Text = "" + score;
+				
+				if (!collectibleActive)
 				{
-					//Delete collectible
-					collectible.delete(gameScene);
-					collectible = null;
-					collectibleActive = false;
-					accumulatedDeltaTime = 0.0f;
+					if (accumulatedDeltaTime >= 2000)
+					{
+						//Create a collectible
+						collectible = new Collectibles(gameScene, specMoveProg);
+						collectibleActive = true;
+						accumulatedDeltaTime = 0.0f;
+					}
 				}
+				else
+				{
+					if (accumulatedDeltaTime >= 10000)
+					{
+						//Delete collectible
+						collectible.delete(gameScene);
+						collectible = null;
+						collectibleActive = false;
+						accumulatedDeltaTime = 0.0f;
+					}
+				}
+				
+				//Player update
+				player.Update(levelManager.GetLevel(), gameScene);
+				int health = player.health;
+				
+				//Background update
+				background.Update(gameScene, health, levelManager.GetLevel());
+				
+				
+				//Update EnemyAI
+				for(int i = 0; i< 20; i++)
+				{		
+					enemy[i].RunAI (player.playerPos);
+					enemy[i].Update ();
+				}
+				
+				CheckCollision();
 			}
-			
-			//Player update
-			player.Update(levelManager.GetLevel(), gameScene);
-			int health = player.health;
-			
-			//Background update
-			background.Update(gameScene, health, levelManager.GetLevel());
-			
-			
-			//Update EnemyAI
-			for(int i = 0; i< 20; i++)
-			{		
-				enemy[i].RunAI (player.playerPos);
-				enemy[i].Update ();
-			}
-			
-			CheckCollision();
 		}
 		
 		public static void CheckCollision()
@@ -314,7 +314,7 @@ namespace MonochromeRainbow
 		public static void LoadLevel(int level)
 		{	
 			//Load level manager
-			
+			levelManager = new LevelManager();
 			
 			//Create up audio
 			audioManager = new AudioManager();
@@ -361,6 +361,11 @@ namespace MonochromeRainbow
 				platforms[6] = new Platform(gameScene, new Vector2(760, 136));
 				platforms[7] = new Platform(gameScene, new Vector2(760, 272));
 				platforms[8] = new Platform(gameScene, new Vector2(760, 408));
+				healthLabel.Text = "Health: " + player.health;
+			scoreLabel.Text = "" + score;
+			ammoLabel.Text = "Ammo: " + player.ammo;
+			multiplierLabel.Text = "Mutiplier: x" + multiplier;
+			rainbowLabel.Text = "";
 			}
 		}
 		
