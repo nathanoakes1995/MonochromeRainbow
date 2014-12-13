@@ -75,7 +75,7 @@ namespace MonochromeRainbow
             		//Check if player is able to jump.
 					if (mayJumpAgain)
 					{
-                		yVelocity = 10.0f;
+                		yVelocity = 11.0f;
                 		mayJumpAgain = false;
 					}
         		}

@@ -158,12 +158,12 @@ namespace MonochromeRainbow
 					return 0;
 					//Health	
 				}
-				else if (randInt <= 79)
+				else if (randInt <= 69)
 				{
 					return 1;
 					//Ammo	
 				}
-				else if (randInt <= 94)
+				else if (randInt <= 89)
 				{
 					return 2;
 					//Multiplier	
