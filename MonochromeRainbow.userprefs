@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Player.cs">
     <Files>
-      <File FileName="MonochromeRainbow\AppMain.cs" Line="130" Column="4" />
-      <File FileName="MonochromeRainbow\Player.cs" Line="117" Column="5" />
+      <File FileName="MonochromeRainbow\AppMain.cs" Line="40" Column="26" />
+      <File FileName="MonochromeRainbow\Player.cs" Line="39" Column="13" />
       <File FileName="MonochromeRainbow\Collectible.cs" Line="52" Column="1" />
       <File FileName="MonochromeRainbow\Bullet.cs" Line="29" Column="31" />
       <File FileName="MonochromeRainbow\Menu.cs" Line="10" Column="28" />

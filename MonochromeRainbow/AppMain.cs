@@ -44,7 +44,6 @@ namespace MonochromeRainbow
 		public static Timer			timer;
 		public static Player		player;
 		public static Enemy[]		enemy;
-		public static Bullet		bullet;
 			
 		public static void Main (string[] args)
 		{					
@@ -342,9 +341,6 @@ namespace MonochromeRainbow
 				{
 					enemy[i] = new Enemy(gameScene);	
 				}	
-				
-				//Create a bullet
-				bullet = new Bullet(gameScene, new Vector2(300,300), 1);
 				
 				//Value for progress through collecting letters for special move
 				specMoveProg = 0;

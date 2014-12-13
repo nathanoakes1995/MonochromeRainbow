@@ -222,3 +222,5 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\Monochro
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\playerSheet.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\Buttons\NewGame.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\playerSheet.png
+C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\playerSheet.png
+C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\playerSheet.png

@@ -25,7 +25,7 @@ namespace MonochromeRainbow
 		public Bounds2 			bounds;
 		public Vector2			playerPos; 
 		public SpriteUV			player;
-		public Bullet	bullet;
+		public Bullet			bullet;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
