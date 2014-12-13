@@ -151,7 +151,7 @@ namespace MonochromeRainbow
 			currentTime = (float)timer.Milliseconds();
 			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
-			
+			menu.Update(level);
 			accumulatedDeltaTime += elapsedTime;
 			
 			//Get gamepad input.
@@ -209,6 +209,10 @@ namespace MonochromeRainbow
 				
 				CheckCollision();
 			}
+		}
+		public static void CheckLevel()
+		{
+			
 		}
 		
 		public static void CheckCollision()
