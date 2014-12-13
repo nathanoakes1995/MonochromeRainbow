@@ -33,6 +33,7 @@ namespace MonochromeRainbow
 		public static float	elapsedTime;
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
+		public static bool	bulletActive;
 		
 		public static Background	background;
 		public static AudioManager	audioManager;
@@ -42,7 +43,7 @@ namespace MonochromeRainbow
 		public static Timer			timer;
 		public static Player		player;
 		public static Enemy[]		enemy;
-		public static Bullet		bullet;
+
 			
 		public static void Main (string[] args)
 		{					
@@ -185,9 +186,14 @@ namespace MonochromeRainbow
 					accumulatedDeltaTime = 0.0f;
 				}
 			}
+
 			
 			//Player update
-			player.Update(levelManager.GetLevel());
+			player.Update(levelManager.GetLevel(), gameScene);
+			
+			player.bullet.Update();
+			
+
 			int health = player.health;
 			
 			//Background update
@@ -330,8 +336,7 @@ namespace MonochromeRainbow
 			audioManager.SetBGM(levelManager.GetLevel());
 			audioManager.PlayBGM();
 			
-			//Create a bullet
-			bullet = new Bullet(gameScene, new Vector2(300,300), 1);
+
 			
 			//Value for progress through collecting letters for special move
 			specMoveProg = 0;
