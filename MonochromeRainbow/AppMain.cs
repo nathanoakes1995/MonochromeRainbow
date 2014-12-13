@@ -134,7 +134,7 @@ namespace MonochromeRainbow
 			
 			score = 0;
 			multiplier = 1;
-			level = 0;
+			level = 1;
 			
 			menu = new Menu(gameScene, level);
 			LoadLevel(level);		
