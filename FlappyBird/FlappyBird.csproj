@@ -88,5 +88,7 @@
     <Content Include="textures\background%28-10%25%29.png" />
     <Content Include="textures\bullet.png" />
     <Content Include="textures\Enemytex.png" />
+    <Content Include="textures\Flyer.png" />
+    <Content Include="textures\tank.png" />
   </ItemGroup>
 </Project>

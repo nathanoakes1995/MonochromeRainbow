@@ -15,7 +15,10 @@ namespace FlappyBird
 		
 		public float 		yVelocity;
 		public bool 		onGround;
-		
+		public int 			type;
+		public int 			behavior;
+		public int 			health;
+		public int 			damage;
 		public Bounds2		bounds;
 		public Vector2		position;
 		public Vector2[]	spawnPositions;
@@ -23,12 +26,13 @@ namespace FlappyBird
 		
 		public Enemy (Scene scene)
 		{
+			DecideType ();
 			yVelocity = 5.0f;
 			onGround = false;
 			spawnPositions = new Vector2[9];
 			SetSpawnLocations();
 			sprite	= new SpriteUV();
-			textureInfo	= new TextureInfo("/Application/textures/Enemytex.png");
+			
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
 			DecideSpawnLocation ();
@@ -36,6 +40,36 @@ namespace FlappyBird
 			scene.AddChild(sprite);
 			
 			
+		}
+		public void DecideType()
+		{
+			//Decide random type
+			Random rnd = new Random();
+			type = rnd.Next (0,2);
+			//Normal enemy
+			if(type == 0)
+			{
+				textureInfo	= new TextureInfo("/Application/textures/Enemytex.png");
+				behavior = 0;
+				health = 3;
+				damage = 1;
+			}
+			//Flying Enemy
+			else if (type == 1)
+			{
+				textureInfo = new TextureInfo("/Application/textures/Flyer.png");
+				behavior = 1;
+				health = 5;
+				damage = 2;
+			}
+			//Tanky Enemy
+			else if (type ==2)
+			{
+				textureInfo = new TextureInfo("/Application/textures/tank.png");
+				behavior = 2;
+				health = 7;
+				damage = 3;
+			}
 		}
 		
 		public void SetSpawnLocations()
@@ -101,8 +135,17 @@ namespace FlappyBird
 		}
 		public void RunAI(Vector2 playerLocation)
 		{
-			
-			//simple AI for now that just follows the player around the X axis
+		
+			if(type == 0)
+				RunAIType1 (playerLocation);
+			else if(type == 1)
+				RunAIType2 (playerLocation);
+			else if(type==2)
+				RunAIType3 (playerLocation);
+		}
+		
+		public void RunAIType1(Vector2 playerLocation)
+		{
 			if (position.X < playerLocation.X)
 			{
 				position.X += 0.5f;	
@@ -113,6 +156,15 @@ namespace FlappyBird
 				position.X -= 0.5f;	
 				sprite.Position = position;
 			}
+		}
+		
+		public void RunAIType2(Vector2 playerLocation)
+		{
+			
+		}
+		
+		public void RunAIType3(Vector2 playerLocation)
+		{
 			
 		}
 	
