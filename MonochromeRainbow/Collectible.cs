@@ -17,7 +17,7 @@ namespace MonochromeRainbow
 		public float	extraHeight;
 		public float	startHeight;
 		public bool		movingUp;
-		
+		public Bounds2	bounds;
 		public Vector2	position;
 		public SpriteUV sprite;
 		
@@ -175,6 +175,10 @@ namespace MonochromeRainbow
 		public void delete(Scene scene)
 		{
 			scene.RemoveChild(sprite, true);
+		}
+		public int getType()
+		{
+			return type;	
 		}
 	}
 }

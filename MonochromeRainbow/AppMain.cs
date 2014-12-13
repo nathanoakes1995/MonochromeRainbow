@@ -123,11 +123,11 @@ namespace MonochromeRainbow
 			LoadLevel(0);
 			
 			score = 0;
-			multiplier = 10;
+			multiplier = 1;
 			
-			healthLabel.Text = "Health: " + playerHealth;
+			healthLabel.Text = "Health: " + player.health;
 			scoreLabel.Text = "" + score;
-			ammoLabel.Text = "Ammo: " + 100;
+			ammoLabel.Text = "Ammo: " + player.ammo;
 			multiplierLabel.Text = "Mutiplier: x" + multiplier;
 					
 			//Run the scene.
@@ -156,7 +156,7 @@ namespace MonochromeRainbow
 			
 			if (!collectibleActive)
 			{
-				if (accumulatedDeltaTime >= 20000)
+				if (accumulatedDeltaTime >= 2000)
 				{
 					//Create a collectible
 					collectible = new Collectibles(gameScene, specMoveProg);
@@ -224,7 +224,48 @@ namespace MonochromeRainbow
 						player.onGround = true;
 					}
 				}
-			}	
+			}
+			if (collectibleActive)
+			{
+				collectible.sprite.GetContentWorldBounds (ref collectible.bounds);
+				player.player.GetContentWorldBounds (ref player.bounds);
+				if(player.yVelocity < 0 && player.bounds.Overlaps(collectible.bounds))
+				{
+					int collectibleType = collectible.getType();
+					collectible.delete(gameScene);
+					collectible = null;
+					collectibleActive = false;
+					accumulatedDeltaTime = 0.0f;
+					switch (collectibleType)
+					{
+    					case 0:
+							player.health += 2;
+							if (player.health > 10)
+							{
+								player.health = 10;	
+							}
+							healthLabel.Text = "Health: " + player.health;
+        				break;
+    					case 1:
+							player.ammo += 10;
+							if (player.ammo > 100)
+							{
+								player.ammo = 100;	
+							}
+							ammoLabel.Text = "Ammo: " + player.ammo;
+        				break;
+						case 2:
+	        				multiplier++;
+							multiplierLabel.Text = "Multiplier: x" + multiplier;
+        				break;
+						case 3:
+	        				Console.WriteLine("Rainbow");
+        				break;
+    					default:
+        				break;
+					}
+				}
+			}
 		}
 		
 		public static void LoadLevel(int level)

@@ -15,6 +15,7 @@ namespace MonochromeRainbow
 		private GamePadData	gamePadData;
 		
 		public int		health;
+		public int 		ammo;
 		public int		level;
 		public float	xVelocity;
 		public float	yVelocity;
@@ -34,6 +35,7 @@ namespace MonochromeRainbow
 			playerPos = playerPosition;
 			bounds = new Bounds2();
 			health = 10;
+			ammo = 0;
 			mayJumpAgain = true;
 			onGround = true;
 			
