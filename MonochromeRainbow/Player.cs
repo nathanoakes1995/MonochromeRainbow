@@ -14,17 +14,18 @@ namespace MonochromeRainbow
 		private	TextureInfo	textureInfo;
 		private GamePadData	gamePadData;
 		
-		public int		health;
-		public int 		ammo;
-		public int		level;
-		public float	xVelocity;
-		public float	yVelocity;
-		public bool		mayJumpAgain;
-		public bool		onGround;
-		public bool		startOn;
-		public Bounds2 	bounds;
-		public Vector2	playerPos; 
-		public SpriteUV	player;
+		public int				health;
+		public int 				ammo;
+		public int				level;
+		public float			xVelocity;
+		public float			yVelocity;
+		public bool				mayJumpAgain;
+		public bool				onGround;
+		public bool				startOn;
+		public Bounds2 			bounds;
+		public Vector2			playerPos; 
+		public SpriteUV			player;
+		public Bullet	bullet;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
@@ -42,7 +43,7 @@ namespace MonochromeRainbow
 			scene.AddChild(player);
 		}
 		
-		public void Update(int level)
+		public void Update(int level, Scene gameScene)
 		{
         	//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
@@ -51,6 +52,8 @@ namespace MonochromeRainbow
         	if ((gamePadData.Buttons & GamePadButtons.Square) != 0)
         	{
         		//shoot;
+				//Create a bullet
+				bullet = new Bullet(gameScene, new Vector2(300,300), 0);
         	}
 			
 			//Check if player is on ground.
