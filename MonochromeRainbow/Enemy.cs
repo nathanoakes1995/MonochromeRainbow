@@ -24,7 +24,8 @@ namespace MonochromeRainbow
 		public Vector2		position;
 		public Vector2[]	spawnPositions;
 		public SpriteUV		sprite;
-		
+		public bool				mayJumpAgain;
+	
 		public Enemy (Scene scene)
 		{
 			DecideType ();
@@ -120,14 +121,7 @@ namespace MonochromeRainbow
 		
 		public void Update()
 		{
-			//bit of simple gravity so that the enemies aren't anchored to the platforms
 			
-			//if enemy is on ground, velocity = 0
-			
-			
-			//moves the enemy down if not on the ground
-			
-			//update position every frame
 			sprite.Position = position;
 		}
 		public void RunAI(Vector2 playerLocation)
@@ -144,6 +138,59 @@ namespace MonochromeRainbow
 		public void RunAIType1(Vector2 playerLocation)
 		{
 			//normalAI
+			if (position.X < playerLocation.X)
+			{
+				position.X += 0.9f;	
+				sprite.Position = position;
+			}
+			if (position.X > playerLocation.X)
+			{
+				position.X -= 0.9f;	
+				sprite.Position = position;
+			}
+			if(onGround == false)
+			{
+				yVelocity = 5.0f;
+			}
+			else if (onGround == true)
+			{
+				yVelocity = 0.0f;
+			}	
+			
+			//checks if enemy is on the ground
+			if (position.Y < 0.0f)
+			{
+				position.Y = 0.0f;
+				onGround = true;
+			}
+			if(onGround == false)
+			{
+				position.Y -= yVelocity;	
+			}
+			
+			
+			
+		}
+		
+		
+		
+		public void RunAIType2(Vector2 playerLocation)
+		{
+			//flying AI
+			if (position.X < playerLocation.X)
+			{
+				position.X += 0.9f;	
+				sprite.Position = position;
+			}
+			if (position.X > playerLocation.X)
+			{
+				position.X -= 0.9f;	
+				sprite.Position = position;
+			}
+		}
+		
+		public void RunAIType3(Vector2 playerLocation)
+		{
 			if (position.X < playerLocation.X)
 			{
 				position.X += 0.5f;	
@@ -173,27 +220,6 @@ namespace MonochromeRainbow
 			{
 				position.Y -= yVelocity;	
 			}
-			
-		}
-		
-		public void RunAIType2(Vector2 playerLocation)
-		{
-			//flying AI
-			if (position.X < playerLocation.X)
-			{
-				position.X += 0.5f;	
-				sprite.Position = position;
-			}
-			if (position.X > playerLocation.X)
-			{
-				position.X -= 0.5f;	
-				sprite.Position = position;
-			}
-		}
-		
-		public void RunAIType3(Vector2 playerLocation)
-		{
-			
 		}
 	
 	}

@@ -230,6 +230,11 @@ namespace MonochromeRainbow
 						enemy[i].sprite.Position= enemy[i].position;
 					}
 				}
+				player.player.GetContentWorldBounds (ref player.bounds);
+				if(enemy[i].bounds.Overlaps (player.bounds))
+				{
+					player.health = player.health - enemy[i].damage;
+				}
 			}
 			
 			for(int i = 0; i < 9; i++)

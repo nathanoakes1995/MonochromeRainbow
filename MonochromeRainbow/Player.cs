@@ -64,7 +64,11 @@ namespace MonochromeRainbow
 		{
         	//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
-
+			
+			if(health < 0)
+			{
+				health = 0;	
+			}
 			//Shooting.
         	if ((gamePadData.Buttons & GamePadButtons.Square) != 0)
         	{
