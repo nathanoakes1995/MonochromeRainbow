@@ -29,7 +29,7 @@ namespace MonochromeRainbow
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
-			textureInfo		= new TextureInfo("/Application/textures/playerSheet.png");
+			textureInfo		= new TextureInfo("/Application/textures/Player.png");
 			
 			player			= new SpriteUV(textureInfo);	
 			player.Quad.S 	= textureInfo.TextureSizef;

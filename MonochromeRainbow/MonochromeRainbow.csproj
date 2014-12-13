@@ -105,5 +105,6 @@
     <Content Include="textures\MenuScreen.png" />
     <Content Include="textures\Buttons\NewGame.png" />
     <Content Include="textures\playerSheet.png" />
+    <Content Include="textures\Player.png" />
   </ItemGroup>
 </Project>

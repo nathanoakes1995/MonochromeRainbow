@@ -35,7 +35,7 @@ namespace MonochromeRainbow
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
 		
-		public static Menu 			menu;
+		//public static Menu 			menu;
 		public static Background	background;
 		public static AudioManager	audioManager;
 		public static LevelManager	levelManager;
@@ -134,7 +134,7 @@ namespace MonochromeRainbow
 			enemy = new Enemy[20];
 			
 			score = 0;
-			level = 0;
+			level = 4;
 			multiplier = 1;
 			
 			LoadLevel(level);		
@@ -152,13 +152,13 @@ namespace MonochromeRainbow
 			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
 
-			menu.Update(gameScene, level);
+			//menu.Update(gameScene, level);
 			
 			accumulatedDeltaTime += elapsedTime;
 			
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
-			if(level == 1)
+			if(level == 4)
 			{
 			
 				//Collectible update
@@ -193,12 +193,11 @@ namespace MonochromeRainbow
 				}
 				
 				//Player update
-				player.Update(levelManager.GetLevel(), gameScene);
+				player.Update(levelManager.level, gameScene);
 				int health = player.health;
 				
 				//Background update
-				background.Update(gameScene, health, levelManager.GetLevel());
-				
+				background.Update(gameScene, health, levelManager.level);
 				
 				//Update EnemyAI
 				for(int i = 0; i< 20; i++)
@@ -341,7 +340,7 @@ namespace MonochromeRainbow
 			
 			if(level == 0)
 			{
-				menu = new Menu(gameScene, level);
+				//menu = new Menu(gameScene, level);
 			}
 			
 			if(level == 4)

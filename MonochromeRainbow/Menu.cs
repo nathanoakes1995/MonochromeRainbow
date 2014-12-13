@@ -10,7 +10,7 @@ using Sce.PlayStation.HighLevel.GameEngine2D;
 using Sce.PlayStation.HighLevel.GameEngine2D.Base;
 using Sce.PlayStation.HighLevel.UI;
 
-namespace MonochromeRainbow
+/*namespace MonochromeRainbow
 {
 	public class Menu
 	{
@@ -18,7 +18,7 @@ namespace MonochromeRainbow
 		private SpriteUV sprite;
 		public Button startButton;
 		
-		public Menu (Scene scene, int level)
+		public Menu (Sce.PlayStation.HighLevel.GameEngine2D.Scene scene, int level)
 		{
 			textureInfo = new TextureInfo("Application/textures/MenuScreen.png");
 			sprite = new SpriteUV(textureInfo);
@@ -32,7 +32,7 @@ namespace MonochromeRainbow
 			LoadMenus (level, scene);
 		}
 		
-		public void LoadMenus(Scene scene, int level)
+		public void LoadMenus(Sce.PlayStation.HighLevel.GameEngine2D.Scene scene, int level)
 		{
 			if(level == 0)
 			{
@@ -44,5 +44,5 @@ namespace MonochromeRainbow
 		{
 		}
 	}
-}
+}*/
 

@@ -18,7 +18,7 @@ namespace MonochromeRainbow
 		public Button (Scene scene, Vector2 position)
 		{
 			bounds = new Bounds2();
-			texture = new TextureInfo(path);
+			//texture = new TextureInfo(path);
 			sprite = new SpriteUV(texture);
 			sprite.Quad.S = texture.TextureSizef;
 			sprite.Position = position;

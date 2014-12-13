@@ -21,7 +21,7 @@ namespace MonochromeRainbow
 		
 		public LevelManager()
 		{				
-			level = 1;
+			level = 4;
 		}
 		
 		public void SetLevel(int changeTo)
@@ -31,11 +31,6 @@ namespace MonochromeRainbow
 			AppMain.audioManager.SetBGM(level);
 			AppMain.audioManager.PlayBGM();
 		}
-		
-		public int GetLevel()
-		{
-			return level;
-		}	
 	}
 }
 
