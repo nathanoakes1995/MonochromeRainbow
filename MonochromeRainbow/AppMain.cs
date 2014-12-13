@@ -34,6 +34,7 @@ namespace MonochromeRainbow
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
 		
+		public static Menu 			menu;
 		public static Background	background;
 		public static AudioManager	audioManager;
 		public static LevelManager	levelManager;
@@ -128,8 +129,10 @@ namespace MonochromeRainbow
 			
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
+			int level = 0;
+			menu = new Menu(gameScene, level);
 			enemy = new Enemy[20];
-			LoadLevel(0);
+			
 			
 			score = 0;
 			multiplier = 1;
@@ -139,7 +142,8 @@ namespace MonochromeRainbow
 			ammoLabel.Text = "Ammo: " + player.ammo;
 			multiplierLabel.Text = "Mutiplier: x" + multiplier;
 			rainbowLabel.Text = "";
-					
+			levelManager = new LevelManager();
+			LoadLevel(levelManager.level);		
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
 		}
@@ -310,43 +314,54 @@ namespace MonochromeRainbow
 		public static void LoadLevel(int level)
 		{	
 			//Load level manager
-			levelManager = new LevelManager();
+			
 			
 			//Create up audio
 			audioManager = new AudioManager();
 			
-			//Create the background.
-			background = new Background(gameScene);
 			
-			//Create the player
-			player = new Player(gameScene, new Vector2(100,100));
-
-			//Create an enemy
-			for(int i = 0; i< 20; i++)
+			
+			if(level == 0)
 			{
-				enemy[i] = new Enemy(gameScene);	
-			}	
+				menu = new Menu(gameScene, level);
+			}
 			
-			audioManager.SetBGM(levelManager.GetLevel());
-			audioManager.PlayBGM();
 			
-			//Create a bullet
-			bullet = new Bullet(gameScene, new Vector2(300,300), 1);
+			//Create the background.
 			
-			//Value for progress through collecting letters for special move
-			specMoveProg = 0;
-			
-			//Hardcoded platform locations
-			platforms = new Platform[9];
-			platforms[0] = new Platform(gameScene, new Vector2(0, 136));
-			platforms[1] = new Platform(gameScene, new Vector2(0, 272));
-			platforms[2] = new Platform(gameScene, new Vector2(0, 408));
-			platforms[3] = new Platform(gameScene, new Vector2(380, 200));
-			platforms[4] = new Platform(gameScene, new Vector2(380, 340));
-			platforms[5] = new Platform(gameScene, new Vector2(380, 60));
-			platforms[6] = new Platform(gameScene, new Vector2(760, 136));
-			platforms[7] = new Platform(gameScene, new Vector2(760, 272));
-			platforms[8] = new Platform(gameScene, new Vector2(760, 408));
+			if(level == 1)
+			{
+				background = new Background(gameScene);
+				//Create the player
+				player = new Player(gameScene, new Vector2(100,100));
+	
+				//Create an enemy
+				for(int i = 0; i< 20; i++)
+				{
+					enemy[i] = new Enemy(gameScene);	
+				}	
+				
+				audioManager.SetBGM(levelManager.GetLevel());
+				audioManager.PlayBGM();
+				
+				//Create a bullet
+				bullet = new Bullet(gameScene, new Vector2(300,300), 1);
+				
+				//Value for progress through collecting letters for special move
+				specMoveProg = 0;
+				
+				//Hardcoded platform locations
+				platforms = new Platform[9];
+				platforms[0] = new Platform(gameScene, new Vector2(0, 136));
+				platforms[1] = new Platform(gameScene, new Vector2(0, 272));
+				platforms[2] = new Platform(gameScene, new Vector2(0, 408));
+				platforms[3] = new Platform(gameScene, new Vector2(380, 200));
+				platforms[4] = new Platform(gameScene, new Vector2(380, 340));
+				platforms[5] = new Platform(gameScene, new Vector2(380, 60));
+				platforms[6] = new Platform(gameScene, new Vector2(760, 136));
+				platforms[7] = new Platform(gameScene, new Vector2(760, 272));
+				platforms[8] = new Platform(gameScene, new Vector2(760, 408));
+			}
 		}
 		
 	}

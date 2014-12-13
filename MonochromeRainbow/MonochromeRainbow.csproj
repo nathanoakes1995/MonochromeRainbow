@@ -47,6 +47,8 @@
     <Compile Include="Bullet.cs" />
     <Compile Include="AudioManager.cs" />
     <Compile Include="LevelManager.cs" />
+    <Compile Include="Menu.cs" />
+    <Compile Include="Button.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -57,6 +59,7 @@
     <Folder Include="textures\" />
     <Folder Include="fonts\" />
     <Folder Include="sounds\" />
+    <Folder Include="textures\Buttons\" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Texture.fcg" />
@@ -101,5 +104,6 @@
     <Content Include="sounds\bgm\Mining by Moonlight.mp3" />
     <Content Include="sounds\bgm\Son Of A Rocket.mp3" />
     <Content Include="textures\MenuScreen.png" />
+    <Content Include="textures\Buttons\NewGame.png" />
   </ItemGroup>
 </Project>

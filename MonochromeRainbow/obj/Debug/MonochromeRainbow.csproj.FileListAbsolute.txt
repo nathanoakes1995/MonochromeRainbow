@@ -153,6 +153,7 @@ C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeR
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\sounds\bgm\Mining by Moonlight.mp3
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\sounds\bgm\Son Of A Rocket.mp3
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\MenuScreen.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\Buttons\NewGame.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\app.info
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\shaders\Texture.cgx
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\app.exe
@@ -203,6 +204,7 @@ C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeR
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Mining by Moonlight.mp3
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Son Of A Rocket.mp3
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\MenuScreen.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\Buttons\NewGame.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow.psdp
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\shaders\shaders\Texture.cgx
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
