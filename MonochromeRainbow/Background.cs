@@ -66,7 +66,7 @@ namespace MonochromeRainbow
 				background.TextureInfo = textureInfo;
 				background.Draw();
 			}
-			else if(level == 1)
+			else
 			{
 				saturation++;
 			

@@ -32,7 +32,6 @@ namespace MonochromeRainbow
 		public static float	elapsedTime;
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
-		public static bool	change;
 		
 		public static Background	background;
 		public static AudioManager	audioManager;
@@ -174,13 +173,12 @@ namespace MonochromeRainbow
 					collectible = null;
 					collectibleActive = false;
 					accumulatedDeltaTime = 0.0f;
-
 				}
 			}
 			
 			//Player update
 			player.Update(levelManager.GetLevel());
-			int health = player.GetHealth();
+			int health = player.health;
 			
 			//Background update
 			background.Update(gameScene, health, levelManager.GetLevel());
@@ -191,19 +189,6 @@ namespace MonochromeRainbow
 			{		
 				enemy[i].RunAI (player.playerPos);
 				enemy[i].Update ();
-			}
-			
-			//Level update
-			{
-				levelManager.SetLevel(player.ReturnLevel());
-				
-				if (levelManager.GetLevel() != 0 && !change)
-				{
-					audioManager.SetBGM(levelManager.GetLevel());
-					audioManager.PlayBGM();
-					
-					change = true;
-				}
 			}
 			
 			CheckCollision();

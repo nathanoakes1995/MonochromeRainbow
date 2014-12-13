@@ -20,6 +20,7 @@ namespace MonochromeRainbow
 		public float	yVelocity;
 		public bool		mayJumpAgain;
 		public bool		onGround;
+		public bool		startOn;
 		public Bounds2 	bounds;
 		public Vector2	playerPos; 
 		public SpriteUV	player;
@@ -37,16 +38,6 @@ namespace MonochromeRainbow
 			onGround = true;
 			
 			scene.AddChild(player);
-		}
-		
-		public int GetHealth()
-		{
-			return health;	
-		}
-		
-		public int ReturnLevel()
-		{
-			return level;
 		}
 		
 		public void Update(int level)
@@ -96,7 +87,17 @@ namespace MonochromeRainbow
 			
 			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && level == 0)
 			{
-				level = 1;
+				AppMain.levelManager.SetLevel(4);
+			}
+			
+			if ((gamePadData.Buttons & GamePadButtons.Square) != 0 && level == 4)
+			{
+				AppMain.levelManager.SetLevel(5);
+			}
+			
+			if ((gamePadData.Buttons & GamePadButtons.Select) != 0 && level == 5)
+			{
+				AppMain.levelManager.SetLevel(4);
 			}
 			
 			//Check if player is off the ground.

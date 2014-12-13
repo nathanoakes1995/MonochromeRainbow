@@ -6,8 +6,8 @@ namespace MonochromeRainbow
 {
 	public class LevelManager
 	{	
-		public int level;
-		public int changeTo;
+		public int	level;
+		public int	changeTo;
 		
 		/*
 		LEVEL 0 = MENU SCREEN
@@ -27,12 +27,15 @@ namespace MonochromeRainbow
 		public void SetLevel(int changeTo)
 		{
 			level = changeTo;
+			
+			AppMain.audioManager.SetBGM(level);
+			AppMain.audioManager.PlayBGM();
 		}
 		
 		public int GetLevel()
 		{
 			return level;
-		}
+		}	
 	}
 }
 
