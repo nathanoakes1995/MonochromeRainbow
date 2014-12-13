@@ -12,15 +12,15 @@ namespace MonochromeRainbow
 	{
 		private TextureInfo	textureInfo;
 		
-		public int		type;
-		public int		spawnPos;
-		public float	extraHeight;
-		public float	startHeight;
-		public bool		movingUp;
-		public Bounds2	bounds;
-		public Vector2	position;
-		public SpriteUV sprite;
-		public int 		specMove;
+		public int			type;
+		public int			spawnPos;
+		public float		extraHeight;
+		public float		startHeight;
+		public bool			movingUp;
+		public Bounds2		bounds;
+		public Vector2		position;
+		public SpriteUV 	sprite;
+		public int 			specMove;
 		
 		public Collectibles (Scene scene, int specMoveProg)
 		{
