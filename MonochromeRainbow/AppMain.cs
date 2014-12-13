@@ -34,7 +34,7 @@ namespace MonochromeRainbow
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
 		
-		public static Menu 			menu;
+		//public static Menu 			menu;
 		public static Background	background;
 		public static AudioManager	audioManager;
 		public static LevelManager	levelManager;
@@ -130,7 +130,7 @@ namespace MonochromeRainbow
 			uiScene.RootWidget.AddChildLast(panel);
 			UISystem.SetScene(uiScene);
 			int level = 0;
-			menu = new Menu(gameScene, level);
+			//menu = new Menu(gameScene, level);
 			enemy = new Enemy[20];
 			
 			
@@ -323,7 +323,7 @@ namespace MonochromeRainbow
 			
 			if(level == 0)
 			{
-				menu = new Menu(gameScene, level);
+				//menu = new Menu(gameScene, level);
 			}
 			
 			

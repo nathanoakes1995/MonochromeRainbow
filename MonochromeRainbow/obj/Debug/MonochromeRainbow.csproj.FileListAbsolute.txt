@@ -317,3 +317,5 @@ C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\obj\Debug\
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\Buttons\NewGame.png
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\Buttons\NewGame.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\playerSheet.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\playerSheet.png
