@@ -105,5 +105,6 @@
     <Content Include="sounds\bgm\Son Of A Rocket.mp3" />
     <Content Include="textures\MenuScreen.png" />
     <Content Include="textures\Buttons\NewGame.png" />
+    <Content Include="textures\playerSheet.png" />
   </ItemGroup>
 </Project>

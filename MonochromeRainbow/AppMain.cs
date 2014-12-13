@@ -191,7 +191,7 @@ namespace MonochromeRainbow
 			}
 			
 			//Player update
-			player.Update(levelManager.GetLevel());
+			player.Update(levelManager.GetLevel(), gameScene);
 			int health = player.health;
 			
 			//Background update

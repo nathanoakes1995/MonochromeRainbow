@@ -14,7 +14,7 @@ namespace MonochromeRainbow
 		private	TextureInfo	textureInfo;
 		private SpriteUV sprite;
 		//private GamePadData	gamePadData;
-		public Button[] buttons;
+		public Button buttons;
 		
 		public Menu (Scene scene, int level)
 		{

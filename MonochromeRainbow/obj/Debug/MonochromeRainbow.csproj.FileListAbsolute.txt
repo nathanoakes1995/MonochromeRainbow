@@ -315,3 +315,5 @@ C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow.psdp
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
+C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\Buttons\NewGame.png
+C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\Buttons\NewGame.png
