@@ -72,6 +72,7 @@
     <Folder Include="Classes\" />
     <Folder Include="textures\" />
     <Folder Include="textures\player\sprites\" />
+    <Folder Include="sounds\sfx\" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Texture.fcg" />
@@ -121,6 +122,11 @@
     <Content Include="textures\player\sprites\jumpingRight.png" />
     <Content Include="textures\player\sprites\standingLeft.png" />
     <Content Include="textures\player\sprites\standingRight.png" />
+    <Content Include="sounds\sfx\damn.mp3" />
+    <Content Include="sounds\sfx\fail.mp3" />
+    <Content Include="sounds\sfx\grunt.mp3" />
+    <Content Include="sounds\sfx\impact.mp3" />
+    <Content Include="sounds\sfx\shoot.mp3" />
   </ItemGroup>
   <ItemGroup>
     <None Include="textures\Thumbs.db" />
