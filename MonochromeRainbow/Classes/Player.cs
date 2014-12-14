@@ -46,7 +46,7 @@ namespace MonochromeRainbow
 			playerWidth = 32;
 			playerHeight = 64;
 			
-			textureInfo		= new TextureInfo("/Application/textures/playerSheet.png");
+			textureInfo		= new TextureInfo("/Application/textures/Player.png");
 			SetTileIndex();
 			timer = new Timer();
 			previousTime = (float)timer.Milliseconds();
@@ -263,6 +263,12 @@ namespace MonochromeRainbow
 					facingDirection = 0;
         		}
 			}
+					
+			//Slow down player if button is held.
+			if ((gamePadData.Buttons & GamePadButtons.Cross) != 0 & !onGround && yVelocity > 0)
+			{
+        		yVelocity += 0.1f;
+			}
 			
 			//Check if player is off the ground.
 			if (!onGround)
@@ -270,25 +276,15 @@ namespace MonochromeRainbow
 				//Player loses vertical speed tue to gravity.
 				yVelocity -= 0.5f;
 			}
-			
-			//Slow down player if button is held.
-			if ((gamePadData.Buttons & GamePadButtons.Cross) != 0 & !onGround && yVelocity > 0)
-			{
-        		yVelocity += 0.1f;
-			}
-			
+
 			//Player shouldn't fall too fast. [Terminal Velocity]
 			if (yVelocity < -5.0f)
 			{
         		yVelocity = -5.0f;
 			}
 			
-			//Update player position.
-    		playerPos.Y += yVelocity;
-			playerPos.X += xVelocity;
-			
 			//Check if player is on the ground.
-            if (yVelocity != -5.0f)
+            if (yVelocity != 0.0f)
 			{
 				onGround = false;
     		}
@@ -296,9 +292,13 @@ namespace MonochromeRainbow
 			//Check if player has hit the ground.
 			if (playerPos.Y < 0.0f)
 			{
-				playerPos.Y = -5.0f;
+				playerPos.Y = 0.0f;
 				onGround = true;
 			}
+						
+			//Update player position.
+    		playerPos.Y += yVelocity;
+			playerPos.X += xVelocity;
 			
 			//Check if player has hit the wall.
 			if (playerPos.X > Director.Instance.GL.Context.GetViewport().Width - player.Quad.S.X)
@@ -314,7 +314,7 @@ namespace MonochromeRainbow
 			
 			if(health == 0)	
 			{
-				isAlive = false;
+				//isAlive = false;
 			}
 		}
 		public bool enemyBulletCollision(Enemy enemy)
