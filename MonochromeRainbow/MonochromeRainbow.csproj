@@ -78,10 +78,7 @@
     <ShaderProgram Include="shaders\Texture.vcg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="textures\bottompipe.png" />
-    <Content Include="textures\toppipe.png" />
     <Content Include="textures\background%280%25%29.png" />
-    <Content Include="textures\GenericTexture.png" />
     <Content Include="textures\Platform.png" />
     <Content Include="textures\1-R.png" />
     <Content Include="textures\2-A.png" />
@@ -112,7 +109,6 @@
     <Content Include="sounds\bgm\Rollin at 5 - electronic.mp3" />
     <Content Include="sounds\bgm\Rollin at 5.mp3" />
     <Content Include="sounds\bgm\One Sly Move.mp3" />
-    <Content Include="sounds\bgm\Mining by Moonlight.mp3" />
     <Content Include="sounds\bgm\Son Of A Rocket.mp3" />
     <Content Include="textures\MenuScreen.png" />
     <Content Include="textures\Buttons\NewGame.png" />
@@ -120,6 +116,5 @@
     <Content Include="textures\Player.png" />
     <Content Include="sounds\bgm\Doh De Oh.mp3" />
     <Content Include="sounds\bgm\Hackbeat.mp3" />
-    <Content Include="sounds\bgm\Long Stroll.mp3" />
   </ItemGroup>
 </Project>
