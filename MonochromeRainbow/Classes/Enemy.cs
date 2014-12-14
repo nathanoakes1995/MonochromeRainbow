@@ -147,13 +147,23 @@ namespace MonochromeRainbow
 		public void RunAIType1(Vector2 playerLocation)
 		{
 			//normalAI
-			if(onGround)
+			
+			if (onGround)
 			{
-				yVelocity = 0;	
-			}
-			else
-			{
-				yVelocity-= 0.5f;
+				yVelocity = 0;
+				
+				if (mayJumpAgain)
+				{
+                	if(playerLocation.Y > position.Y)
+					{
+						yVelocity = 11.0f;
+						mayJumpAgain = false;
+					}
+				}
+        		else if (onGround)
+				{
+					mayJumpAgain = true;
+        		}
 			}
 			
 			//moves towards the player
@@ -167,71 +177,63 @@ namespace MonochromeRainbow
 				position.X -= 0.9f;	
 				sprite.Position = position;
 			}
+						
+			//Check if enemy is off the ground.
+			if (!onGround)
+			{
+        		//Enemy loses vertical speed tue to gravity.
+				yVelocity -= 0.5f;
+			}
 			
+			//Enemy shouldn't fall too fast. [Terminal Velocity]
+			if (yVelocity < -5.0f)
+			{
+        		yVelocity = -5.0f;
+			}
 			
-			//checks if enemy is on the ground
+			//Check if enemy is on the ground.
+            if (yVelocity != 0.0f)
+			{
+				onGround = false;
+    		}
+			
+			//checks if enemy has hit the ground.
 			if (position.Y < 0.0f)
 			{
 				position.Y = 0.0f;
 				onGround = true;
 			}
-			//jumps if on the ground
-			if (onGround)
-			{
-				if (mayJumpAgain)
-				{
-                	if(playerLocation.Y > position.Y)
-					{
-						mayJumpAgain = false;
-						yVelocity = 11.0f;
-						onGround = false;
-					}
-				}
-        		
-        		else
-				{
-					mayJumpAgain = true;
-					onGround = true;
-        		}
-			}
-			//falls properly if on the ground
-			if(!onGround)
-			{
-				if (yVelocity < -5.0f)
-				{
-        			yVelocity = -5.0f;
-				}
-			}
 			
 			position.Y += yVelocity;
 			
-
-			
-			
+			Console.WriteLine (yVelocity);
 		}
-		
-		
-		
 		
 		public void RunAIType2(Vector2 playerLocation)
 		{
 			//flying AI
 		
-			
 			//moves towards the player on the X axis
 			if (position.X < playerLocation.X)
 			{
-				position.X += 0.9f;	
+				position.X += 0.7f;	
 				sprite.Position = position;
 			}
 			if (position.X > playerLocation.X)
 			{
-				position.X -= 0.9f;	
+				position.X -= 0.7f;	
 				sprite.Position = position;
 			}
-			
-				
-			
+			if (position.Y < playerLocation.Y)
+			{
+				position.Y += 0.7f;	
+				sprite.Position = position;
+			}
+			if (position.Y > playerLocation.Y)
+			{
+				position.Y -= 0.7f;	
+				sprite.Position = position;
+			}
 		}
 		
 		public void RunAIType3(Vector2 playerLocation)
@@ -267,13 +269,9 @@ namespace MonochromeRainbow
 			{
         		yVelocity = -5.0f;
 			}
-			
-			
+				
 			position.Y += yVelocity;
-			
-
 		}
-	
 	}
 }
 

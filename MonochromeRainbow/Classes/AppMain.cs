@@ -181,7 +181,7 @@ namespace MonochromeRainbow
         		}		
 			}
 			
-			if(level == 5)
+			if(level == 5 || level == 6)
 			{
 
 				//Collectible update
@@ -257,36 +257,30 @@ namespace MonochromeRainbow
 				if(enemy[i].isAlive)
 				{
 					
-					for(int k = 0; k< 9; k++)
+					for(int k = 0; k < 9; k++)
 					{
 						enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
 						platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);
-						if(enemy[i].yVelocity>0)
+						if(enemy[i].yVelocity < 0)
 						{
-							if((enemy[i].position.X + enemy[i].sprite.Quad.S.X) > (platforms[k].position.X + 20.0f) && enemy[i].position.X < (platforms[k].position.X + platforms[k].platformWidth - 18.0f))
+							if(enemy[i].bounds.Overlaps(platforms[k].bounds))
 							{
-								if(enemy[i].bounds.Overlaps(platforms[k].bounds))
+								if(enemy[i].position.Y > (platforms[k].position.Y + (platforms[k].platformHeight / 2)))
 								{
-									if(enemy[i].position.Y > (platforms[k].position.Y + (platforms[k].platformHeight / 2)))
-									{
-										enemy[i].position.Y = (platforms[k].position.Y + platforms[k].platformHeight) - 4.0f;
-										enemy[i].sprite.Position = enemy[i].position;
-										enemy[i].onGround = true;
-									}
+									enemy[i].position.Y = (platforms[k].position.Y + platforms[k].platformHeight);
+									enemy[i].sprite.Position = enemy[i].position;
+									enemy[i].onGround = true;
 								}
 							}
-						if(enemy[i].yVelocity == 0)
-						{
-							if(!enemy[i].bounds.Overlaps(platforms[k].bounds) && enemy[i].position.Y != -5.0f)
+							if(enemy[i].yVelocity == 0)
 							{
-								enemy[i].onGround = false;
+								if(!enemy[i].bounds.Overlaps(platforms[k].bounds) && enemy[i].position.Y != 0.0f)
+								{
+									enemy[i].onGround = false;
+								}
 							}
 						}
-						
-							
 					}
-						
-				}
 					player.player.GetContentWorldBounds (ref player.bounds);
 					if(enemy[i].bounds.Overlaps (player.bounds))
 					{
@@ -301,26 +295,23 @@ namespace MonochromeRainbow
 			
 			for(int i = 0; i < 9; i++)
 			{
-				platforms[i].sprite.GetContentWorldBounds (ref platforms[i].bounds);
 				player.player.GetContentWorldBounds (ref player.bounds);
+				platforms[i].sprite.GetContentWorldBounds (ref platforms[i].bounds);
 				if(player.yVelocity < 0)
 				{
-					if((player.playerPos.X + player.player.Quad.S.X) > (platforms[i].position.X + 20.0f) && player.playerPos.X < (platforms[i].position.X + platforms[i].platformWidth - 18.0f))
+					if(player.bounds.Overlaps(platforms[i].bounds))
 					{
-						if(player.bounds.Overlaps(platforms[i].bounds))
+						if(player.playerPos.Y > (platforms[i].position.Y + (platforms[i].platformHeight / 2)))
 						{
-							if(player.playerPos.Y > (platforms[i].position.Y + (platforms[i].platformHeight / 2)))
-							{
-								player.playerPos.Y = (platforms[i].position.Y + platforms[i].platformHeight) - 4.0f;
-								player.player.Position = player.playerPos;
-								player.onGround = true;
-							}
+							player.playerPos.Y = (platforms[i].position.Y + platforms[i].platformHeight);
+							player.player.Position = player.playerPos;
+							player.onGround = true;
 						}
 					}
 				}
 				if(player.yVelocity == 0)
 				{
-					if(!player.bounds.Overlaps(platforms[i].bounds) && player.playerPos.Y != -5.0f)
+					if(!player.bounds.Overlaps(platforms[i].bounds) && player.playerPos.Y != 0.0f)
 					{
 						player.onGround = false;
 					}
