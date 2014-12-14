@@ -223,16 +223,18 @@ namespace MonochromeRainbow
 				background.Update(gameScene, health, levelManager.level);
 				
 				//Update EnemyAI
-				for(int i = 0; i< 20; i++)
-				{//checks to see if enemy is alive
+				for(int i = 0; i < 20; i++)
+				{
+					//checks to see if enemy is alive
 					if(enemy[i].isAlive)
-					{	//runs AI for living enemy
+					{	
+						//runs AI for living enemy
 						enemy[i].RunAI (player.playerPos);
 						enemy[i].Update ();
 					}
-					
 					else
-					{	//respawns a dead one
+					{	
+						//respawns a dead one
 						SpawnEnemy (i);
 					}
 				}
@@ -256,11 +258,11 @@ namespace MonochromeRainbow
 			{
 				if(enemy[i].isAlive)
 				{
-					
 					for(int k = 0; k < 9; k++)
 					{
 						enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
 						platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);
+						
 						if(enemy[i].yVelocity < 0)
 						{
 							if(enemy[i].bounds.Overlaps(platforms[k].bounds))
@@ -272,6 +274,7 @@ namespace MonochromeRainbow
 									enemy[i].onGround = true;
 								}
 							}
+							
 							if(enemy[i].yVelocity == 0)
 							{
 								if(!enemy[i].bounds.Overlaps(platforms[k].bounds) && enemy[i].position.Y != 0.0f)
@@ -281,8 +284,10 @@ namespace MonochromeRainbow
 							}
 						}
 					}
+					
 					player.player.GetContentWorldBounds (ref player.bounds);
-					if(enemy[i].bounds.Overlaps (player.bounds))
+					
+					if(enemy[i].bounds.Overlaps(player.bounds))
 					{
 						if(player.canBeHit)
 						{
@@ -297,6 +302,7 @@ namespace MonochromeRainbow
 			{
 				player.player.GetContentWorldBounds (ref player.bounds);
 				platforms[i].sprite.GetContentWorldBounds (ref platforms[i].bounds);
+				
 				if(player.yVelocity < 0)
 				{
 					if(player.bounds.Overlaps(platforms[i].bounds))
@@ -309,6 +315,7 @@ namespace MonochromeRainbow
 						}
 					}
 				}
+				
 				if(player.yVelocity == 0)
 				{
 					if(!player.bounds.Overlaps(platforms[i].bounds) && player.playerPos.Y != 0.0f)
@@ -444,9 +451,7 @@ namespace MonochromeRainbow
 						enemy[i] = new Enemy(gameScene);
 						enemy[i].isAlive = true;
 						enemy[i].Load (gameScene);
-						
-					}
-						
+					}	
 				}
 			}
 		}	

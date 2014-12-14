@@ -57,6 +57,7 @@ namespace MonochromeRainbow
 			//Decide random type
 			Random rnd = new Random();
 			type = rnd.Next (0,3);
+			
 			//Normal enemy
 			if(type == 0)
 			{
@@ -130,9 +131,9 @@ namespace MonochromeRainbow
 		
 		public void Update()
 		{
-			
 			sprite.Position = position;
 		}
+		
 		public void RunAI(Vector2 playerLocation)
 		{
 		
@@ -170,12 +171,10 @@ namespace MonochromeRainbow
 			if (position.X < playerLocation.X)
 			{
 				position.X += 0.9f;	
-				sprite.Position = position;
 			}
 			if (position.X > playerLocation.X)
 			{
 				position.X -= 0.9f;	
-				sprite.Position = position;
 			}
 						
 			//Check if enemy is off the ground.
@@ -203,7 +202,7 @@ namespace MonochromeRainbow
 				position.Y = 0.0f;
 				onGround = true;
 			}
-			
+
 			position.Y += yVelocity;
 			
 			Console.WriteLine (yVelocity);
