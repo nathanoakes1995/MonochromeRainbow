@@ -16,7 +16,7 @@ namespace MonochromeRainbow
 		public bool			isAlive = false;
 		public bool 		touchingPlatform;
 		public float 		yVelocity;
-			
+		public TextureInfo[] textures;
 		public bool 		onGround;
 		public int 			type;
 		public int 			behavior;
@@ -36,6 +36,7 @@ namespace MonochromeRainbow
 		
 		public void Load(Scene scene)
 		{
+			textures = new TextureInfo[1];
 			//the reason this isn't in the constructor is because the enemies need to respawn.
 			DecideType ();
 			
@@ -43,6 +44,8 @@ namespace MonochromeRainbow
 			SetSpawnLocations();
 			sprite	= new SpriteUV();
 			
+			textureInfo = new TextureInfo();
+			textureInfo = textures[0];
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
 			bounds = new Bounds2();
@@ -62,29 +65,31 @@ namespace MonochromeRainbow
 			//Normal enemy
 			if(type == 0)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/enemy/Enemytex.png");
 				behavior = 0;
 				health = 3;
 				damage = 1;
-				touchingPlatform = false;				
+				touchingPlatform = false;		
+				
+				textures[0] = new TextureInfo("/Application/textures/Enemytex.png");
 			}
 			//Flying Enemy
 			else if (type == 1)
 			{
-				textureInfo = new TextureInfo("/Application/textures/enemy/Flyer.png");
+				
 				behavior = 1;
 				health = 5;
 				damage = 1;
-				touchingPlatform = false;			
+				touchingPlatform = false;
+				textures[0] = new TextureInfo("/Application/textures/Flyer.png");
 			}
 			//Tanky Enemy
 			else if (type ==2)
 			{
-				textureInfo = new TextureInfo("/Application/textures/enemy/tank.png");
 				behavior = 2;
 				health = 7;
 				damage = 4;
 				touchingPlatform = false;
+				textures[0] = new TextureInfo("/Application/textures/tank.png");
 			}	
 		}
 		
