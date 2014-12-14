@@ -33,17 +33,17 @@ namespace MonochromeRainbow
 			//Health Collectible Texture
 			if (type == 0)
 			{
-				textureInfo = new TextureInfo("/Application/textures/Health.png");
+				textureInfo = new TextureInfo("/Application/textures/collectibles/health.png");
 			}
 			//Ammo Collectible Texture
 			else if (type == 1)
 			{
-				textureInfo = new TextureInfo("/Application/textures/Ammo.png");
+				textureInfo = new TextureInfo("/Application/textures/collectibles/ammo.png");
 			}
 			//Mutiplier Collectible Texture
 			else if (type == 2)
 			{
-				textureInfo = new TextureInfo("/Application/textures/Multiplier.png");
+				textureInfo = new TextureInfo("/Application/textures/collectibles/multiplier.png");
 			}
 			//Finisher Move Collectible Textures
 			else
@@ -52,25 +52,25 @@ namespace MonochromeRainbow
 				switch (specMove)
 				{
     			case 0:
-					textureInfo = new TextureInfo("/Application/textures/1-R.png");
+					textureInfo = new TextureInfo("/Application/textures/collectibles/rainbow/1-R.png");
         		break;
     			case 1:
-					textureInfo = new TextureInfo("/Application/textures/2-A.png");
+					textureInfo = new TextureInfo("/Application/textures/collectibles/rainbow/2-A.png");
        			break;
 				case 2:
-					textureInfo = new TextureInfo("/Application/textures/3-I.png");
+					textureInfo = new TextureInfo("/Application/textures/collectibles/rainbow/3-I.png");
         		break;
 				case 3:
-					textureInfo = new TextureInfo("/Application/textures/4-N.png");
+					textureInfo = new TextureInfo("/Application/textures/collectibles/rainbow/4-N.png");
         		break;
 				case 4:
-					textureInfo = new TextureInfo("/Application/textures/5-B.png");
+					textureInfo = new TextureInfo("/Application/textures/collectibles/rainbow/5-B.png");
         		break;
 				case 5:
-					textureInfo = new TextureInfo("/Application/textures/6-O.png");
+					textureInfo = new TextureInfo("/Application/textures/collectibles/rainbow/6-O.png");
         		break;
  				default:
-					textureInfo = new TextureInfo("/Application/textures/7-W.png");
+					textureInfo = new TextureInfo("/Application/textures/collectibles/rainbow/7-W.png");
         		break;
 				}
 			}

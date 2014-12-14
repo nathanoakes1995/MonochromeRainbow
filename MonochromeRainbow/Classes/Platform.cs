@@ -25,7 +25,7 @@ namespace MonochromeRainbow
 			position = pos;
 			sprite	= new SpriteUV();
 			
-			textureInfo	= new TextureInfo("/Application/textures/Platform.png");
+			textureInfo	= new TextureInfo("/Application/textures/other/Platform.png");
 			
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;

@@ -46,7 +46,7 @@ namespace MonochromeRainbow
 			playerWidth = 32;
 			playerHeight = 64;
 			
-			textureInfo		= new TextureInfo("/Application/textures/Player.png");
+			textureInfo		= new TextureInfo("/Application/textures/player/Player.png");
 			SetTileIndex();
 			timer = new Timer();
 			previousTime = (float)timer.Milliseconds();
@@ -313,7 +313,7 @@ namespace MonochromeRainbow
 			
 			if(health == 0)	
 			{
-				//isAlive = false;
+				isAlive = false;
 			}
 		}
 		public bool enemyBulletCollision(Enemy enemy, Scene scene)

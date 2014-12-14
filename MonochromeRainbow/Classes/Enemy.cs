@@ -62,7 +62,7 @@ namespace MonochromeRainbow
 			//Normal enemy
 			if(type == 0)
 			{
-				textureInfo	= new TextureInfo("/Application/textures/Enemytex.png");
+				textureInfo	= new TextureInfo("/Application/textures/enemy/Enemytex.png");
 				behavior = 0;
 				health = 3;
 				damage = 1;
@@ -71,7 +71,7 @@ namespace MonochromeRainbow
 			//Flying Enemy
 			else if (type == 1)
 			{
-				textureInfo = new TextureInfo("/Application/textures/Flyer.png");
+				textureInfo = new TextureInfo("/Application/textures/enemy/Flyer.png");
 				behavior = 1;
 				health = 5;
 				damage = 1;
@@ -80,7 +80,7 @@ namespace MonochromeRainbow
 			//Tanky Enemy
 			else if (type ==2)
 			{
-				textureInfo = new TextureInfo("/Application/textures/tank.png");
+				textureInfo = new TextureInfo("/Application/textures/enemy/tank.png");
 				behavior = 2;
 				health = 7;
 				damage = 4;
