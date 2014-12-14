@@ -234,7 +234,7 @@ namespace MonochromeRainbow
         		{
 					xVelocity = -4.0f;
 					//Aim Left
-					facingDirection = 0;
+					facingDirection = 4;
         		}
 			
 				//Right movement.
@@ -242,7 +242,7 @@ namespace MonochromeRainbow
         		{
 					xVelocity = 4.0f;
 					//Aim Right
-					facingDirection = 4;
+					facingDirection = 0;
         		}
 			}
 			if ((gamePadData.Buttons & GamePadButtons.R) != 0)
