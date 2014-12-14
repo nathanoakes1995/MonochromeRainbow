@@ -33,6 +33,7 @@ namespace MonochromeRainbow
 		public Bullet			bullet;
 		public bool 			bulletActive;
 		public bool 			isPressed;
+		public bool 			aiming;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
@@ -49,6 +50,7 @@ namespace MonochromeRainbow
 			onGround = true;
 			bulletActive = false;
 			facingDirection = 0;
+			aiming = false;
 			
 			scene.AddChild(player);
 		}
@@ -176,18 +178,62 @@ namespace MonochromeRainbow
         	}				
 			
 			//Left movement.
-        	if ((gamePadData.Buttons & GamePadButtons.Left) != 0)
-        	{
-				xVelocity = -4.0f;
-				facingDirection = 0;
-        	}
+			if (!aiming)
+			{
+        		if ((gamePadData.Buttons & GamePadButtons.Left) != 0)
+        		{
+					xVelocity = -4.0f;
+					//Aim Left
+					facingDirection = 4;
+        		}
 			
-			//Right movement.
-        	if ((gamePadData.Buttons & GamePadButtons.Right) != 0)
-        	{
-				xVelocity = 4.0f;
-				facingDirection = 0;
-        	}
+				//Right movement.
+        		if ((gamePadData.Buttons & GamePadButtons.Right) != 0)
+        		{
+					xVelocity = 4.0f;
+					//Aim Right
+					facingDirection = 0;
+        		}
+			}
+			if ((gamePadData.Buttons & GamePadButtons.R) != 0)
+			{
+				//Stop moving to aim
+				aiming = true;
+			}
+			
+			if (aiming)
+			{
+				if ((gamePadData.Buttons & GamePadButtons.R) == 0)
+				{
+					//Stop aiming
+					aiming = false;
+				}
+				if ((gamePadData.Buttons & GamePadButtons.Up) != 0)
+				{
+					//Aim up
+					facingDirection = 2;
+				}
+				if (((gamePadData.Buttons & GamePadButtons.Up) != 0) & ((gamePadData.Buttons & GamePadButtons.Right) != 0))
+				{
+					//Aim up-right
+					facingDirection = 1;
+				}
+				if (((gamePadData.Buttons & GamePadButtons.Up) != 0) & ((gamePadData.Buttons & GamePadButtons.Left) != 0))
+				{
+					//Aim up-left
+					facingDirection = 3;
+				}
+				if ((gamePadData.Buttons & GamePadButtons.Left) != 0)
+        		{
+					//Aim Left
+					facingDirection = 4;
+        		}
+        		if ((gamePadData.Buttons & GamePadButtons.Right) != 0)
+        		{
+					//Aim Right
+					facingDirection = 0;
+        		}
+			}
 			
 			//Check if player is off the ground.
 			if (!onGround)
