@@ -332,6 +332,7 @@ namespace MonochromeRainbow
 						{
 							player.health = player.health - enemy[i].damage;
 							player.canBeHit = false;
+							multiplier = 1;
 						}
 					}
 				}
