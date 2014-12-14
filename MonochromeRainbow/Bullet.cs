@@ -39,25 +39,25 @@ namespace MonochromeRainbow
 			{
     		case 0:
 				//Right
-				xVelocity = 1.0f;
+				xVelocity = 5.0f;
         	break;
     		case 1:
 				//Up-Right
-				xVelocity = 1.0f;
-				yVelocity = 1.0f;
+				xVelocity = 5.0f;
+				yVelocity = 5.0f;
        		break;
 			case 2:
 				//Up
-				yVelocity = 1.0f;
+				yVelocity = 5.0f;
 			break;
 			case 3:
 				//Up-Left
-				xVelocity = -1.0f;
-				yVelocity = 1.0f;
+				xVelocity = -5.0f;
+				yVelocity = 5.0f;
         	break;
  			default:
 				//Left
-				xVelocity = -1.0f;
+				xVelocity = -5.0f;
         	break;
 			}
 			
@@ -66,13 +66,9 @@ namespace MonochromeRainbow
 			sprite.Position = bulletPosition;
 		}
 		
-		public void Draw()
+		public void delete(Scene scene)
 		{
-			
-		}
-		public void calculateMovement()
-		{
-			
+			scene.RemoveChild(sprite, true);
 		}
 	}
 }

@@ -19,7 +19,7 @@ namespace MonochromeRainbow
 		public float			previousTime; 
 		public float			currentTime;
 		public float			elapsedTime;
-		public float				coolTime;
+		public float			coolTime;
 		public int 				ammo;
 		public int				level;
 		public float			xVelocity;
@@ -30,7 +30,8 @@ namespace MonochromeRainbow
 		public Bounds2 			bounds;
 		public Vector2			playerPos; 
 		public SpriteUV			player;
-		public Bullet	bullet;
+		public Bullet			bullet;
+		public bool 			bulletActive;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
@@ -42,9 +43,10 @@ namespace MonochromeRainbow
 			playerPos = playerPosition;
 			bounds = new Bounds2();
 			health = 10;
-			ammo = 0;
+			ammo = 50;
 			mayJumpAgain = true;
 			onGround = true;
+			bulletActive = false;
 			
 			scene.AddChild(player);
 		}
@@ -89,12 +91,46 @@ namespace MonochromeRainbow
 			{
 				health = 0;	
 			}
+			
+			if (bulletActive)
+			{
+				//for (int i = 0; i < bulletCount; i++)
+				//{
+//					bullet[i].Update();
+//					if(bullet[i].bulletPosition.X < 0 || bullet[i].bulletPosition.X > 960)
+//					{
+//						bullet[i].delete(gameScene);
+//						bullet[i] = null;
+//					}
+					bullet.Update();
+					if(bullet.bulletPosition.X < 0 || bullet.bulletPosition.X > 960)
+					{
+						bullet.delete(gameScene);
+						bullet = null;
+						bulletActive = false;
+					}
+				//}
+			}
+
+			
 			//Shooting.
         	if ((gamePadData.Buttons & GamePadButtons.Square) != 0)
         	{
         		//shoot;
 				//Create a bullet
-				bullet = new Bullet(gameScene, new Vector2(300,300), 0);
+				if (ammo > 0)
+				{
+					ammo --;
+					Console.WriteLine(ammo);
+					//bullet[bulletCount] = new Bullet(gameScene, new Vector2(playerPos.X + 28,playerPos.Y + 32), 0);
+					bullet = new Bullet(gameScene, new Vector2(playerPos.X + 28,playerPos.Y + 32), 0);
+					bulletActive = true;
+//					bulletCount++;
+//					if (bulletCount > 19)
+//					{
+//						bulletCount = 0;	
+//					}
+				}
         	}
 			
 			//Check if player is on ground.
@@ -141,11 +177,6 @@ namespace MonochromeRainbow
 			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && level == 0)
 			{
 				AppMain.levelManager.SetLevel(4);
-			}
-			
-			if ((gamePadData.Buttons & GamePadButtons.Square) != 0 && level == 4)
-			{
-				AppMain.levelManager.SetLevel(5);
 			}
 			
 			if ((gamePadData.Buttons & GamePadButtons.Select) != 0 && level == 5)
