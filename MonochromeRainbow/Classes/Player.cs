@@ -52,6 +52,7 @@ namespace MonochromeRainbow
 			player			= new SpriteTile(textureInfo,tileIndex[0]); 
 			playerRec = new Vector2(32,64);
 			player.Quad.S = playerRec;
+			
 			playerPos = playerPosition;
 			bounds = new Bounds2();
 			health = 10;
@@ -71,7 +72,7 @@ namespace MonochromeRainbow
 			int y = playerHeight;
 			
 			tileIndex = new Vector2i[3];
-			tileIndex[0]	= new Vector2i(0,0);
+			tileIndex[0]	= new Vector2i(0,320);
 			tileIndex[1]	= new Vector2i(0,0);
 			tileIndex[2]	= new Vector2i(0,0);
 		}
