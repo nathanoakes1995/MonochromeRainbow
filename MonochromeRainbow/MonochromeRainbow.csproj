@@ -38,18 +38,28 @@
     <Reference Include="Sce.PlayStation.HighLevel.UI" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppMain.cs" />
-    <Compile Include="Background.cs" />
-    <Compile Include="Enemy.cs" />
-    <Compile Include="Collectible.cs" />
-    <Compile Include="Platform.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Bullet.cs" />
-    <Compile Include="AudioManager.cs" />
-    <Compile Include="LevelManager.cs" />
-    <Compile Include="Button.cs" />
-    <Compile Include="MainMenu.composer.cs" />
-    <Compile Include="MainMenu.cs" />
+    <Compile Include="Classes\AppMain.cs" />
+    <Compile Include="Classes\Background.cs" />
+    <Compile Include="Classes\Bullet.cs" />
+    <Compile Include="Classes\Button.cs" />
+    <Compile Include="Classes\Collectible.cs" />
+    <Compile Include="Classes\Enemy.cs" />
+    <Compile Include="Classes\Platform.cs" />
+    <Compile Include="Classes\Player.cs" />
+    <Compile Include="Classes\UIScenes\Confirmation.composer.cs" />
+    <Compile Include="Classes\UIScenes\Confirmation.cs" />
+    <Compile Include="Classes\UIScenes\HighScores.composer.cs" />
+    <Compile Include="Classes\UIScenes\HighScores.cs" />
+    <Compile Include="Classes\UIScenes\MainMenu.composer.cs" />
+    <Compile Include="Classes\UIScenes\MainMenu.cs" />
+    <Compile Include="Classes\UIScenes\Options.composer.cs" />
+    <Compile Include="Classes\UIScenes\Options.cs" />
+    <Compile Include="Classes\UIScenes\Tutorial.composer.cs" />
+    <Compile Include="Classes\UIScenes\Tutorial.cs" />
+    <Compile Include="Classes\UIScenes\UIStringTable.cs" />
+    <Compile Include="Classes\Managers\LevelManager.cs" />
+    <Compile Include="Classes\Managers\AudioManager.cs" />
+    <Compile Include="Classes\Managers\UISceneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <PsmMetadata Include="app.xml" />
@@ -61,6 +71,7 @@
     <Folder Include="fonts\" />
     <Folder Include="sounds\" />
     <Folder Include="textures\Buttons\" />
+    <Folder Include="Classes\" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Texture.fcg" />
