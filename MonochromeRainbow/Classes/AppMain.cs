@@ -188,45 +188,6 @@ namespace MonochromeRainbow
 					
 					LoadLevel();
         		} 
-			}		
-			
-			if(level == 7)
-			{
-				if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && !isPressed)
-        		{
-					AppMain.levelManager.SetLevel(5);
-					isPressed = true;	
-					System.Threading.Thread.Sleep(100);
-        		} 
-				if ((gamePadData.Buttons & GamePadButtons.Start) == 0)
-        		{		
-					isPressed = false;
-        		}		
-			}
-			
-			if (level == 8)
-			{
-				if(justDied)
-				{
-					AppMain.audioManager.SetSFX(3);
-					System.Threading.Thread.Sleep(1000);
-					AppMain.audioManager.SetSFX(4);
-					System.Threading.Thread.Sleep(2500);
-					AppMain.audioManager.SetBGM(level);	
-					justDied = false;
-				}
-				
-				if (!background.stop)
-				{
-					background.Update(gameScene, 0, level);
-				}
-				else
-				{
-					System.Threading.Thread.Sleep(5000);
-						
-					quitGame = true;
-				}
-
 			}
 			
 			if(level == 5 || level == 6)
@@ -273,7 +234,7 @@ namespace MonochromeRainbow
 				background.Update(gameScene, health, levelManager.level);
 				
 				//Update EnemyAI
-				for(int i = 0; i < 20; i++)
+				for(int i = 0; i < 10; i++)
 				{
 					//checks to see if enemy is alive
 					if(enemy[i].isAlive)
@@ -289,8 +250,49 @@ namespace MonochromeRainbow
 					}
 				}
 				
+				Console.WriteLine (enemy[4].position.X);
+				
 				healthLabel.Text = "Health: " + player.health;
 				CheckCollision();
+			}
+			
+			if(level == 7)
+			{
+				if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && !isPressed)
+        		{
+					AppMain.levelManager.SetLevel(5);
+					isPressed = true;	
+					System.Threading.Thread.Sleep(100);
+        		} 
+				if ((gamePadData.Buttons & GamePadButtons.Start) == 0)
+        		{		
+					isPressed = false;
+        		}		
+			}
+			
+			if (level == 8)
+			{
+				if(justDied)
+				{
+					AppMain.audioManager.SetSFX(3);
+					System.Threading.Thread.Sleep(1000);
+					AppMain.audioManager.SetSFX(4);
+					System.Threading.Thread.Sleep(2500);
+					AppMain.audioManager.SetBGM(level);	
+					justDied = false;
+				}
+				
+				if (!background.stop)
+				{
+					background.Update(gameScene, 0, level);
+				}
+				else
+				{
+					System.Threading.Thread.Sleep(5000);
+						
+					quitGame = true;
+				}
+
 			}
 		}
 		
@@ -303,7 +305,7 @@ namespace MonochromeRainbow
 		
 		public static void CheckCollision()
 		{
-			for(int i = 0; i < 20; i++)
+			for(int i = 0; i < 10; i++)
 			{
 				if(enemy[i].isAlive)
 				{
@@ -328,14 +330,10 @@ namespace MonochromeRainbow
 								}
 							}
 							
-							if(enemy[i].yVelocity == 0)
+							if(!enemy[i].bounds.Overlaps(platforms[k].bounds) && enemy[i].position.Y != 0.0f)
 							{
-								//if( && enemy[i].position.Y != 0.0f)
-								//{
-								//	enemy[i].onGround = false;
-								//}
-							}
-												
+								enemy[i].onGround = false;
+							}	
 						}
 					}
 				
@@ -494,7 +492,7 @@ namespace MonochromeRainbow
 				multiplierLabel.Text = "Mutiplier: x" + multiplier;
 				rainbowLabel.Text = "";
 				
-				for(int i = 0; i< 20; i++)
+				for(int i = 0; i< 10; i++)
 				{ 
 					//so this thing counts to 300 ms then spawns an enemy, then repeats
 					while(enemyCoolTime < 50)

@@ -66,8 +66,10 @@ namespace MonochromeRainbow
 			//Decide random type
 			Random rnd = new Random();
 			
+			int random = randomNumber();
+			
 			//Flying Enemy
-			if(randomNumber() <= 50)
+			if(random <= 50)
 			{
 				type = 1;
 				behavior = 1;
@@ -76,9 +78,8 @@ namespace MonochromeRainbow
 				
 				textureInfo = textures[0];
 			}
-			
 			//Normal enemy
-			if(50 < randomNumber() && randomNumber() <= 85)
+			else if(random <= 85)
 			{
 				type = 0;
 				behavior = 0;
@@ -87,9 +88,8 @@ namespace MonochromeRainbow
 				
 				textureInfo = textures[1];
 			}
-			
 			//Tanky Enemy
-			if(85 < randomNumber())
+			else
 			{
 				type = 2;
 				behavior = 2;
