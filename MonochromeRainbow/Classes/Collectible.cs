@@ -153,7 +153,7 @@ namespace MonochromeRainbow
 			int randInt = randGen.Next (100);
 			if (specMove < 7)
 			{
-			if (randInt <= 39)
+				if (randInt <= 39)	
 				{
 					return 0;
 					//Health	

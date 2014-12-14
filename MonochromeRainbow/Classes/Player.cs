@@ -166,7 +166,7 @@ namespace MonochromeRainbow
 			
 			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && !isPressed)
         	{
-				AppMain.levelManager.SetLevel(1);
+				AppMain.levelManager.SetLevel(7);
 				isPressed = true;
         	} 
 			if ((gamePadData.Buttons & GamePadButtons.Start) == 0)

@@ -325,3 +325,9 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\shaders\
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\sounds\bgm\Doh De Oh.mp3
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\sounds\bgm\Hackbeat.mp3
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\sounds\bgm\Long Stroll.mp3
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Doh De Oh.mp3
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Hackbeat.mp3
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Long Stroll.mp3

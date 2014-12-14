@@ -118,5 +118,8 @@
     <Content Include="textures\Buttons\NewGame.png" />
     <Content Include="textures\playerSheet.png" />
     <Content Include="textures\Player.png" />
+    <Content Include="sounds\bgm\Doh De Oh.mp3" />
+    <Content Include="sounds\bgm\Hackbeat.mp3" />
+    <Content Include="sounds\bgm\Long Stroll.mp3" />
   </ItemGroup>
 </Project>

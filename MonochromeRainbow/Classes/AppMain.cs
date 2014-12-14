@@ -1,3 +1,7 @@
+//implementing scenes
+//if count = 1,2 or 3
+//why ~main
+
 using System;
 using System.Collections.Generic;
 
@@ -167,7 +171,7 @@ namespace MonochromeRainbow
 			
 			Console.WriteLine(levelManager.level);
 			
-			if(level == 1)
+			if(level == 7)
 			{
 				if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && !isPressed)
         		{
