@@ -89,10 +89,10 @@ namespace MonochromeRainbow
 			gameScene.Camera.SetViewFromViewport();
 			
 			//Set the ui scene.
-			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
 			Panel panel  = new Panel();
 			panel.Width  = Director.Instance.GL.Context.GetViewport().Width;
 			panel.Height = Director.Instance.GL.Context.GetViewport().Height;
+			
 			//Health label data
 			healthLabel = new Sce.PlayStation.HighLevel.UI.Label();
 			healthLabel.HorizontalAlignment = HorizontalAlignment.Center;
@@ -134,16 +134,16 @@ namespace MonochromeRainbow
 				Director.Instance.GL.Context.GetViewport().Height*0.1f - rainbowLabel.Height/2 + 20);
 			panel.AddChildLast(rainbowLabel);
 			
-			uiScene.RootWidget.AddChildLast(panel);
-			UISystem.SetScene(uiScene);
+			LoadLevel(level);
+			
+			uiSceneManager.uiScenes[0].RootWidget.AddChildLast(panel);
+			UISystem.SetScene(uiSceneManager.uiScenes[0]);
 			
 			enemy = new Enemy[20];
 			
 			score = 0;
 			level = 5;
 			multiplier = 1;
-			
-			LoadLevel(level);		
 			
 			AppMain.audioManager.SetBGM(level);
 			AppMain.audioManager.PlayBGM();
