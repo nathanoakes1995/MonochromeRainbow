@@ -23,7 +23,7 @@ namespace MonochromeRainbow
 		
 		public LevelManager()
 		{				
-			level = 5;
+			level = 0;
 		}
 		
 		public void SetLevel(int changeTo)

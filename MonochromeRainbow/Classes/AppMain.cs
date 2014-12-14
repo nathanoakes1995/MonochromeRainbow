@@ -454,8 +454,7 @@ namespace MonochromeRainbow
 			
 			//uiSceneManager = new UISceneManager();
 			
-			if(level == 5)
-			{
+
 				//Create the background.
 				background = new Background(gameScene);
 				
@@ -502,7 +501,6 @@ namespace MonochromeRainbow
 						enemy[i].Load (gameScene);
 					}	
 				}
-			}
-		}	
+			}	
 	}
 }
