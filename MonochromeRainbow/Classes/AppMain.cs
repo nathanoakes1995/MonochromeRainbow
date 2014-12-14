@@ -260,12 +260,26 @@ namespace MonochromeRainbow
 					enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
 					for(int k = 0; k< 9; k++)
 					{
-						platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);	
-						if(enemy[i].bounds.Overlaps(platforms[k].bounds))
+						platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);
+						if(enemy[i].yVelocity>0)
 						{
-							enemy[i].position.Y = (platforms[k].position.Y + 20);
-							enemy[i].sprite.Position= enemy[i].position;
+							if((enemy[i].position.X + enemy[i].sprite.Quad.S.X) > (platforms[k].position.X + 20.0f) && enemy[i].position.X < (platforms[k].position.X + platforms[k].platformWidth - 18.0f))
+							{
+								if(enemy[i].bounds.Overlaps(platforms[k].bounds))
+								{
+									if(enemy[i].position.Y > (platforms[k].position.Y + (platforms[k].platformHeight / 2)))
+									{
+										enemy[i].position.Y = (platforms[k].position.Y + platforms[k].platformHeight) - 4.0f;
+										enemy[i].sprite.Position = enemy[i].position;
+										enemy[i].onGround = true;
+									}
+								}
+							}
+							
+						
+							
 						}
+						
 					}
 					player.player.GetContentWorldBounds (ref player.bounds);
 					if(enemy[i].bounds.Overlaps (player.bounds))
@@ -425,14 +439,14 @@ namespace MonochromeRainbow
 				
 				for(int i = 0; i< 20; i++)
 				{ //so this thing counts to 300 ms then spawns an enemy, then repeats
-					while(enemyCoolTime < 300)
+					while(enemyCoolTime < 50)
 					{
 						currentTime = (float)timer.Milliseconds();
 						elapsedTime = currentTime - previousTime;
 						previousTime = currentTime;
 						enemyCoolTime+= elapsedTime;
 					}
-					if (enemyCoolTime >= 300)
+					if (enemyCoolTime >= 50)
 					{	//when the timer reaches 300ms, it creates a new enemy and sets it to alive, then loads it.  I changed that stuff for respawning.
 						enemyCoolTime = 0.0f;
 						enemy[i] = new Enemy(gameScene);

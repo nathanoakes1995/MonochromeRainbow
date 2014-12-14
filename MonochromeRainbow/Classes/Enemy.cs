@@ -15,6 +15,7 @@ namespace MonochromeRainbow
 		private	TextureInfo	textureInfo;
 		public bool			isAlive = false;
 		public float 		yVelocity;
+	
 		public bool 		onGround;
 		public int 			type;
 		public int 			behavior;
@@ -155,29 +156,43 @@ namespace MonochromeRainbow
 				position.X -= 0.9f;	
 				sprite.Position = position;
 			}
-			if(onGround == false)
-			{
-				yVelocity = 5.0f;
-			}
-			else if (onGround == true)
-			{
-				yVelocity = 0.0f;
-			}	
-			
 			//checks if enemy is on the ground
 			if (position.Y < 0.0f)
 			{
 				position.Y = 0.0f;
 				onGround = true;
 			}
-			if(onGround == false)
+			
+			if (onGround)
 			{
-				position.Y -= yVelocity;	
+				if (mayJumpAgain)
+				{
+                	if(playerLocation.Y > position.Y)
+					{
+						mayJumpAgain = false;
+						yVelocity = 11.0f;
+					}
+				}
+        		
+        		else
+				{
+					mayJumpAgain = true;
+        		}
+			}
+			if (!onGround)
+			{
+				yVelocity -= 0.5f;
+			}
+			if (yVelocity < -5.0f)
+			{
+        		yVelocity = -5.0f;
 			}
 			
 			
+			position.Y += yVelocity;
 			
 		}
+		
 		
 		
 		
