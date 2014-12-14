@@ -149,7 +149,7 @@ namespace MonochromeRainbow
 			enemy = new Enemy[20];
 			
 			score = 0;
-			level = 5;
+			level = 0;
 			multiplier = 1;
 			justDied = true;
 			
@@ -168,13 +168,20 @@ namespace MonochromeRainbow
 			currentTime = (float)timer.Milliseconds();
 			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
-			
+			ammoLabel.Text = "Ammo: " + player.ammo;
+			multiplierLabel.Text = "Multiplier: x" + multiplier;
 			accumulatedDeltaTime += elapsedTime;
 			
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
-			ammoLabel.Text = "Ammo: " + player.ammo;
-			multiplierLabel.Text = "Multiplier: x" + multiplier;
+			
+			
+			if(level == 0)
+			{
+				levelManager.level = 5;
+				level = 5;
+			}
+			
 			
 			if(level == 7)
 			{
