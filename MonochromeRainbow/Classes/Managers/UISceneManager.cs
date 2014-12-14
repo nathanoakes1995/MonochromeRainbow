@@ -5,45 +5,30 @@ using Sce.PlayStation.Core;
 using Sce.PlayStation.Core.Environment;
 using Sce.PlayStation.Core.Graphics;
 using Sce.PlayStation.Core.Input;
+
 using Sce.PlayStation.HighLevel.UI;
 
 namespace MonochromeRainbow
 {
     public class UISceneManager
-    {
-        private GraphicsContext graphics;
-
+	{
+		public Sce.PlayStation.HighLevel.UI.Scene[] uiScenes;
+		
         public UISceneManager()
         {
             Initialize();
-
-            while (true)
-			{
-                SystemEvents.CheckEvents();
-                Update ();
-                Render ();
-            }
         }
 
         public void Initialize ()
         {
-            // Set up the graphics system
-            graphics = new GraphicsContext ();
-
-            // Initialize UI Toolkit
-            UISystem.Initialize(graphics);
-
             // Create scene
-			Sce.PlayStation.HighLevel.UI.Scene[] uiScenes;
-			uiScenes = new Sce.PlayStation.HighLevel.UI.Scene[5];
-			uiScenes[0] = new Screen.MainMenu();
-			uiScenes[1] = new Screen.Tutorial();
-			uiScenes[2] = new Screen.Options();
-			uiScenes[3] = new Screen.HighScores();
-			uiScenes[4] = new Screen.Confirmation();
-			
-			// Set scene
-			UISystem.SetScene(uiScenes[4], null);
+			uiScenes = new Sce.PlayStation.HighLevel.UI.Scene[6];
+			uiScenes[0] = new Sce.PlayStation.HighLevel.UI.Scene();
+			uiScenes[1] = new Screen.MainMenu();
+			uiScenes[2] = new Screen.Tutorial();
+			uiScenes[3] = new Screen.Options();
+			uiScenes[4] = new Screen.HighScores();
+			uiScenes[5] = new Screen.Confirmation();
         }
 
         public void Update ()
@@ -60,15 +45,6 @@ namespace MonochromeRainbow
 
         public void Render ()
         {
-            // Clear the screen
-			graphics.SetClearColor (1.0f, 1.0f, 1.0f, 1.0f);
-			graphics.Clear ();
-
-            // Render UI Toolkit
-            UISystem.Render ();
-
-            // Present the screen
-            graphics.SwapBuffers ();
         }
     }
 }
