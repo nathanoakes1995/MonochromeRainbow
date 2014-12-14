@@ -230,9 +230,9 @@ namespace MonochromeRainbow
 				sprite.Position = position;
 			}
 			
+				
 			
-			
-			}
+		}
 		
 		public void RunAIType3(Vector2 playerLocation)
 		{

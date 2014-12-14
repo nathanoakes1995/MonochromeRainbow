@@ -40,7 +40,7 @@ namespace MonochromeRainbow
 		public Vector2i[]		tileIndex;
 		public bool 			aiming;
 		public bool				canShoot;
-		
+		public bool isAlive;
 		public Player (Scene scene, Vector2 playerPosition)
 		{
 			playerWidth = 32;
@@ -55,7 +55,7 @@ namespace MonochromeRainbow
 			player.TileIndex2D = tileIndex[0];
 			playerRec = new Vector2(32,64);
 			player.Quad.S = playerRec;
-			
+			isAlive = true;
 			playerPos = playerPosition;
 			bounds = new Bounds2();
 			health = 10;
@@ -202,7 +202,10 @@ namespace MonochromeRainbow
         	{
 				isPressed = false;
         	}				
-			
+			if(!isAlive)
+			{
+				AppMain.levelManager.SetLevel (8);	
+			}
 			//Left movement.
 			if (!aiming)
 			{
@@ -308,6 +311,11 @@ namespace MonochromeRainbow
 			}
 			
 			player.Position = playerPos;
+			
+			if(health == 0)	
+			{
+				isAlive = false;
+			}
 		}
 	}
 }
