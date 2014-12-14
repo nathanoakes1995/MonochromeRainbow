@@ -264,7 +264,7 @@ namespace MonochromeRainbow
 				{
 					for(int k = 0; k < 9; k++)
 					{
-						if (player.enemyBulletCollision(enemy[i]))
+						if (player.enemyBulletCollision(enemy[i],gameScene))
 						{
 							enemy[i].isAlive = false;	
 						}

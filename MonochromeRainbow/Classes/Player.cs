@@ -316,7 +316,7 @@ namespace MonochromeRainbow
 				//isAlive = false;
 			}
 		}
-		public bool enemyBulletCollision(Enemy enemy)
+		public bool enemyBulletCollision(Enemy enemy, Scene scene)
 		{
 			for (int i = 0; i < 20; i++)
 			{
@@ -328,6 +328,7 @@ namespace MonochromeRainbow
 					{
 						bullet[i].bulletPosition = new Vector2(-100.0f, -100.0f);
 						bulletActive[i] = false;
+						scene.RemoveChild (enemy.sprite, true);
 						return true;
 					}
 					else
