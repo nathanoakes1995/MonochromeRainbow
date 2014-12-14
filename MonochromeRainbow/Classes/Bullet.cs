@@ -23,7 +23,7 @@ namespace MonochromeRainbow
 			bulletDirection = direction;
 			sprite	= new SpriteUV();
 			
-			textureInfo	= new TextureInfo("/Application/textures/bullet.png");
+			textureInfo	= new TextureInfo("/Application/textures/other/bullet.png");
 			
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
