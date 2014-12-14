@@ -168,8 +168,7 @@ namespace MonochromeRainbow
 			currentTime = (float)timer.Milliseconds();
 			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
-			ammoLabel.Text = "Ammo: " + player.ammo;
-			multiplierLabel.Text = "Multiplier: x" + multiplier;
+
 			accumulatedDeltaTime += elapsedTime;
 			
 			//Get gamepad input.
@@ -233,6 +232,8 @@ namespace MonochromeRainbow
 				
 				score += 1 * multiplier;
 				scoreLabel.Text = "" + score;
+				ammoLabel.Text = "Ammo: " + player.ammo;
+				multiplierLabel.Text = "Multiplier: x" + multiplier;
 				
 				if (!collectibleActive)
 				{
