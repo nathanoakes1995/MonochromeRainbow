@@ -159,6 +159,7 @@ namespace MonochromeRainbow
 						{
 							if (bulletActive[checkCount] == false)
 							{
+								AppMain.audioManager.SetSFX(0);
 								bullet[checkCount].bulletDirection = facingDirection;
 								bullet[checkCount].bulletPosition = new Vector2(playerPos.X + 28,playerPos.Y + 32);
 								bulletActive[checkCount] = true;
