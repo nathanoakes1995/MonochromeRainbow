@@ -71,7 +71,7 @@ namespace MonochromeRainbow
 				textureInfo = new TextureInfo("/Application/textures/Flyer.png");
 				behavior = 1;
 				health = 5;
-				damage = 2;
+				damage = 1;
 				
 			}
 			//Tanky Enemy
@@ -80,7 +80,7 @@ namespace MonochromeRainbow
 				textureInfo = new TextureInfo("/Application/textures/tank.png");
 				behavior = 2;
 				health = 7;
-				damage = 3;
+				damage = 4;
 				
 			}
 			
@@ -190,6 +190,12 @@ namespace MonochromeRainbow
 			
 			
 			position.Y += yVelocity;
+			
+			if (yVelocity != -5.0f)
+			{
+				onGround = false;
+    		}
+			
 			
 		}
 		
