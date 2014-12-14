@@ -109,7 +109,7 @@ namespace MonochromeRainbow
 				}
 			if (!canShoot)
 			{
-				if (shootCoolTime >= 1000)
+				if (shootCoolTime >= 300)
 				{
 					shootCoolTime = 0.0f;
 					canShoot = true;

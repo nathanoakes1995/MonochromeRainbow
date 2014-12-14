@@ -169,6 +169,7 @@ namespace MonochromeRainbow
 			
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
+			ammoLabel.Text = "Ammo: " + player.ammo;
 			
 			if(level == 7)
 			{
@@ -290,10 +291,10 @@ namespace MonochromeRainbow
 							
 							if(enemy[i].yVelocity == 0)
 							{
-								if(!enemy[i].touchingPlaform || enemy[i].position.Y != 0.0f)
-								{
-									enemy[i].onGround = false;
-								}
+//								if(!enemy[i].touchingPlaform || enemy[i].position.Y != 0.0f)
+//								{
+//									enemy[i].onGround = false;
+//								}
 							}
 												
 							if(enemy[i].bounds.Overlaps(platforms[k].bounds))
