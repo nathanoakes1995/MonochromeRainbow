@@ -48,7 +48,6 @@
     <Compile Include="AudioManager.cs" />
     <Compile Include="LevelManager.cs" />
     <Compile Include="Button.cs" />
-    <Compile Include="Screen.cs" />
     <Compile Include="MainMenu.composer.cs" />
     <Compile Include="MainMenu.cs" />
   </ItemGroup>

@@ -15,7 +15,7 @@ namespace MonochromeRainbow
 	public class AppMain
 	{
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
-		private static Sce.PlayStation.HighLevel.UI.Scene[] 				menuScene;
+		private static Sce.PlayStation.HighLevel.UI.Scene[] 			uiScenes;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				healthLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				ammoLabel;
@@ -39,7 +39,6 @@ namespace MonochromeRainbow
 		public static bool 	enemyCanBeSpawned;
 		
 		public static GamePadData	gamePadData;
-		public static Screen		screen;
 		public static Background	background;
 		public static AudioManager	audioManager;
 		public static LevelManager	levelManager;
@@ -53,7 +52,7 @@ namespace MonochromeRainbow
 		public static Bullet		bullet;
 			
 		public static void Main (string[] args)
-		{					
+		{							
 			timer = new Timer();
 			previousTime = (float)timer.Milliseconds();
 			
@@ -65,12 +64,15 @@ namespace MonochromeRainbow
 			{
 				Update();
 				
+				UISystem.Render();
+				
 				Director.Instance.Update();
 				Director.Instance.Render();
-				UISystem.Render();
 				
 				Director.Instance.GL.Context.SwapBuffers();
 				Director.Instance.PostSwap();
+				
+				SystemEvents.CheckEvents ();
 			}
 			
 			background.Dispose();
@@ -80,6 +82,8 @@ namespace MonochromeRainbow
 
 		public static void Initialize ()
 		{
+			graphics = new GraphicsContext ();
+			
 			//Set up director and UISystem.
 			Director.Initialize ();
 			UISystem.Initialize(Director.Instance.GL.Context);
@@ -89,11 +93,13 @@ namespace MonochromeRainbow
 			gameScene.Camera.SetViewFromViewport();
 			
 			//Set the ui scene.
-			menuScene = new Sce.PlayStation.HighLevel.UI.Scene[2];
-			for(int i = 0; i < 2; i++)
-			{
-				menuScene[i] = new Sce.PlayStation.HighLevel.UI.Scene();
-			}
+			//uiScenes = new Sce.PlayStation.HighLevel.UI.Scene[2];
+			
+			//uiScenes[0] = new Sce.PlayStation.HighLevel.UI.Scene();
+			//uiScenes[1] = new Screen.MainMenu();
+			
+			var Screen = new Screen.MainMenu();
+			
 			Panel panel  = new Panel();
 			panel.Width  = Director.Instance.GL.Context.GetViewport().Width;
 			panel.Height = Director.Instance.GL.Context.GetViewport().Height;
@@ -137,12 +143,12 @@ namespace MonochromeRainbow
 				90 - rainbowLabel.Width/2,
 				Director.Instance.GL.Context.GetViewport().Height*0.1f - rainbowLabel.Height/2 + 20);
 			panel.AddChildLast(rainbowLabel);
-			for(int i = 0; i < 2; i++)
-			{
-				menuScene[i].RootWidget.AddChildLast(panel);
-				UISystem.SetScene(menuScene[i]);	
-			}
 			
+			SetClearColor (1.0f, 1.0f, 1.0f, 1.0f);
+			graphics.Clear ();
+			
+			UISystem.SetScene(Screen, null);	
+			Screen.RootWidget.AddChildLast(panel);
 			
 			enemy = new Enemy[20];
 			
@@ -169,6 +175,12 @@ namespace MonochromeRainbow
 			
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
+
+            // Query touch for current state
+            List<TouchData> touchDataList = Touch.GetData (0);
+
+            // Update UI Toolkit
+            UISystem.Update(touchDataList);
 			
 			if(level == 5)
 			{
@@ -379,14 +391,6 @@ namespace MonochromeRainbow
 			
 			//Create up audio
 			audioManager = new AudioManager();
-			
-			if(level == 0)
-			{
-				screen = new Screen(gameScene, level);
-							
-				levelManager.SetLevel(5);
-				screen.LoadScreens(gameScene, levelManager.level);
-			}
 			
 			if(level == 5)
 			{
