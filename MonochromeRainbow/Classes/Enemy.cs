@@ -13,24 +13,22 @@ namespace MonochromeRainbow
 	public class Enemy
 	{
 		private	TextureInfo	textureInfo;
-		public bool			isAlive = false;
-		public float 		yVelocity;
-		public TextureInfo[] textures;
-		public bool 		onGround;
-		public int 			type;
-		public int 			behavior;
-		public int 			health;
-		public int 			damage;
-		public Bounds2		bounds;
-		public Vector2		position;
-		public Vector2[]	spawnPositions;
-		public SpriteUV		sprite;
-		public bool			mayJumpAgain;
+		public bool				isAlive = false;
+		public float			yVelocity;
+		public TextureInfo[]	textures;
+		public bool 			onGround;
+		public int 				type;
+		public int 				behavior;
+		public int 				health;
+		public int 				damage;
+		public Bounds2			bounds;
+		public Vector2			position;
+		public Vector2[]		spawnPositions;
+		public SpriteUV			sprite;
+		public bool				mayJumpAgain;
 	
 		public Enemy (Scene scene)
 		{
-			
-			
 		}
 		
 		public void Load(Scene scene)
@@ -43,6 +41,8 @@ namespace MonochromeRainbow
 			SetSpawnLocations();
 			sprite	= new SpriteUV();
 			
+			SetEnemyArray();
+			
 			textureInfo = new TextureInfo();
 			textureInfo = textures[0];
 			sprite			= new SpriteUV(textureInfo);
@@ -52,6 +52,14 @@ namespace MonochromeRainbow
 			yVelocity = 5.0f;
 			onGround = false;
 			scene.AddChild(sprite);
+		}
+		
+		public void SetEnemyArray()
+		{
+			textures = new TextureInfo[3];
+			textures[0]		= new TextureInfo("/Application/textures/enemy/flyingEnemy.png");
+			textures[1]		= new TextureInfo("/Application/textures/enemy/regularEnemy.png");
+			textures[2]		= new TextureInfo("/Application/textures/enemy/heavyEnemy.png");	
 		}
 		
 		public void DecideType()
@@ -66,26 +74,28 @@ namespace MonochromeRainbow
 				behavior = 1;
 				health = 5;
 				damage = 1;
-				textures[0] = new TextureInfo("/Application/textures/enemy/flyingEnemy.png");
+				
+				textureInfo = textures[0];
 			}
 			
 			//Normal enemy
-			if(0 <= randomNumber() && randomNumber() <= 85)
+			if(50 < randomNumber() && randomNumber() <= 85)
 			{
 				behavior = 0;
 				health = 3;
 				damage = 1;	
 				
-				textures[0] = new TextureInfo("/Application/textures/enemy/regularEnemy.png");
+				textureInfo = textures[1];
 			}
 			
 			//Tanky Enemy
-			if(0 <= randomNumber() && randomNumber() <= 85)
+			if(85 < randomNumber())
 			{
 				behavior = 2;
 				health = 7;
 				damage = 3;
-				textures[0] = new TextureInfo("/Application/textures/enemy/heavyEnemy.png");
+				
+				textureInfo = textures[2];
 			}	
 		}
 		
@@ -99,7 +109,6 @@ namespace MonochromeRainbow
 		
 		public void SetSpawnLocations()
 		{
-			
 			//Create array of potential spawn positions (set to the platform XY positions.
 			//Added 20 to each one because of Y0 being at the bottom.
 			spawnPositions[8] = new Vector2(0,158);
