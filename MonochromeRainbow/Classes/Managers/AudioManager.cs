@@ -226,6 +226,7 @@ namespace MonochromeRainbow
 				return 1;	
 			}
 		}
+		
 		public void Dispose()
 		{
 			BGMPlayer.Dispose();

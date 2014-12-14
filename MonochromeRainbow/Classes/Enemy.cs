@@ -59,10 +59,17 @@ namespace MonochromeRainbow
 		
 			//Decide random type
 			Random rnd = new Random();
-			type = rnd.Next (0,3);
 			
+			//Flying Enemy
+			if(randomNumber() <= 50)
+			{
+				behavior = 1;
+				health = 5;
+				damage = 1;
+				textures[0] = new TextureInfo("/Application/textures/enemy/Flyer.png");
+			}
 			//Normal enemy
-			if(type == 0)
+			else if(randomNumber() <= 85)
 			{
 				behavior = 0;
 				health = 3;
@@ -70,23 +77,22 @@ namespace MonochromeRainbow
 				
 				textures[0] = new TextureInfo("/Application/textures/enemy/Enemytex.png");
 			}
-			//Flying Enemy
-			else if (type == 1)
-			{
-				
-				behavior = 1;
-				health = 5;
-				damage = 1;
-				textures[0] = new TextureInfo("/Application/textures/enemy/Flyer.png");
-			}
 			//Tanky Enemy
-			else if (type ==2)
+			else(randomNumber() <= 49)
 			{
 				behavior = 2;
 				health = 7;
-				damage = 4;
+				damage = 3;
 				textures[0] = new TextureInfo("/Application/textures/enemy/tank.png");
 			}	
+		}
+		
+		public int randomNumber()
+		{
+			var randGen = new Random(Guid.NewGuid().GetHashCode());
+			int randInt = randGen.Next (100);
+			
+			return randInt;
 		}
 		
 		public void SetSpawnLocations()
@@ -103,7 +109,6 @@ namespace MonochromeRainbow
 			spawnPositions[5] = new Vector2(760, 156);
 			spawnPositions[6] = new Vector2(760, 292);
 			spawnPositions[7] = new Vector2(760, 428);
-			
 		}
 		
 		public void DecideSpawnLocation()
