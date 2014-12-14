@@ -14,7 +14,7 @@ namespace MonochromeRainbow
 	{
 		private	TextureInfo	textureInfo;
 		public bool			isAlive = false;
-		public bool 		airborne = true;
+		public bool 		touchingPlatform;
 		public float 		yVelocity;
 			
 		public bool 		onGround;
@@ -26,7 +26,7 @@ namespace MonochromeRainbow
 		public Vector2		position;
 		public Vector2[]	spawnPositions;
 		public SpriteUV		sprite;
-		public bool				mayJumpAgain;
+		public bool			mayJumpAgain;
 	
 		public Enemy (Scene scene)
 		{
@@ -65,7 +65,7 @@ namespace MonochromeRainbow
 				behavior = 0;
 				health = 3;
 				damage = 1;
-				
+				touchingPlatform = false;				
 			}
 			//Flying Enemy
 			else if (type == 1)
@@ -74,7 +74,7 @@ namespace MonochromeRainbow
 				behavior = 1;
 				health = 5;
 				damage = 1;
-				
+				touchingPlatform = false;			
 			}
 			//Tanky Enemy
 			else if (type ==2)
@@ -83,9 +83,8 @@ namespace MonochromeRainbow
 				behavior = 2;
 				health = 7;
 				damage = 4;
-				
-			}
-			
+				touchingPlatform = false;
+			}	
 		}
 		
 		public void SetSpawnLocations()
@@ -250,6 +249,7 @@ namespace MonochromeRainbow
 				position.X -= 0.9f;	
 				sprite.Position = position;
 			}
+			
 			//checks if enemy is on the ground
 			if (position.Y < 0.0f)
 			{

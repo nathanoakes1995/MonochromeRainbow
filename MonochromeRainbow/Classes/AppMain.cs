@@ -274,6 +274,8 @@ namespace MonochromeRainbow
 						{
 							if(enemy[i].bounds.Overlaps(platforms[k].bounds))
 							{
+								enemy[i].touchingPlatform = true;
+								
 								if(enemy[i].position.Y > (platforms[k].position.Y + (platforms[k].platformHeight / 2)))
 								{
 									enemy[i].position.Y = (platforms[k].position.Y + platforms[k].platformHeight);
@@ -281,10 +283,14 @@ namespace MonochromeRainbow
 									enemy[i].onGround = true;
 								}
 							}
+							else
+							{
+								enemy[i].touchingPlatform = false;
+							}
 							
 							if(enemy[i].yVelocity == 0)
 							{
-								if(!enemy[i].bounds.Overlaps(platforms[k].bounds) && enemy[i].position.Y != 0.0f)
+								if(!enemy[i].touchingPlaform || enemy[i].position.Y != 0.0f)
 								{
 									enemy[i].onGround = false;
 								}
