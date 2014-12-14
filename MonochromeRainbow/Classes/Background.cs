@@ -27,8 +27,6 @@ namespace MonochromeRainbow
 			textureInfo = new TextureInfo();
 			textureInfo = textures[0];
 			
-			//textureInfo = new TextureInfo("/Application/textures/background(0%).png");	
-			
 			background			= new SpriteUV(textureInfo);
 			background.Quad.S	= textureInfo.TextureSizef;
 			

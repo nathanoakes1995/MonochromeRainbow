@@ -71,6 +71,7 @@
     <Folder Include="sounds\" />
     <Folder Include="Classes\" />
     <Folder Include="textures\" />
+    <Folder Include="textures\player\sprites\" />
   </ItemGroup>
   <ItemGroup>
     <ShaderProgram Include="shaders\Texture.fcg" />
@@ -113,8 +114,13 @@
     <Content Include="textures\enemy\tank.png" />
     <Content Include="textures\other\bullet.png" />
     <Content Include="textures\other\Platform.png" />
-    <Content Include="textures\player\Player.png" />
     <Content Include="textures\player\playerSheet.png" />
+    <Content Include="textures\player\sprites\coffeeLeft.png" />
+    <Content Include="textures\player\sprites\coffeeRight.png" />
+    <Content Include="textures\player\sprites\jumpingLeft.png" />
+    <Content Include="textures\player\sprites\jumpingRight.png" />
+    <Content Include="textures\player\sprites\standingLeft.png" />
+    <Content Include="textures\player\sprites\standingRight.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="textures\Thumbs.db" />
