@@ -174,6 +174,7 @@ namespace MonochromeRainbow
         		{
 					AppMain.levelManager.SetLevel(5);
 					isPressed = true;	
+					System.Threading.Thread.Sleep(100);
         		} 
 				if ((gamePadData.Buttons & GamePadButtons.Start) == 0)
         		{		
