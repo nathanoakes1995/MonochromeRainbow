@@ -169,6 +169,7 @@ namespace MonochromeRainbow
         	{
         		xVelocity = -4.0f;
 				facingDirection = 4;
+				Console.WriteLine(facingDirection);
         	}
 			
 			//Right movement.
@@ -176,7 +177,28 @@ namespace MonochromeRainbow
         	{
 				xVelocity = 4.0f;
 				facingDirection = 0;
+				Console.WriteLine(facingDirection);
         	}
+			
+			if ((gamePadData.Buttons & GamePadButtons.R) != 0)
+			{
+				if ((gamePadData.Buttons & GamePadButtons.Up) != 0)
+				{
+					facingDirection = 2;
+					Console.WriteLine(facingDirection);
+				}
+				if (((gamePadData.Buttons & GamePadButtons.Up)!= 0) & ((gamePadData.Buttons & GamePadButtons.Right)!= 0))
+				{
+					facingDirection = 1;
+					Console.WriteLine(facingDirection);
+				}
+				if (((gamePadData.Buttons & GamePadButtons.Up)!= 0) & ((gamePadData.Buttons & GamePadButtons.Left)!= 0))
+				{
+					facingDirection = 3;	
+					Console.WriteLine(facingDirection);
+				}
+			}
+			
 			
 			//Check if player is off the ground.
 			if (!onGround)
