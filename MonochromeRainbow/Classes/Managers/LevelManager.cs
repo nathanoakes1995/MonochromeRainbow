@@ -37,11 +37,6 @@ namespace MonochromeRainbow
 			else
 			{
 				AppMain.audioManager.StopBGM();
-				AppMain.audioManager.SetSFX(3);
-				System.Threading.Thread.Sleep(1000);
-				AppMain.audioManager.SetSFX(4);
-				System.Threading.Thread.Sleep(2500);
-				AppMain.audioManager.SetBGM(level);
 			}
 		}
 	}

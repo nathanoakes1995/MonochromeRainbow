@@ -18,13 +18,14 @@ namespace MonochromeRainbow
 {
 	public class AppMain
 	{
-		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
-		public static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				healthLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				ammoLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				multiplierLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				rainbowLabel;
+		
+		public static Sce.PlayStation.HighLevel.GameEngine2D.Scene 		gameScene;
+		public static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		
 		public static float enemyPreviousTime; 
 		public static float enemyCurrentTime;
@@ -42,6 +43,8 @@ namespace MonochromeRainbow
 		public static bool	collectibleActive;
 		public static bool 	enemyCanBeSpawned;
 		public static bool	isPressed;
+		public static bool	justDied;
+		public static bool	quitGame;
 		
 		public static GamePadData		gamePadData;
 		public static Background		background;
@@ -65,7 +68,7 @@ namespace MonochromeRainbow
 			Initialize();
 			
 			//Game loop
-			bool quitGame = false;
+			quitGame = false;
 			while (!quitGame) 
 			{
 				Update();
@@ -148,6 +151,7 @@ namespace MonochromeRainbow
 			score = 0;
 			level = 5;
 			multiplier = 1;
+			justDied = true;
 			
 			LoadLevel(level);
 			
@@ -183,6 +187,31 @@ namespace MonochromeRainbow
         		{		
 					isPressed = false;
         		}		
+			}
+			
+			if (level == 8)
+			{
+				if(justDied)
+				{
+					AppMain.audioManager.SetSFX(3);
+					System.Threading.Thread.Sleep(1000);
+					AppMain.audioManager.SetSFX(4);
+					System.Threading.Thread.Sleep(2500);
+					AppMain.audioManager.SetBGM(level);	
+					justDied = false;
+				}
+				
+				if (!background.stop)
+				{
+					background.Update(gameScene, 0, level);
+				}
+				else
+				{
+					System.Threading.Thread.Sleep(5000);
+						
+					quitGame = true;
+				}
+
 			}
 			
 			if(level == 5 || level == 6)
@@ -274,9 +303,7 @@ namespace MonochromeRainbow
 						if(enemy[i].yVelocity < 0)
 						{
 							if(enemy[i].bounds.Overlaps(platforms[k].bounds))
-							{
-								enemy[i].touchingPlatform = true;
-								
+							{		
 								if(enemy[i].position.Y > (platforms[k].position.Y + (platforms[k].platformHeight / 2)))
 								{
 									enemy[i].position.Y = (platforms[k].position.Y + platforms[k].platformHeight);
@@ -284,27 +311,15 @@ namespace MonochromeRainbow
 									enemy[i].onGround = true;
 								}
 							}
-							else
-							{
-								enemy[i].touchingPlatform = false;
-							}
 							
 							if(enemy[i].yVelocity == 0)
 							{
-//								if(!enemy[i].touchingPlaform || enemy[i].position.Y != 0.0f)
-//								{
-//									enemy[i].onGround = false;
-//								}
+								if(!enemy[i].bounds.Overlaps(platforms[k].bounds) || enemy[i].position.Y != 0.0f)
+								{
+									enemy[i].onGround = false;
+								}
 							}
 												
-							if(enemy[i].bounds.Overlaps(platforms[k].bounds))
-							{
-								Console.WriteLine ("ON PLATFORM");
-							}
-							else
-							{
-								Console.WriteLine ("Nope");
-							}
 						}
 					}
 				

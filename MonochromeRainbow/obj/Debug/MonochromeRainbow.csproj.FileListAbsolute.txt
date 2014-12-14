@@ -123,3 +123,5 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\Monochro
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\sfx\fail.wav
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\sounds\bgm\Laconic Granny.mp3
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Laconic Granny.mp3
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\other\youSuck.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\other\youSuck.png

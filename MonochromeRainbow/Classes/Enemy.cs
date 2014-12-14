@@ -14,7 +14,6 @@ namespace MonochromeRainbow
 	{
 		private	TextureInfo	textureInfo;
 		public bool			isAlive = false;
-		public bool 		touchingPlatform;
 		public float 		yVelocity;
 		public TextureInfo[] textures;
 		public bool 		onGround;
@@ -67,8 +66,7 @@ namespace MonochromeRainbow
 			{
 				behavior = 0;
 				health = 3;
-				damage = 1;
-				touchingPlatform = false;		
+				damage = 1;	
 				
 				textures[0] = new TextureInfo("/Application/textures/enemy/Enemytex.png");
 			}
@@ -79,7 +77,6 @@ namespace MonochromeRainbow
 				behavior = 1;
 				health = 5;
 				damage = 1;
-				touchingPlatform = false;
 				textures[0] = new TextureInfo("/Application/textures/enemy/Flyer.png");
 			}
 			//Tanky Enemy
@@ -88,7 +85,6 @@ namespace MonochromeRainbow
 				behavior = 2;
 				health = 7;
 				damage = 4;
-				touchingPlatform = false;
 				textures[0] = new TextureInfo("/Application/textures/enemy/tank.png");
 			}	
 		}

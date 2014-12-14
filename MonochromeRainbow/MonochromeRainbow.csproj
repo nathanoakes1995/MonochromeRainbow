@@ -113,7 +113,6 @@
     <Content Include="textures\enemy\Flyer.png" />
     <Content Include="textures\enemy\tank.png" />
     <Content Include="textures\other\bullet.png" />
-    <Content Include="textures\other\Platform.png" />
     <Content Include="textures\player\playerSheet.png" />
     <Content Include="textures\player\sprites\coffeeLeft.png" />
     <Content Include="textures\player\sprites\coffeeRight.png" />
@@ -127,6 +126,8 @@
     <Content Include="sounds\sfx\damn.wav" />
     <Content Include="sounds\sfx\fail.wav" />
     <Content Include="sounds\bgm\Laconic Granny.mp3" />
+    <Content Include="textures\other\platform.png" />
+    <Content Include="textures\other\youSuck.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="textures\Thumbs.db" />

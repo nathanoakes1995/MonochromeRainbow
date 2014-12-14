@@ -11,24 +11,36 @@ namespace MonochromeRainbow
 	public class Background
 	{	
 		private TextureInfo		textureInfo;
+		private TextureInfo		youSuck;
 		private TextureInfo[]	textures;
 		
 		public int		level;
 		public float	width;
+		public bool		stop;
 		
+		public Vector2	youSuckPos;
 		public SpriteUV background;
-		public SpriteUV	secondBackground;
+		public SpriteUV youSuckText;
 		
 		//Public functions.
 		public Background (Scene scene)
 		{
 			SetTextureArray();
 			
+			youSuck = new TextureInfo("/Application/textures/other/youSuck.png");
+			
 			textureInfo = new TextureInfo();
 			textureInfo = textures[0];
 			
+			stop = false;
+			youSuckPos = new Vector2(480,600);
+			
 			background			= new SpriteUV(textureInfo);
 			background.Quad.S	= textureInfo.TextureSizef;
+			
+			youSuckText			= new SpriteUV(youSuck);
+			youSuckText.Quad.S	= textureInfo.TextureSizef;
+			youSuckText.Position = (youSuckPos);
 			
 			//Get background bounds.
 			Bounds2 b = background.Quad.Bounds2();
@@ -53,16 +65,30 @@ namespace MonochromeRainbow
 			textures[9]		= new TextureInfo("/Application/textures/background/levelBackground(-10%).png");	
 			textures[10]	= new TextureInfo("/Application/textures/background/levelBackground(0%).png");
 		}
-		
+
 		public void Update(Scene scene, int saturation, int level)
 		{
-			if(level == 4 || level == 5)
+			if (level == 4 || level == 5)
 			{	
 				textureInfo	= textures[saturation];
 			
 				background.TextureInfo = textureInfo;
 				background.Draw();
 			}
+			
+			if (level == 8)
+			{
+				if(youSuckText.Position.Y != 272.0f)
+				{
+					youSuckPos.Y -= 5.0f;
+					youSuckText.Position += youSuckPos;
+				}
+				else
+				{
+					stop = true;
+				}
+			}
+				
 		}
 	
 		public void Dispose()

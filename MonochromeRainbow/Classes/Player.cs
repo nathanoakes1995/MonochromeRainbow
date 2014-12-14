@@ -108,7 +108,6 @@ namespace MonochromeRainbow
 			coolTime+= elapsedTime;
 			shootCoolTime += elapsedTime;
 			
-			
 			if (!canBeHit)
 				{
 					if (coolTime >= 2000)
