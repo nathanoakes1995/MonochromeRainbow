@@ -15,6 +15,7 @@ namespace MonochromeRainbow
 		private TextureInfo[]	textures;
 		
 		public int		level;
+		public float	yVelocity;
 		public float	width;
 		public bool		stop;
 		
@@ -33,6 +34,8 @@ namespace MonochromeRainbow
 			textureInfo = textures[0];
 			
 			stop = false;
+			yVelocity = -1.0f;
+			
 			youSuckPos = new Vector2(480,600);
 			
 			background			= new SpriteUV(textureInfo);
@@ -40,7 +43,6 @@ namespace MonochromeRainbow
 			
 			youSuckText				= new SpriteUV(youSuckTexture);
 			youSuckText.Quad.S		= youSuckTexture.TextureSizef;
-			youSuckText.Position	= youSuckPos;
 			
 			//Get background bounds.
 			Bounds2 b = background.Quad.Bounds2();
@@ -80,16 +82,19 @@ namespace MonochromeRainbow
 			{
 				if(youSuckPos.Y > 272.0f)
 				{
-					youSuckPos.Y -= 1.0f;
-					youSuckText.Position += youSuckPos;
+					yVelocity = -1.0f;
 					
+					youSuckPos.Y += yVelocity;
+					
+					youSuckText.Position = youSuckPos;
 					youSuckText.Draw();
 				}
 				else
 				{
 					stop = true;
 				}
-				Console.WriteLine (youSuckPos.Y);
+				
+				Console.WriteLine (youSuckText.Position);
 			}
 				
 		}
