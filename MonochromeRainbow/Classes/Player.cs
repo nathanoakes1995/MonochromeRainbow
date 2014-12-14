@@ -31,9 +31,10 @@ namespace MonochromeRainbow
 		public bool				startOn;
 		public Bounds2 			bounds;
 		public Vector2			playerPos; 
-		public SpriteUV			player;
+		public SpriteTile			player;
 		public Bullet			bullet;
 		public bool 			bulletActive;
+		public Vector2 			playerRec;
 		public bool 			isPressed;
 		public Vector2i[]		tileIndex;
 		public bool 			aiming;
@@ -48,6 +49,8 @@ namespace MonochromeRainbow
 			timer = new Timer();
 			previousTime = (float)timer.Milliseconds();
 			player			= new SpriteTile(textureInfo,tileIndex[0]); 
+			playerRec = new Vector2(32,64);
+			player.Quad.S = playerRec;
 			playerPos = playerPosition;
 			bounds = new Bounds2();
 			health = 10;

@@ -3,8 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\Player.cs">
     <Files>
       <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="230" Column="8" />
-      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="50" Column="15" />
-      <File FileName="..\3\MonochromeRainbow\Classes\Player.cs" Line="25" Column="1" />
+      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="38" Column="28" />
       <File FileName="MonochromeRainbow\Classes\Managers\AudioManager.cs" Line="73" Column="5" />
       <File FileName="MonochromeRainbow\Classes\Managers\LevelManager.cs" Line="33" Column="39" />
       <File FileName="MonochromeRainbow\Classes\Collectible.cs" Line="152" Column="4" />
