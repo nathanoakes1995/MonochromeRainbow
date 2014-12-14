@@ -32,7 +32,7 @@ namespace MonochromeRainbow
 		public bool				startOn;
 		public Bounds2 			bounds;
 		public Vector2			playerPos; 
-		public SpriteTile			player;
+		public SpriteTile		player;
 		public Bullet[]			bullet;
 		public bool[] 			bulletActive;
 		public Vector2 			playerRec;

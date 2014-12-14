@@ -45,6 +45,7 @@ namespace MonochromeRainbow
 			
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
+			bounds = new Bounds2();
 			DecideSpawnLocation ();
 			yVelocity = 5.0f;
 			onGround = false;
