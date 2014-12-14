@@ -153,6 +153,7 @@ namespace MonochromeRainbow
 		
 		public static void Update()
 		{
+			level = levelManager.level;
 			currentTime = (float)timer.Milliseconds();
 			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
