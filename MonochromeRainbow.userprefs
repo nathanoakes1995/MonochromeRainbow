@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\Managers\AudioManager.cs">
     <Files>
-      <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="87" Column="4" />
-      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="52" Column="9" />
-      <File FileName="MonochromeRainbow\Classes\Managers\AudioManager.cs" Line="164" Column="14" />
-      <File FileName="MonochromeRainbow\Classes\Managers\LevelManager.cs" Line="33" Column="39" />
-      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="463" Column="74" />
+      <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="81" Column="16" />
+      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="217" Column="15" />
+      <File FileName="MonochromeRainbow\Classes\Managers\AudioManager.cs" Line="46" Column="53" />
+      <File FileName="MonochromeRainbow\Classes\Managers\LevelManager.cs" Line="40" Column="36" />
+      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="479" Column="5" />
       <File FileName="MonochromeRainbow\Classes\Background.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

@@ -10,9 +10,13 @@ namespace MonochromeRainbow
 		private BgmPlayer	BGMPlayer;
   		private Bgm[]		BGM;
 		
+		private SoundPlayer	SFXPlayer;
+  		private Sound[]		SFX;
+		
 		public int	gameSong;
 		public int	pauseSong;
 		public bool	BGMPlaying;
+		public bool	SFXPlaying;
 		public double gameTime;
 		public double pauseTime;
 		public bool inGame;
@@ -23,10 +27,13 @@ namespace MonochromeRainbow
 		public AudioManager()
 		{
 			SetBGMArray();
+			SetSFXArray();
 			
-			BGMPlayer =		BGM[0].CreatePlayer();
+			BGMPlayer =	BGM[0].CreatePlayer();
+			SFXPlayer = SFX[0].CreatePlayer();
 			
 			BGMPlayer.Loop = true;
+			SFXPlayer.Loop = false;
 		}
 		
 		public void SetBGMArray()
@@ -39,11 +46,17 @@ namespace MonochromeRainbow
 			BGM[4]	= new Bgm("/Application/sounds/bgm/Rollin at 5 - electronic.mp3");	
 			BGM[5]	= new Bgm("/Application/sounds/bgm/Doh De Oh.mp3");
 			BGM[6]	= new Bgm("/Application/sounds/bgm/Hackbeat.mp3");
-			BGM[7]	= new Bgm("/Application/sounds/bgm/One Sly Move.mp3");
+			BGM[7]	= new Bgm("/Application/sounds/bgm/Laconic Granny.mp3");
 		}
 		
 		public void SetSFXArray()
 		{
+			SFX = new Sound[5];
+			SFX[0] = new Sound("/Application/sounds/sfx/shoot.wav");
+			SFX[1] = new Sound("/Application/sounds/sfx/impact.wav");
+			SFX[2] = new Sound("/Application/sounds/sfx/grunt.wav");
+			SFX[3] = new Sound("/Application/sounds/sfx/damn.wav");
+			SFX[4] = new Sound("/Application/sounds/sfx/fail.wav");
 		}
 		
 		public void SetBGM(int level)
@@ -157,15 +170,22 @@ namespace MonochromeRainbow
 				
 				gameTime = 0;
 				pauseTime = 0;
-				
-				PlayBGM();
 			}
 					
 			PlayBGM();
 		}
 		
-		public void PlayBGM()
+		public void SetSFX(int effect)
 		{
+			SFXPlayer.Dispose();
+			
+			SFXPlayer = SFX[effect].CreatePlayer();
+			
+			PlaySFX();
+		}
+		
+		public void PlayBGM()
+		{		
 			BGMPlayer.Play();
 			
 			BGMPlaying = true;
@@ -178,6 +198,20 @@ namespace MonochromeRainbow
 			BGMPlaying = false;
 		}
 		 
+		public void PlaySFX()
+		{
+			SFXPlayer.Play();
+			
+			SFXPlaying = true;
+		}
+		
+		public void StopSFX()
+		{
+			SFXPlayer.Stop();
+			
+			SFXPlaying = false;
+		}
+		
 		public int randomNumber(int chance)
 		{
 			var randGen = new Random(Guid.NewGuid().GetHashCode());

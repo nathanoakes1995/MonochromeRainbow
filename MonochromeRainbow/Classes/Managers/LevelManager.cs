@@ -30,7 +30,19 @@ namespace MonochromeRainbow
 		{
 			level = changeTo;
 			
-			AppMain.audioManager.SetBGM(level);
+			if (level != 8)
+			{
+				AppMain.audioManager.SetBGM(level);
+			}
+			else
+			{
+				AppMain.audioManager.StopBGM();
+				AppMain.audioManager.SetSFX(3);
+				System.Threading.Thread.Sleep(1000);
+				AppMain.audioManager.SetSFX(4);
+				System.Threading.Thread.Sleep(2500);
+				AppMain.audioManager.SetBGM(level);
+			}
 		}
 	}
 }

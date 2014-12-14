@@ -224,8 +224,9 @@ namespace MonochromeRainbow
         	}				
 			if(!isAlive)
 			{
-				AppMain.levelManager.SetLevel (8);	
+				AppMain.levelManager.SetLevel(8);
 			}
+			
 			//Left movement.
 			if (!aiming)
 			{
