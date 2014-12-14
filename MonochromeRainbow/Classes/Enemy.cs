@@ -146,6 +146,16 @@ namespace MonochromeRainbow
 		public void RunAIType1(Vector2 playerLocation)
 		{
 			//normalAI
+			if(onGround)
+			{
+				yVelocity = 0;	
+			}
+			else
+			{
+				yVelocity-= 0.5f;
+			}
+			
+			//moves towards the player
 			if (position.X < playerLocation.X)
 			{
 				position.X += 0.9f;	
@@ -156,13 +166,15 @@ namespace MonochromeRainbow
 				position.X -= 0.9f;	
 				sprite.Position = position;
 			}
+			
+			
 			//checks if enemy is on the ground
 			if (position.Y < 0.0f)
 			{
 				position.Y = 0.0f;
 				onGround = true;
 			}
-			
+			//jumps if on the ground
 			if (onGround)
 			{
 				if (mayJumpAgain)
@@ -171,30 +183,28 @@ namespace MonochromeRainbow
 					{
 						mayJumpAgain = false;
 						yVelocity = 11.0f;
+						onGround = false;
 					}
 				}
         		
         		else
 				{
 					mayJumpAgain = true;
+					onGround = true;
         		}
 			}
-			if (!onGround)
+			//falls properly if on the ground
+			if(!onGround)
 			{
-				yVelocity -= 0.5f;
+				if (yVelocity < -5.0f)
+				{
+        			yVelocity = -5.0f;
+				}
 			}
-			if (yVelocity < -5.0f)
-			{
-        		yVelocity = -5.0f;
-			}
-			
 			
 			position.Y += yVelocity;
 			
-			if (yVelocity != -5.0f)
-			{
-				onGround = false;
-    		}
+
 			
 			
 		}
@@ -205,6 +215,8 @@ namespace MonochromeRainbow
 		public void RunAIType2(Vector2 playerLocation)
 		{
 			//flying AI
+			
+			//moves towards the player on the X axis
 			if (position.X < playerLocation.X)
 			{
 				position.X += 0.9f;	
@@ -219,35 +231,42 @@ namespace MonochromeRainbow
 		
 		public void RunAIType3(Vector2 playerLocation)
 		{
+			if(onGround)
+			{
+				yVelocity = 0;	
+			}
+			//Moves towards player on X axis
 			if (position.X < playerLocation.X)
 			{
-				position.X += 0.5f;	
+				position.X += 0.9f;	
 				sprite.Position = position;
 			}
 			if (position.X > playerLocation.X)
 			{
-				position.X -= 0.5f;	
+				position.X -= 0.9f;	
 				sprite.Position = position;
 			}
-			if(onGround == false)
-			{
-				yVelocity = 5.0f;
-			}
-			else if (onGround == true)
-			{
-				yVelocity = 0.0f;
-			}	
-			
 			//checks if enemy is on the ground
 			if (position.Y < 0.0f)
 			{
 				position.Y = 0.0f;
 				onGround = true;
 			}
-			if(onGround == false)
+			
+			//Falls if not on the ground
+			if (!onGround)
 			{
-				position.Y -= yVelocity;	
+				yVelocity -= 0.5f;
 			}
+			if (yVelocity < -5.0f)
+			{
+        		yVelocity = -5.0f;
+			}
+			
+			
+			position.Y += yVelocity;
+			
+
 		}
 	
 	}

@@ -257,9 +257,10 @@ namespace MonochromeRainbow
 			{
 				if(enemy[i].isAlive)
 				{
-					enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
+					
 					for(int k = 0; k< 9; k++)
 					{
+						enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
 						platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);
 						if(enemy[i].yVelocity>0)
 						{
@@ -275,12 +276,18 @@ namespace MonochromeRainbow
 									}
 								}
 							}
-							
-						
-							
+						if(enemy[i].yVelocity == 0)
+						{
+							if(!enemy[i].bounds.Overlaps(platforms[k].bounds) && enemy[i].position.Y != -5.0f)
+							{
+								enemy[i].onGround = false;
+							}
 						}
 						
+							
 					}
+						
+				}
 					player.player.GetContentWorldBounds (ref player.bounds);
 					if(enemy[i].bounds.Overlaps (player.bounds))
 					{
