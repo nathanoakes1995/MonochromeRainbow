@@ -68,8 +68,9 @@ namespace MonochromeRainbow
 				damage = 1;
 				textures[0] = new TextureInfo("/Application/textures/enemy/flyingEnemy.png");
 			}
+			
 			//Normal enemy
-			else if(randomNumber() <= 85)
+			if(0 <= randomNumber() && randomNumber() <= 85)
 			{
 				behavior = 0;
 				health = 3;
@@ -77,8 +78,9 @@ namespace MonochromeRainbow
 				
 				textures[0] = new TextureInfo("/Application/textures/enemy/regularEnemy.png");
 			}
+			
 			//Tanky Enemy
-			else
+			if(0 <= randomNumber() && randomNumber() <= 85)
 			{
 				behavior = 2;
 				health = 7;
