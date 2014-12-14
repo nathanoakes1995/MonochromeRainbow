@@ -47,7 +47,7 @@ namespace MonochromeRainbow
 		public static Background		background;
 		public static AudioManager		audioManager;
 		public static LevelManager		levelManager;
-		public static UISceneManager	uiSceneManager;
+		//public static UISceneManager	uiSceneManager;
 		public static Collectibles		collectible;
 		public static Platform[]		platforms;	
 		public static Panel				panel;
@@ -93,9 +93,9 @@ namespace MonochromeRainbow
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
 			
-			//Set the ui scene
+			//Set the ui scene.
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
-			panel  = new Panel();
+			Panel panel  = new Panel();
 			panel.Width  = Director.Instance.GL.Context.GetViewport().Width;
 			panel.Height = Director.Instance.GL.Context.GetViewport().Height;
 			
@@ -139,6 +139,9 @@ namespace MonochromeRainbow
 				90 - rainbowLabel.Width/2,
 				Director.Instance.GL.Context.GetViewport().Height*0.1f - rainbowLabel.Height/2 + 20);
 			panel.AddChildLast(rainbowLabel);
+				
+			uiScene.RootWidget.AddChildLast(panel);
+			UISystem.SetScene(uiScene);
 
 			enemy = new Enemy[20];
 			
@@ -282,9 +285,18 @@ namespace MonochromeRainbow
 									enemy[i].onGround = false;
 								}
 							}
+												
+							if(enemy[i].bounds.Overlaps(platforms[k].bounds))
+							{
+								Console.WriteLine ("ON PLATFORM");
+							}
+							else
+							{
+								Console.WriteLine ("Nope");
+							}
 						}
 					}
-					
+				
 					player.player.GetContentWorldBounds (ref player.bounds);
 					
 					if(enemy[i].bounds.Overlaps(player.bounds))
@@ -403,7 +415,7 @@ namespace MonochromeRainbow
 			//Load audio manager
 			audioManager = new AudioManager();
 			
-			uiSceneManager = new UISceneManager();
+			//uiSceneManager = new UISceneManager();
 			
 			if(level == 5)
 			{

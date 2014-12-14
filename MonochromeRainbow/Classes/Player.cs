@@ -142,7 +142,6 @@ namespace MonochromeRainbow
 					if (ammo > 0)
 					{
 						ammo --;
-						Console.WriteLine(ammo);
 						bool bulletNotActive = false;
 						int checkCount = 0;
 						do

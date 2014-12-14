@@ -14,8 +14,8 @@ namespace MonochromeRainbow
 	{
 		private	TextureInfo	textureInfo;
 		public bool			isAlive = false;
+		public bool 		airborne = true;
 		public float 		yVelocity;
-		bool airborne = true;
 			
 		public bool 		onGround;
 		public int 			type;
@@ -202,10 +202,8 @@ namespace MonochromeRainbow
 				position.Y = 0.0f;
 				onGround = true;
 			}
-
-			position.Y += yVelocity;
 			
-			Console.WriteLine (yVelocity);
+			position.Y += yVelocity;
 		}
 		
 		public void RunAIType2(Vector2 playerLocation)
