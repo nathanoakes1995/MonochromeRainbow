@@ -3,8 +3,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\Background.cs">
     <Files>
       <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="441" Column="24" />
-      <File FileName="MonochromeRainbow\Classes\Background.cs" Line="65" Column="58" />
-      <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="87" Column="16" />
+      <File FileName="MonochromeRainbow\Classes\Background.cs" Line="44" Column="4" />
+      <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="18" Column="33" />
+      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="339" Column="32" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

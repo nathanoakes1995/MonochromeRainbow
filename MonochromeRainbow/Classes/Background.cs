@@ -11,7 +11,7 @@ namespace MonochromeRainbow
 	public class Background
 	{	
 		private TextureInfo		textureInfo;
-		private TextureInfo		youSuck;
+		private TextureInfo		youSuckTexture;
 		private TextureInfo[]	textures;
 		
 		public int		level;
@@ -27,7 +27,7 @@ namespace MonochromeRainbow
 		{
 			SetTextureArray();
 			
-			youSuck = new TextureInfo("/Application/textures/other/youSuck.png");
+			youSuckTexture = new TextureInfo("/Application/textures/other/youSuck.png");
 			
 			textureInfo = new TextureInfo();
 			textureInfo = textures[0];
@@ -38,9 +38,9 @@ namespace MonochromeRainbow
 			background			= new SpriteUV(textureInfo);
 			background.Quad.S	= textureInfo.TextureSizef;
 			
-			youSuckText			= new SpriteUV(youSuck);
-			youSuckText.Quad.S	= textureInfo.TextureSizef;
-			youSuckText.Position = (youSuckPos);
+			youSuckText				= new SpriteUV(youSuckTexture);
+			youSuckText.Quad.S		= youSuckTexture.TextureSizef;
+			youSuckText.Position	= youSuckPos;
 			
 			//Get background bounds.
 			Bounds2 b = background.Quad.Bounds2();
@@ -78,7 +78,7 @@ namespace MonochromeRainbow
 			
 			if (level == 8)
 			{
-				if(youSuckText.Position.Y != 272.0f)
+				if(youSuckPos.Y > 272.0f)
 				{
 					youSuckPos.Y -= 1.0f;
 					youSuckText.Position += youSuckPos;
