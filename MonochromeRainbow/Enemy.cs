@@ -13,7 +13,7 @@ namespace MonochromeRainbow
 	public class Enemy
 	{
 		private	TextureInfo	textureInfo;
-		
+		public bool			isAlive = false;
 		public float 		yVelocity;
 		public bool 		onGround;
 		public int 			type;
@@ -28,9 +28,14 @@ namespace MonochromeRainbow
 	
 		public Enemy (Scene scene)
 		{
+			
+			
+		}
+		
+		public void Load(Scene scene)
+		{
 			DecideType ();
-			yVelocity = 5.0f;
-			onGround = false;
+			
 			spawnPositions = new Vector2[9];
 			SetSpawnLocations();
 			sprite	= new SpriteUV();
@@ -38,13 +43,14 @@ namespace MonochromeRainbow
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
 			DecideSpawnLocation ();
-			
+			yVelocity = 5.0f;
+			onGround = false;
 			scene.AddChild(sprite);
-			
-			
 		}
+		
 		public void DecideType()
 		{
+		
 			//Decide random type
 			Random rnd = new Random();
 			type = rnd.Next (0,3);

@@ -23,7 +23,11 @@ namespace MonochromeRainbow
 		private static Sce.PlayStation.HighLevel.UI.Label				rainbowLabel;
 		
 		public static GamePadData	gamePadData;
-		
+		public static Timer enemyTimer = new Timer();
+		public static float enemyPreviousTime; 
+		public static float enemyCurrentTime;
+		public static float enemyElapsedTime;
+		public static float enemyCoolTime;
 		public static int	specMoveProg;
 		public static int	score;
 		public static int	multiplier;
@@ -34,7 +38,7 @@ namespace MonochromeRainbow
 		public static float	elapsedTime;
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
-		
+		public static bool 	enemyCanBeSpawned;
 		//public static Menu 			menu;
 		public static Background	background;
 		public static AudioManager	audioManager;
@@ -42,6 +46,7 @@ namespace MonochromeRainbow
 		public static Collectibles	collectible;
 		public static Platform[]	platforms;
 		public static Timer			timer;
+		
 		public static Player		player;
 		public static Enemy[]		enemy;
 		public static Bullet		bullet;
@@ -201,15 +206,36 @@ namespace MonochromeRainbow
 				
 				//Update EnemyAI
 				for(int i = 0; i< 20; i++)
-				{		
-					enemy[i].RunAI (player.playerPos);
-					enemy[i].Update ();
+				{
+					if(enemy[i].isAlive)
+					{
+						enemy[i].RunAI (player.playerPos);
+						enemy[i].Update ();
+					}
+					
+					else
+					{
+						
+						
+						SpawnEnemy (i);
+						
+					}
 				}
 				
 				level = levelManager.level;
 				healthLabel.Text = "Health: " + player.health;
 				CheckCollision();
 			}
+		}
+		
+		public static void SpawnEnemy(int whichEnemy)
+		{		
+			
+			enemy[whichEnemy].isAlive = true;
+			enemy[whichEnemy].Load (gameScene);
+			
+						
+			
 		}
 		
 		public static void CheckLevel()
@@ -220,23 +246,26 @@ namespace MonochromeRainbow
 		{
 			for(int i = 0; i < 20; i++)
 			{
-				enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
-				for(int k = 0; k< 9; k++)
+				if(enemy[i].isAlive)
 				{
-					platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);	
-					if(enemy[i].bounds.Overlaps(platforms[k].bounds))
+					enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
+					for(int k = 0; k< 9; k++)
 					{
-						enemy[i].position.Y = (platforms[k].position.Y + 20);
-						enemy[i].sprite.Position= enemy[i].position;
+						platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);	
+						if(enemy[i].bounds.Overlaps(platforms[k].bounds))
+						{
+							enemy[i].position.Y = (platforms[k].position.Y + 20);
+							enemy[i].sprite.Position= enemy[i].position;
+						}
 					}
-				}
-				player.player.GetContentWorldBounds (ref player.bounds);
-				if(enemy[i].bounds.Overlaps (player.bounds))
-				{
-					if(player.canBeHit)
+					player.player.GetContentWorldBounds (ref player.bounds);
+					if(enemy[i].bounds.Overlaps (player.bounds))
 					{
-						player.health = player.health - enemy[i].damage;
-						player.canBeHit = false;
+						if(player.canBeHit)
+						{
+							player.health = player.health - enemy[i].damage;
+							player.canBeHit = false;
+						}
 					}
 				}
 			}
@@ -356,7 +385,25 @@ namespace MonochromeRainbow
 			{
 				//Create the background.
 				background = new Background(gameScene);
-				
+				for(int i = 0; i< 20; i++)
+				{
+					while(enemyCoolTime < 300)
+					{
+						currentTime = (float)timer.Milliseconds();
+						elapsedTime = currentTime - previousTime;
+						previousTime = currentTime;
+						enemyCoolTime+= elapsedTime;
+					}
+					if (enemyCoolTime >= 300)
+					{
+						enemyCoolTime = 0.0f;
+						enemy[i] = new Enemy(gameScene);
+						enemy[i].isAlive = true;
+						enemy[i].Load (gameScene);
+						
+					}
+						
+				}
 				//Hardcoded platform locations
 				platforms = new Platform[9];
 				platforms[0] = new Platform(gameScene, new Vector2(0, 136));
@@ -373,10 +420,7 @@ namespace MonochromeRainbow
 				player = new Player(gameScene, new Vector2(0,0));
 	
 				//Create an enemy
-				for(int i = 0; i< 20; i++)
-				{
-					enemy[i] = new Enemy(gameScene);	
-				}	
+				
 				
 				//Create a bullet
 				bullet = new Bullet(gameScene, new Vector2(300,300), 1);
