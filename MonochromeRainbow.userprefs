@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\AppMain.cs">
     <Files>
-      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="299" Column="35" />
+      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="59" Column="1" />
       <File FileName="MonochromeRainbow\Classes\Player.cs" Line="269" Column="13" />
       <File FileName="MonochromeRainbow\Classes\Managers\AudioManager.cs" Line="73" Column="5" />
       <File FileName="MonochromeRainbow\Classes\Managers\LevelManager.cs" Line="33" Column="39" />
