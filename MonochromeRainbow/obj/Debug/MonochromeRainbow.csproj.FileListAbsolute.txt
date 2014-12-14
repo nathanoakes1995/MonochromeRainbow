@@ -1,7 +1,3 @@
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\shaders\shaders\Texture.cgx
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.info
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\shaders\Texture.cgx
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.exe
@@ -103,3 +99,7 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\Monochro
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Doh De Oh.mp3
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Hackbeat.mp3
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow.psdp
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\shaders\shaders\Texture.cgx
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb

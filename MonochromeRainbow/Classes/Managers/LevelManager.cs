@@ -31,7 +31,6 @@ namespace MonochromeRainbow
 			level = changeTo;
 			
 			AppMain.audioManager.SetBGM(level);
-			AppMain.audioManager.PlayBGM();
 		}
 	}
 }

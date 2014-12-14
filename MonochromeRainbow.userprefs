@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\Managers\AudioManager.cs">
     <Files>
-      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="195" Column="5" />
+      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="169" Column="37" />
       <File FileName="MonochromeRainbow\Classes\Player.cs" Line="173" Column="11" />
-      <File FileName="MonochromeRainbow\Classes\Managers\AudioManager.cs" Line="147" Column="7" />
-      <File FileName="MonochromeRainbow\Classes\Managers\LevelManager.cs" Line="21" Column="29" />
+      <File FileName="MonochromeRainbow\Classes\Managers\AudioManager.cs" Line="77" Column="5" />
+      <File FileName="MonochromeRainbow\Classes\Managers\LevelManager.cs" Line="33" Column="39" />
       <File FileName="MonochromeRainbow\Classes\Collectible.cs" Line="152" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>

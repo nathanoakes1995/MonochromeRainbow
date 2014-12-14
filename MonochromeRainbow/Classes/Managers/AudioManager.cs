@@ -8,24 +8,25 @@ namespace MonochromeRainbow
 	public class AudioManager
 	{
 		private BgmPlayer	BGMPlayer;
-		private BgmPlayer	BGMAuxPlayer;
   		private Bgm[]		BGM;
 		
 		public int	gameSong;
 		public int	pauseSong;
 		public bool	BGMPlaying;
+		public double gameTime;
+		public double pauseTime;
 		public bool inGame;
 		public bool hasPaused;
+		public bool wasGame;
+		public bool wasPaused;
 		
 		public AudioManager()
 		{
 			SetBGMArray();
 			
 			BGMPlayer =		BGM[0].CreatePlayer();
-			BGMAuxPlayer =	BGM[1].CreatePlayer();
 			
 			BGMPlayer.Loop = true;
-			BGMAuxPlayer.Loop = true;
 		}
 		
 		public void SetBGMArray()
@@ -47,45 +48,41 @@ namespace MonochromeRainbow
 		
 		public void SetBGM(int level)
 		{	
+			if(wasGame)
+			{
+				gameTime = BGMPlayer.Time;
+				wasGame = false;
+			}
+			if(wasPaused)
+			{
+				pauseTime = BGMPlayer.Time;
+				wasPaused = false;
+			}
+			
+			BGMPlayer.Dispose();
+			
 			if(level == 0)
 			{
-				BGMPlayer.Dispose();
 				BGMPlayer = BGM[0].CreatePlayer();
-				
-				PlayBGM();
 			}
 			else if(level == 1)
 			{
-				BGMPlayer.Dispose();
 				BGMPlayer = BGM[6].CreatePlayer();
-				
-				PlayBGM();
 			}
 			else if(level == 2)
 			{
-				BGMPlayer.Dispose();
 				BGMPlayer = BGM[1].CreatePlayer();
-				
-				PlayBGM();
 			}
 			else if(level == 3)
 			{
-				BGMPlayer.Dispose();
 				BGMPlayer = BGM[2].CreatePlayer();
-				
-				PlayBGM();
 			}
 			else if(level == 4)
 			{
-				BGMPlayer.Dispose();
 				BGMPlayer = BGM[5].CreatePlayer();
-				
-				PlayBGM();
 			}
 			else if(level == 5 || level == 6)
 			{
-				BGMAuxPlayer.Pause();
-				
 				if(!inGame)
 				{
 					if(randomNumber(90) == 0)
@@ -106,37 +103,30 @@ namespace MonochromeRainbow
 					if(gameSong == 0)
 					{
 						BGMPlayer = BGM[3].CreatePlayer();
+						BGMPlayer.Time = gameTime;
 					}
 					else
 					{
 						BGMPlayer = BGM[4].CreatePlayer();
+						BGMPlayer.Time = gameTime;
 					}
 				}
 				
-				if (BGMPlayer.Status == BgmStatus.Paused)
-				{
-					BGMPlayer.Resume();
-				}
-				else
-				{
-					PlayBGM();
-				}
+				wasGame = true;
 			}
 			else if (level == 7)
 			{
-				BGMPlayer.Pause();
-				
 				if(!hasPaused)
 				{
 					if(randomNumber(50) == 0)
 					{
-						BGMAuxPlayer = BGM[5].CreatePlayer();
+						BGMPlayer = BGM[5].CreatePlayer();
 						pauseSong = 0;
 						hasPaused = true;
 					}
 					else
 					{
-						BGMAuxPlayer = BGM[6].CreatePlayer();
+						BGMPlayer = BGM[6].CreatePlayer();
 						pauseSong = 1;
 						hasPaused = true;
 					}
@@ -145,24 +135,18 @@ namespace MonochromeRainbow
 				{
 					if(pauseSong == 0)
 					{
-						BGMAuxPlayer = BGM[5].CreatePlayer();
+						BGMPlayer = BGM[5].CreatePlayer();
+						BGMPlayer.Time = pauseTime;
+						
 					}
 					else
 					{
-						BGMAuxPlayer = BGM[6].CreatePlayer();
+						BGMPlayer = BGM[6].CreatePlayer();
+						BGMPlayer.Time = pauseTime;
 					}
 				}
 				
-				if (BGMAuxPlayer.Status == BgmStatus.Paused)
-				{
-					BGMAuxPlayer.Resume();
-				}
-				else
-				{
-					BGMAuxPlayer.Play();
-			
-					BGMPlaying = true;
-				}
+				wasPaused = true;
 			}
 			else
 			{
@@ -171,8 +155,16 @@ namespace MonochromeRainbow
 				inGame = false;
 				hasPaused = false;
 				
+				gameTime = 0;
+				pauseTime = 0;
+				
 				PlayBGM();
 			}
+			
+			Console.WriteLine ("Game Time:" + gameTime);
+			Console.WriteLine ("Pause Time:" + pauseTime);
+					
+			PlayBGM();
 		}
 		
 		public void PlayBGM()

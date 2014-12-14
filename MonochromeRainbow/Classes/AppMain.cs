@@ -150,7 +150,6 @@ namespace MonochromeRainbow
 			LoadLevel(level);
 			
 			audioManager.SetBGM(level);
-			audioManager.PlayBGM();
 			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
@@ -168,8 +167,6 @@ namespace MonochromeRainbow
 			
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
-			
-			Console.WriteLine(levelManager.level);
 			
 			if(level == 7)
 			{
