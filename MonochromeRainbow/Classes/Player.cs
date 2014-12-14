@@ -364,6 +364,7 @@ namespace MonochromeRainbow
 					bullet[i].sprite.GetContentWorldBounds (ref bullet[i].bounds);
 					if (enemy.bounds.Overlaps (bullet[i].bounds))
 					{
+						AppMain.audioManager.SetSFX(1);
 						bullet[i].bulletPosition = new Vector2(-100.0f, -100.0f);
 						bulletActive[i] = false;
 						scene.RemoveChild (enemy.sprite, true);
