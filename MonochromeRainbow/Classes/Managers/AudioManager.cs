@@ -12,7 +12,7 @@ namespace MonochromeRainbow
 		
 		public bool	BGMPlaying;
 		
-		public AudioManager ()
+		public AudioManager()
 		{
 			SetBGMArray();
 			
