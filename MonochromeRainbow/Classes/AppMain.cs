@@ -37,6 +37,7 @@ namespace MonochromeRainbow
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
 		public static bool 	enemyCanBeSpawned;
+		public static bool	isPressed;
 		
 		public static GamePadData		gamePadData;
 		public static Background		background;
@@ -154,6 +155,7 @@ namespace MonochromeRainbow
 		public static void Update()
 		{
 			level = levelManager.level;
+			
 			currentTime = (float)timer.Milliseconds();
 			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
@@ -163,15 +165,19 @@ namespace MonochromeRainbow
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
 			
+			Console.WriteLine(levelManager.level);
+			
 			if(level == 1)
 			{
-				uiSceneManager.uiScenes[1].RootWidget.Visible = true;
-				
-				if ((gamePadData.Buttons & GamePadButtons.Start) != 0)
+				if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && !isPressed)
         		{
-        			AppMain.levelManager.SetLevel(5);
-					uiSceneManager.uiScenes[1].RootWidget.Visible = false;
-        		}	
+					AppMain.levelManager.SetLevel(5);
+					isPressed = true;	
+        		} 
+				if ((gamePadData.Buttons & GamePadButtons.Start) == 0)
+        		{		
+					isPressed = false;
+        		}		
 			}
 			
 			if(level == 5)

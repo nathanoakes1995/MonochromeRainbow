@@ -32,6 +32,7 @@ namespace MonochromeRainbow
 		public SpriteUV			player;
 		public Bullet			bullet;
 		public bool 			bulletActive;
+		public bool 			isPressed;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
@@ -163,10 +164,15 @@ namespace MonochromeRainbow
         		}
         	}	
 			
-			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && AppMain.levelManager.level == 5)
+			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && !isPressed)
         	{
-        		AppMain.levelManager.SetLevel(1);
-        	}					
+				AppMain.levelManager.SetLevel(1);
+				isPressed = true;
+        	} 
+			if ((gamePadData.Buttons & GamePadButtons.Start) == 0)
+        	{
+				isPressed = false;
+        	}				
 			
 			//Left movement.
         	if ((gamePadData.Buttons & GamePadButtons.Left) != 0)
