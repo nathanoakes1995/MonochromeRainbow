@@ -206,19 +206,16 @@ namespace MonochromeRainbow
 				
 				//Update EnemyAI
 				for(int i = 0; i< 20; i++)
-				{
+				{//checks to see if enemy is alive
 					if(enemy[i].isAlive)
-					{
+					{	//runs AI for living enemy
 						enemy[i].RunAI (player.playerPos);
 						enemy[i].Update ();
 					}
 					
 					else
-					{
-						
-						
+					{	//respawns a dead one
 						SpawnEnemy (i);
-						
 					}
 				}
 				
@@ -230,7 +227,7 @@ namespace MonochromeRainbow
 		
 		public static void SpawnEnemy(int whichEnemy)
 		{		
-			
+			//for spawning a new enemy if one is dead.
 			enemy[whichEnemy].isAlive = true;
 			enemy[whichEnemy].Load (gameScene);
 			
@@ -385,25 +382,7 @@ namespace MonochromeRainbow
 			{
 				//Create the background.
 				background = new Background(gameScene);
-				for(int i = 0; i< 20; i++)
-				{
-					while(enemyCoolTime < 300)
-					{
-						currentTime = (float)timer.Milliseconds();
-						elapsedTime = currentTime - previousTime;
-						previousTime = currentTime;
-						enemyCoolTime+= elapsedTime;
-					}
-					if (enemyCoolTime >= 300)
-					{
-						enemyCoolTime = 0.0f;
-						enemy[i] = new Enemy(gameScene);
-						enemy[i].isAlive = true;
-						enemy[i].Load (gameScene);
-						
-					}
-						
-				}
+				
 				//Hardcoded platform locations
 				platforms = new Platform[9];
 				platforms[0] = new Platform(gameScene, new Vector2(0, 136));
@@ -434,6 +413,26 @@ namespace MonochromeRainbow
 				ammoLabel.Text = "Ammo: " + player.ammo;
 				multiplierLabel.Text = "Mutiplier: x" + multiplier;
 				rainbowLabel.Text = "";
+				
+				for(int i = 0; i< 20; i++)
+				{ //so this thing counts to 300 ms then spawns an enemy, then repeats
+					while(enemyCoolTime < 300)
+					{
+						currentTime = (float)timer.Milliseconds();
+						elapsedTime = currentTime - previousTime;
+						previousTime = currentTime;
+						enemyCoolTime+= elapsedTime;
+					}
+					if (enemyCoolTime >= 300)
+					{	//when the timer reaches 300ms, it creates a new enemy and sets it to alive, then loads it.  I changed that stuff for respawning.
+						enemyCoolTime = 0.0f;
+						enemy[i] = new Enemy(gameScene);
+						enemy[i].isAlive = true;
+						enemy[i].Load (gameScene);
+						
+					}
+						
+				}
 			}
 		}	
 	}

@@ -34,6 +34,7 @@ namespace MonochromeRainbow
 		
 		public void Load(Scene scene)
 		{
+			//the reason this isn't in the constructor is because the enemies need to respawn.
 			DecideType ();
 			
 			spawnPositions = new Vector2[9];
