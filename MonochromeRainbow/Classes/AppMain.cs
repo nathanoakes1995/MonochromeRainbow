@@ -174,6 +174,7 @@ namespace MonochromeRainbow
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
 			ammoLabel.Text = "Ammo: " + player.ammo;
+			multiplierLabel.Text = "Multiplier: x" + multiplier;
 			
 			if(level == 7)
 			{
