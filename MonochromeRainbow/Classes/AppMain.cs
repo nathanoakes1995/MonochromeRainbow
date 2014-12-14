@@ -237,7 +237,7 @@ namespace MonochromeRainbow
 				
 				if (!collectibleActive)
 				{
-					if (accumulatedDeltaTime >= 2000)
+					if (accumulatedDeltaTime >= 20000)
 					{
 						//Create a collectible
 						collectible = new Collectibles(gameScene, specMoveProg);
