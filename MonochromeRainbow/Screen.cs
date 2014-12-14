@@ -42,8 +42,9 @@ namespace MonochromeRainbow
 		
 		public void LoadScreens(Scene scene, int level)
 		{
-			if(level == 0)
+			if(level == 5)
 			{
+				scene.RemoveChild(screen, true);
 				//AppMain.mainMenu = new MainMenu();
 			}
 		}

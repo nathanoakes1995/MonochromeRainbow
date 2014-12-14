@@ -378,6 +378,7 @@ namespace MonochromeRainbow
 				screen = new Screen(gameScene, level);
 							
 				levelManager.SetLevel(5);
+				screen.LoadScreens(gameScene, levelManager.level);
 			}
 			
 			if(level == 5)
