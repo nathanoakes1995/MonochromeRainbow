@@ -22,6 +22,8 @@ namespace MonochromeRainbow
 		private static Sce.PlayStation.HighLevel.UI.Label				multiplierLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				rainbowLabel;
 		
+		public static GamePadData	gamePadData;
+		public static Timer enemyTimer = new Timer();
 		public static float enemyPreviousTime; 
 		public static float enemyCurrentTime;
 		public static float enemyElapsedTime;
@@ -36,17 +38,20 @@ namespace MonochromeRainbow
 		public static float	elapsedTime;
 		public static float	accumulatedDeltaTime;
 		public static bool	collectibleActive;
-		public static bool 	enemyCanBeSpawned;
+<<<<<<< HEAD
 		
-		public static GamePadData	gamePadData;
 		public static Screen		screen;
+=======
+		public static bool 	enemyCanBeSpawned;
+		//public static Menu 			menu;
+>>>>>>> origin/master
 		public static Background	background;
+		private MainMenu	mainMenu;
 		public static AudioManager	audioManager;
 		public static LevelManager	levelManager;
 		public static Collectibles	collectible;
 		public static Platform[]	platforms;
 		public static Timer			timer;
-		public static Timer 		enemyTimer = new Timer();
 		
 		public static Player		player;
 		public static Enemy[]		enemy;
@@ -140,7 +145,7 @@ namespace MonochromeRainbow
 			enemy = new Enemy[20];
 			
 			score = 0;
-			level = 4;
+			level = 5;
 			multiplier = 1;
 			
 			LoadLevel(level);		
@@ -162,8 +167,7 @@ namespace MonochromeRainbow
 			
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
-			
-			if(level == 4)
+			if(level == 5)
 			{
 			
 				//Collectible update
@@ -373,12 +377,9 @@ namespace MonochromeRainbow
 			//Create up audio
 			audioManager = new AudioManager();
 			
-			if(level == 0)
-			{
-				screen = new Screen(gameScene, level);
-			}
+			screen = new Screen(gameScene, level);
 			
-			if(level == 4)
+			if(level == 5)
 			{
 				//Create the background.
 				background = new Background(gameScene);

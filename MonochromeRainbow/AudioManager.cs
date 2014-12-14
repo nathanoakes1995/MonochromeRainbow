@@ -17,8 +17,6 @@ namespace MonochromeRainbow
 			SetBGMArray();
 			
 			BGMPlayer = BGM[0].CreatePlayer();
-			
-			Console.Write(BGMPlayer.Status);
 		}
 		
 		public void SetBGMArray()
@@ -27,12 +25,11 @@ namespace MonochromeRainbow
 			BGM[0]	= new Bgm("/Application/sounds/bgm/Pamgaea.mp3");	
 			BGM[1]	= new Bgm("/Application/sounds/bgm/Mining by Moonlight.mp3");
 			BGM[2]	= new Bgm("/Application/sounds/bgm/Local Forecast - Elevator.mp3");
-			BGM[3]	= new Bgm("/Application/sounds/bgm/Son Of A Rocket.mp3");		
-			BGM[4]	= new Bgm("/Application/sounds/bgm/Rollin at 5.mp3");	
-			BGM[5]	= new Bgm("/Application/sounds/bgm/Rollin at 5 - electronic.mp3");	
-			BGM[6]	= new Bgm("/Application/sounds/bgm/One Sly Move.mp3");
-			BGM[7]	= new Bgm("/Application/sounds/bgm/One Sly Move.mp3");	//sure screen
-
+			BGM[3]	= new Bgm("/Application/sounds/bgm/Son Of A Rocket.mp3");
+			BGM[4]	= new Bgm("/Application/sounds/bgm/One Sly Move.mp3");	//sure screen
+			BGM[5]	= new Bgm("/Application/sounds/bgm/Rollin at 5.mp3");	
+			BGM[6]	= new Bgm("/Application/sounds/bgm/Rollin at 5 - electronic.mp3");	
+			BGM[7]	= new Bgm("/Application/sounds/bgm/One Sly Move.mp3");
 		}
 		
 		public void SetSFXArray()

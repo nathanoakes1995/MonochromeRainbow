@@ -22,7 +22,7 @@ namespace MonochromeRainbow
 		//Public functions.
 		public Background (Scene scene)
 		{
-			SetTextureArray ();
+			SetTextureArray();
 			
 			textureInfo = new TextureInfo();
 			textureInfo = textures[0];
@@ -58,15 +58,8 @@ namespace MonochromeRainbow
 		
 		public void Update(Scene scene, int saturation, int level)
 		{
-			if(level == 4)
+			if(level == 4 || level == 5)
 			{	
-				textureInfo	= textures[saturation];
-			
-				background.TextureInfo = textureInfo;
-				background.Draw();
-			}
-			if(level == 5)
-			{
 				textureInfo	= textures[saturation];
 			
 				background.TextureInfo = textureInfo;
