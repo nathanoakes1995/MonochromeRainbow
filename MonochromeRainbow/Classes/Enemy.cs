@@ -12,10 +12,11 @@ namespace MonochromeRainbow
 {
 	public class Enemy
 	{
-		private	TextureInfo	textureInfo;
+		private TextureInfo		textureInfo;
+		private	TextureInfo[]	textures;
+		
 		public bool				isAlive = false;
 		public float			yVelocity;
-		public TextureInfo[]	textures;
 		public bool 			onGround;
 		public int 				type;
 		public int 				behavior;
@@ -33,18 +34,15 @@ namespace MonochromeRainbow
 		
 		public void Load(Scene scene)
 		{
-			textures = new TextureInfo[1];
-			//the reason this isn't in the constructor is because the enemies need to respawn.
-			DecideType ();
-			
-			spawnPositions = new Vector2[9];
-			SetSpawnLocations();
-			sprite	= new SpriteUV();
-			
 			SetEnemyArray();
 			
 			textureInfo = new TextureInfo();
 			textureInfo = textures[0];
+			
+			DecideType ();
+			
+			spawnPositions = new Vector2[9];
+			SetSpawnLocations();
 			sprite			= new SpriteUV(textureInfo);
 			sprite.Quad.S	= textureInfo.TextureSizef;
 			bounds = new Bounds2();
