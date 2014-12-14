@@ -38,11 +38,11 @@ namespace MonochromeRainbow
 			float yVelocity = 0.0f;
 			switch (bulletDirection)
 			{
-    		case 0:
+    		case 4:
 				//Right
 				xVelocity = 5.0f;
         	break;
-    		case 1:
+    		case 3:
 				//Up-Right
 				xVelocity = 5.0f;
 				yVelocity = 5.0f;
@@ -51,7 +51,7 @@ namespace MonochromeRainbow
 				//Up
 				yVelocity = 5.0f;
 			break;
-			case 3:
+			case 1:
 				//Up-Left
 				xVelocity = -5.0f;
 				yVelocity = 5.0f;

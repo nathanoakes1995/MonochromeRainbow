@@ -143,6 +143,7 @@ namespace MonochromeRainbow
 					}
 				}
 			}			
+			
 			//Shooting.
         	if ((gamePadData.Buttons & GamePadButtons.Square) != 0)
         	{
@@ -166,6 +167,7 @@ namespace MonochromeRainbow
 							}
 							checkCount++;
 						} 
+						
 						while(bulletNotActive == false);
 					}
 
@@ -234,7 +236,7 @@ namespace MonochromeRainbow
         		{
 					xVelocity = -4.0f;
 					//Aim Left
-					facingDirection = 4;
+					facingDirection = 0;
         		}
 			
 				//Right movement.
@@ -242,7 +244,7 @@ namespace MonochromeRainbow
         		{
 					xVelocity = 4.0f;
 					//Aim Right
-					facingDirection = 0;
+					facingDirection = 4;
         		}
 			}
 			if ((gamePadData.Buttons & GamePadButtons.R) != 0)
@@ -276,12 +278,12 @@ namespace MonochromeRainbow
 				if ((gamePadData.Buttons & GamePadButtons.Left) != 0 & !((gamePadData.Buttons & GamePadButtons.Up) != 0))
         		{
 					//Aim Left
-					facingDirection = 4;
+					facingDirection = 0;
         		}
         		if ((gamePadData.Buttons & GamePadButtons.Right) != 0 & !((gamePadData.Buttons & GamePadButtons.Up) != 0))
         		{
 					//Aim Right
-					facingDirection = 0;
+					facingDirection = 4;
         		}
 			}
 					
