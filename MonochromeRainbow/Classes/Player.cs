@@ -143,6 +143,7 @@ namespace MonochromeRainbow
 					}
 				}
 			}			
+			
 			//Shooting.
         	if ((gamePadData.Buttons & GamePadButtons.Square) != 0)
         	{
@@ -158,6 +159,7 @@ namespace MonochromeRainbow
 						{
 							if (bulletActive[checkCount] == false)
 							{
+								AppMain.audioManager.SetSFX(0);
 								bullet[checkCount].bulletDirection = facingDirection;
 								bullet[checkCount].bulletPosition = new Vector2(playerPos.X + 28,playerPos.Y + 32);
 								bulletActive[checkCount] = true;
@@ -166,6 +168,7 @@ namespace MonochromeRainbow
 							}
 							checkCount++;
 						} 
+						
 						while(bulletNotActive == false);
 					}
 
@@ -234,7 +237,7 @@ namespace MonochromeRainbow
         		{
 					xVelocity = -4.0f;
 					//Aim Left
-					facingDirection = 4;
+					facingDirection = 0;
         		}
 			
 				//Right movement.
@@ -242,7 +245,7 @@ namespace MonochromeRainbow
         		{
 					xVelocity = 4.0f;
 					//Aim Right
-					facingDirection = 0;
+					facingDirection = 4;
         		}
 			}
 			if ((gamePadData.Buttons & GamePadButtons.R) != 0)
@@ -276,12 +279,12 @@ namespace MonochromeRainbow
 				if ((gamePadData.Buttons & GamePadButtons.Left) != 0 & !((gamePadData.Buttons & GamePadButtons.Up) != 0))
         		{
 					//Aim Left
-					facingDirection = 4;
+					facingDirection = 0;
         		}
         		if ((gamePadData.Buttons & GamePadButtons.Right) != 0 & !((gamePadData.Buttons & GamePadButtons.Up) != 0))
         		{
 					//Aim Right
-					facingDirection = 0;
+					facingDirection = 4;
         		}
 			}
 					
@@ -361,6 +364,7 @@ namespace MonochromeRainbow
 					bullet[i].sprite.GetContentWorldBounds (ref bullet[i].bounds);
 					if (enemy.bounds.Overlaps (bullet[i].bounds))
 					{
+						AppMain.audioManager.SetSFX(1);
 						bullet[i].bulletPosition = new Vector2(-100.0f, -100.0f);
 						bulletActive[i] = false;
 						scene.RemoveChild (enemy.sprite, true);
