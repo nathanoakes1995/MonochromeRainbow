@@ -70,7 +70,7 @@ namespace MonochromeRainbow
 				damage = 1;
 				touchingPlatform = false;		
 				
-				textures[0] = new TextureInfo("/Application/textures/Enemytex.png");
+				textures[0] = new TextureInfo("/Application/textures/enemy/Enemytex.png");
 			}
 			//Flying Enemy
 			else if (type == 1)
@@ -80,7 +80,7 @@ namespace MonochromeRainbow
 				health = 5;
 				damage = 1;
 				touchingPlatform = false;
-				textures[0] = new TextureInfo("/Application/textures/Flyer.png");
+				textures[0] = new TextureInfo("/Application/textures/enemy/Flyer.png");
 			}
 			//Tanky Enemy
 			else if (type ==2)
@@ -89,7 +89,7 @@ namespace MonochromeRainbow
 				health = 7;
 				damage = 4;
 				touchingPlatform = false;
-				textures[0] = new TextureInfo("/Application/textures/tank.png");
+				textures[0] = new TextureInfo("/Application/textures/enemy/tank.png");
 			}	
 		}
 		
