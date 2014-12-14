@@ -69,6 +69,7 @@ namespace MonochromeRainbow
 			//Flying Enemy
 			if(randomNumber() <= 50)
 			{
+				type = 1;
 				behavior = 1;
 				health = 5;
 				damage = 1;
@@ -79,6 +80,7 @@ namespace MonochromeRainbow
 			//Normal enemy
 			if(50 < randomNumber() && randomNumber() <= 85)
 			{
+				type = 0;
 				behavior = 0;
 				health = 3;
 				damage = 1;	
@@ -89,6 +91,7 @@ namespace MonochromeRainbow
 			//Tanky Enemy
 			if(85 < randomNumber())
 			{
+				type = 2;
 				behavior = 2;
 				health = 7;
 				damage = 3;

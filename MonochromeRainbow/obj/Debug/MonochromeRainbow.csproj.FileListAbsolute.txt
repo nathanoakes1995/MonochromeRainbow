@@ -288,9 +288,6 @@ C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeR
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\collectibles\rainbow\5-B.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\collectibles\rainbow\6-O.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\collectibles\rainbow\7-W.png
-C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\Enemytex.png
-C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\Flyer.png
-C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\tank.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\other\bullet.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\player\playerSheet.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\player\sprites\coffeeLeft.png
@@ -349,9 +346,6 @@ C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeR
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\collectibles\rainbow\5-B.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\collectibles\rainbow\6-O.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\collectibles\rainbow\7-W.png
-C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\Enemytex.png
-C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\Flyer.png
-C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\tank.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\other\bullet.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\player\playerSheet.png
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\player\sprites\coffeeLeft.png
@@ -379,3 +373,9 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\Monochro
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\flyingEnemy.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\heavyEnemy.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\regularEnemy.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\flyingEnemy.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\heavyEnemy.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\regularEnemy.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\flyingEnemy.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\heavyEnemy.png
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\regularEnemy.png
