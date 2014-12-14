@@ -300,6 +300,11 @@ namespace MonochromeRainbow
 				//Player loses vertical speed tue to gravity.
 				yVelocity -= 0.5f;
 				
+				if ((gamePadData.Buttons & GamePadButtons.Left) == 0 && (gamePadData.Buttons & GamePadButtons.Right) == 0)
+				{
+					xVelocity *= 0.975f;
+				}
+				
 				if (facingDirection < 2)
 				{
 					textureInfo	= textures[4];

@@ -149,11 +149,10 @@ namespace MonochromeRainbow
 			enemy = new Enemy[20];
 			
 			score = 0;
-			level = 0;
 			multiplier = 1;
 			justDied = true;
 			
-			LoadLevel(level);
+			LoadLevel();
 			
 			audioManager.SetBGM(level);
 			
@@ -444,7 +443,7 @@ namespace MonochromeRainbow
 			}
 		}
 		
-		public static void LoadLevel(int level)
+		public static void LoadLevel()
 		{	
 			//Load level manager
 			levelManager = new LevelManager();
@@ -455,52 +454,53 @@ namespace MonochromeRainbow
 			//uiSceneManager = new UISceneManager();
 			
 
-				//Create the background.
-				background = new Background(gameScene);
-				
-				//Hardcoded platform locations
-				platforms = new Platform[9];
-				platforms[0] = new Platform(gameScene, new Vector2(0, 136));
-				platforms[1] = new Platform(gameScene, new Vector2(0, 272));
-				platforms[2] = new Platform(gameScene, new Vector2(0, 408));
-				platforms[3] = new Platform(gameScene, new Vector2(380, 200));
-				platforms[4] = new Platform(gameScene, new Vector2(380, 340));
-				platforms[5] = new Platform(gameScene, new Vector2(380, 60));
-				platforms[6] = new Platform(gameScene, new Vector2(760, 136));
-				platforms[7] = new Platform(gameScene, new Vector2(760, 272));
-				platforms[8] = new Platform(gameScene, new Vector2(760, 408));
+			//Create the background.
+			background = new Background(gameScene);
+			
+			//Hardcoded platform locations
+			platforms = new Platform[9];
+			platforms[0] = new Platform(gameScene, new Vector2(0, 136));
+			platforms[1] = new Platform(gameScene, new Vector2(0, 272));
+			platforms[2] = new Platform(gameScene, new Vector2(0, 408));
+			platforms[3] = new Platform(gameScene, new Vector2(380, 200));
+			platforms[4] = new Platform(gameScene, new Vector2(380, 340));
+			platforms[5] = new Platform(gameScene, new Vector2(380, 60));
+			platforms[6] = new Platform(gameScene, new Vector2(760, 136));
+			platforms[7] = new Platform(gameScene, new Vector2(760, 272));
+			platforms[8] = new Platform(gameScene, new Vector2(760, 408));
 
-				//Create the player
-				player = new Player(gameScene, new Vector2(0,0));
+			//Create the player
+			player = new Player(gameScene, new Vector2(0,0));
 	
-				//Create an enemy
-									
-				//Value for progress through collecting letters for special move
-				specMoveProg = 0;	
-				
-				healthLabel.Text = "Health: " + player.health;
-				scoreLabel.Text = "" + score;
-				ammoLabel.Text = "Ammo: " + player.ammo;
-				multiplierLabel.Text = "Mutiplier: x" + multiplier;
-				rainbowLabel.Text = "";
-				
-				for(int i = 0; i< 20; i++)
-				{ //so this thing counts to 300 ms then spawns an enemy, then repeats
-					while(enemyCoolTime < 50)
-					{
-						currentTime = (float)timer.Milliseconds();
-						elapsedTime = currentTime - previousTime;
-						previousTime = currentTime;
-						enemyCoolTime+= elapsedTime;
-					}
-					if (enemyCoolTime >= 50)
-					{	//when the timer reaches 300ms, it creates a new enemy and sets it to alive, then loads it.  I changed that stuff for respawning.
-						enemyCoolTime = 0.0f;
-						enemy[i] = new Enemy(gameScene);
-						enemy[i].isAlive = true;
-						enemy[i].Load (gameScene);
-					}	
+			//Create an enemy
+								
+			//Value for progress through collecting letters for special move
+			specMoveProg = 0;	
+			
+			healthLabel.Text = "Health: " + player.health;
+			scoreLabel.Text = "" + score;
+			ammoLabel.Text = "Ammo: " + player.ammo;
+			multiplierLabel.Text = "Mutiplier: x" + multiplier;
+			rainbowLabel.Text = "";
+			
+			for(int i = 0; i< 20; i++)
+			{ 
+				//so this thing counts to 300 ms then spawns an enemy, then repeats
+				while(enemyCoolTime < 50)
+				{
+					currentTime = (float)timer.Milliseconds();
+					elapsedTime = currentTime - previousTime;
+					previousTime = currentTime;
+					enemyCoolTime+= elapsedTime;
 				}
-			}	
+				if (enemyCoolTime >= 50)
+				{	//when the timer reaches 300ms, it creates a new enemy and sets it to alive, then loads it.  I changed that stuff for respawning.
+					enemyCoolTime = 0.0f;
+					enemy[i] = new Enemy(gameScene);
+					enemy[i].isAlive = true;
+					enemy[i].Load (gameScene);
+				}	
+			}
+		}	
 	}
 }

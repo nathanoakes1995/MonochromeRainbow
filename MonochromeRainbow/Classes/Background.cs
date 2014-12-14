@@ -54,7 +54,7 @@ namespace MonochromeRainbow
 		
 		public void SetTextureArray()
 		{
-			textures = new TextureInfo[11];
+			textures = new TextureInfo[13];
 			textures[0]		= new TextureInfo("/Application/textures/background/levelBackground(-100%).png");
 			textures[1]		= new TextureInfo("/Application/textures/background/levelBackground(-90%).png");
 			textures[2]		= new TextureInfo("/Application/textures/background/levelBackground(-80%).png");	
@@ -66,10 +66,20 @@ namespace MonochromeRainbow
 			textures[8]		= new TextureInfo("/Application/textures/background/levelBackground(-20%).png");	
 			textures[9]		= new TextureInfo("/Application/textures/background/levelBackground(-10%).png");	
 			textures[10]	= new TextureInfo("/Application/textures/background/levelBackground(0%).png");
+			textures[11]	= new TextureInfo("/Application/textures/background/menuBackground.png");
+			textures[12]	= new TextureInfo("/Application/textures/background/pauseBackground.png");
 		}
 
 		public void Update(Scene scene, int saturation, int level)
 		{
+			if (level == 0)
+			{
+				textureInfo	= textures[11];
+			
+				background.TextureInfo = textureInfo;
+				background.Draw();
+			}
+			
 			if (level == 4 || level == 5)
 			{	
 				textureInfo	= textures[saturation];
