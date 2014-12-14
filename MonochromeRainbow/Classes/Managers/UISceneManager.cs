@@ -23,7 +23,7 @@ namespace MonochromeRainbow
         {
             // Create scene
 			uiScenes = new Sce.PlayStation.HighLevel.UI.Scene[6];
-			uiScenes[0] = new Sce.PlayStation.HighLevel.UI.Scene();
+			uiScenes[0] = AppMain.uiScene;
 			uiScenes[1] = new Screen.MainMenu();
 			uiScenes[2] = new Screen.Tutorial();
 			uiScenes[3] = new Screen.Options();
@@ -31,7 +31,7 @@ namespace MonochromeRainbow
 			uiScenes[5] = new Screen.Confirmation();
         }
 
-        public void Update ()
+        public void Update (Scene scene)
         {
             // Query gamepad for current state
             var gamePadData = GamePad.GetData (0);

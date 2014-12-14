@@ -1,7 +1,3 @@
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.exe
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\System.Core.dll
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.info
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\shaders\Texture.cgx
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.exe
@@ -220,17 +216,17 @@ C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeR
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\shaders\shaders\Texture.cgx
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.info
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\shaders\Texture.cgx
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.exe
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\Sce.PlayStation.HighLevel.UI.dll
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\System.Json.dll
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\System.Xml.dll
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\System.Runtime.Serialization.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\System.Core.dll
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\System.ServiceModel.Web.dll
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\System.ServiceModel.dll
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\Sce.PlayStation.HighLevel.GameEngine2D.dll
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.exe.mdb
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\bottompipe.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\toppipe.png
@@ -325,3 +321,7 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\Monochro
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\playerSheet.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\Player.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow.psdp
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\shaders\shaders\Texture.cgx
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb

@@ -15,7 +15,7 @@ namespace MonochromeRainbow
 	public class AppMain
 	{
 		private static Sce.PlayStation.HighLevel.GameEngine2D.Scene 	gameScene;
-		private static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
+		public static Sce.PlayStation.HighLevel.UI.Scene 				uiScene;
 		private static Sce.PlayStation.HighLevel.UI.Label				scoreLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				healthLabel;
 		private static Sce.PlayStation.HighLevel.UI.Label				ammoLabel;
@@ -88,7 +88,8 @@ namespace MonochromeRainbow
 			gameScene = new Sce.PlayStation.HighLevel.GameEngine2D.Scene();
 			gameScene.Camera.SetViewFromViewport();
 			
-			//Set the ui scene.
+			//Set the ui scene
+			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
 			Panel panel  = new Panel();
 			panel.Width  = Director.Instance.GL.Context.GetViewport().Width;
 			panel.Height = Director.Instance.GL.Context.GetViewport().Height;
@@ -134,11 +135,9 @@ namespace MonochromeRainbow
 				Director.Instance.GL.Context.GetViewport().Height*0.1f - rainbowLabel.Height/2 + 20);
 			panel.AddChildLast(rainbowLabel);
 			
-			LoadLevel(level);
-			
-			uiSceneManager.uiScenes[0].RootWidget.AddChildLast(panel);
-			UISystem.SetScene(uiSceneManager.uiScenes[0]);
-			
+			uiScene.RootWidget.AddChildLast(panel);
+			UISystem.SetScene(uiScene);
+
 			enemy = new Enemy[20];
 			
 			score = 0;
@@ -147,6 +146,8 @@ namespace MonochromeRainbow
 			
 			AppMain.audioManager.SetBGM(level);
 			AppMain.audioManager.PlayBGM();
+			
+			LoadLevel(level);
 			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
@@ -191,14 +192,14 @@ namespace MonochromeRainbow
 					{
 						//Delete collectible
 						collectible.delete(gameScene);
-						collectible = null;
+						collectible = null; 
 						collectibleActive = false;
 						accumulatedDeltaTime = 0.0f;
 					}
 				}
 				
 				//Player update
-				player.Update(levelManager.level, gameScene);
+				player.Update(gameScene);
 				int health = player.health;
 				
 				//Background update
@@ -373,7 +374,6 @@ namespace MonochromeRainbow
 			//Load audio manager
 			audioManager = new AudioManager();
 			
-			//Load scene manager
 			uiSceneManager = new UISceneManager();
 			
 			if(level == 5)

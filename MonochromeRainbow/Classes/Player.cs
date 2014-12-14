@@ -21,7 +21,6 @@ namespace MonochromeRainbow
 		public float			elapsedTime;
 		public float			coolTime;
 		public int 				ammo;
-		public int				level;
 		public int 				facingDirection;
 		public float			xVelocity;
 		public float			yVelocity;
@@ -70,7 +69,7 @@ namespace MonochromeRainbow
 		//	textures[11]	= new TextureInfo("/Application/textures/background(0%).png");
 		//}
 		
-		public void Update(int level, Scene gameScene)
+		public void Update(Scene gameScene)
 		{
         	//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
