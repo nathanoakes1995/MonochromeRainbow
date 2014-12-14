@@ -13,8 +13,13 @@ namespace MonochromeRainbow
 	{
 		private	TextureInfo	textureInfo;
 		private GamePadData	gamePadData;
-		
+		public bool 			canBeHit;
 		public int				health;
+		public Timer			timer;
+		public float			previousTime; 
+		public float			currentTime;
+		public float			elapsedTime;
+		public float				coolTime;
 		public int 				ammo;
 		public int				level;
 		public float			xVelocity;
@@ -30,7 +35,8 @@ namespace MonochromeRainbow
 		public Player (Scene scene, Vector2 playerPosition)
 		{
 			textureInfo		= new TextureInfo("/Application/textures/Player.png");
-			
+			timer = new Timer();
+			previousTime = (float)timer.Milliseconds();
 			player			= new SpriteUV(textureInfo);	
 			player.Quad.S 	= textureInfo.TextureSizef;
 			playerPos = playerPosition;
@@ -64,7 +70,21 @@ namespace MonochromeRainbow
 		{
         	//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
+			currentTime = (float)timer.Milliseconds();
+			elapsedTime = currentTime - previousTime;
+			previousTime = currentTime;
+			coolTime+= elapsedTime;
 			
+			
+			if (!canBeHit)
+				{
+					if (coolTime >= 2000)
+					{
+						coolTime = 0.0f;
+						canBeHit= true;
+					}
+				}
+				
 			if(health < 0)
 			{
 				health = 0;	

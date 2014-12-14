@@ -207,7 +207,7 @@ namespace MonochromeRainbow
 				}
 				
 				level = levelManager.level;
-				
+				healthLabel.Text = "Health: " + player.health;
 				CheckCollision();
 			}
 		}
@@ -233,7 +233,11 @@ namespace MonochromeRainbow
 				player.player.GetContentWorldBounds (ref player.bounds);
 				if(enemy[i].bounds.Overlaps (player.bounds))
 				{
-					player.health = player.health - enemy[i].damage;
+					if(player.canBeHit)
+					{
+						player.health = player.health - enemy[i].damage;
+						player.canBeHit = false;
+					}
 				}
 			}
 			
