@@ -1,11 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\AppMain.cs">
     <Files>
-      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="490" Column="6" />
-      <File FileName="MonochromeRainbow\Classes\Background.cs" Line="74" Column="4" />
-      <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="18" Column="33" />
-      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="305" Column="24" />
+      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="167" Column="31" />
+      <File FileName="MonochromeRainbow\Classes\Background.cs" Line="108" Column="2" />
+      <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="243" Column="19" />
+      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="361" Column="3" />
       <File FileName="MonochromeRainbow\Classes\Managers\LevelManager.cs" Line="31" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>

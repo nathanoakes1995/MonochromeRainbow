@@ -103,10 +103,7 @@ namespace MonochromeRainbow
 				{
 					stop = true;
 				}
-				
-				Console.WriteLine (youSuckText.Position);
-			}
-				
+			}			
 		}
 	
 		public void Dispose()

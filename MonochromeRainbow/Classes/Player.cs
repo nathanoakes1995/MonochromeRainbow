@@ -352,7 +352,7 @@ namespace MonochromeRainbow
 			
 			if(health == 0)	
 			{
-				isAlive = false;
+				//isAlive = false;
 			}
 			
 			player.Position = playerPos;

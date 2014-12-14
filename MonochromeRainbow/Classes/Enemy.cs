@@ -236,39 +236,49 @@ namespace MonochromeRainbow
 		
 		public void RunAIType3(Vector2 playerLocation)
 		{
-			if(onGround)
+			//normalAI
+			
+			if (onGround)
 			{
-				yVelocity = 0;	
+				yVelocity = 0;
 			}
-			//Moves towards player on X axis
+			
+			//moves towards the player
 			if (position.X < playerLocation.X)
 			{
 				position.X += 0.9f;	
-				sprite.Position = position;
 			}
 			if (position.X > playerLocation.X)
 			{
 				position.X -= 0.9f;	
-				sprite.Position = position;
+			}
+						
+			//Check if enemy is off the ground.
+			if (!onGround)
+			{
+        		//Enemy loses vertical speed tue to gravity.
+				yVelocity -= 0.5f;
 			}
 			
-			//checks if enemy is on the ground
+			//Enemy shouldn't fall too fast. [Terminal Velocity]
+			if (yVelocity < -5.0f)
+			{
+        		yVelocity = -5.0f;
+			}
+			
+			//Check if enemy is on the ground.
+            if (yVelocity != 0.0f)
+			{
+				onGround = false;
+    		}
+			
+			//checks if enemy has hit the ground.
 			if (position.Y < 0.0f)
 			{
 				position.Y = 0.0f;
 				onGround = true;
 			}
 			
-			//Falls if not on the ground
-			if (!onGround)
-			{
-				yVelocity -= 0.5f;
-			}
-			if (yVelocity < -5.0f)
-			{
-        		yVelocity = -5.0f;
-			}
-				
 			position.Y += yVelocity;
 		}
 	}
