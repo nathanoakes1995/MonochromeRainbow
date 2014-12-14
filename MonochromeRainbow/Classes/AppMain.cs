@@ -45,6 +45,7 @@ namespace MonochromeRainbow
 		public static UISceneManager	uiSceneManager;
 		public static Collectibles		collectible;
 		public static Platform[]		platforms;	
+		public static Panel				panel;
 		public static Timer				timer;
 		public static Timer 			enemyTimer = new Timer();
 		
@@ -90,7 +91,7 @@ namespace MonochromeRainbow
 			
 			//Set the ui scene
 			uiScene = new Sce.PlayStation.HighLevel.UI.Scene();
-			Panel panel  = new Panel();
+			panel  = new Panel();
 			panel.Width  = Director.Instance.GL.Context.GetViewport().Width;
 			panel.Height = Director.Instance.GL.Context.GetViewport().Height;
 			
@@ -134,9 +135,6 @@ namespace MonochromeRainbow
 				90 - rainbowLabel.Width/2,
 				Director.Instance.GL.Context.GetViewport().Height*0.1f - rainbowLabel.Height/2 + 20);
 			panel.AddChildLast(rainbowLabel);
-			
-			uiScene.RootWidget.AddChildLast(panel);
-			UISystem.SetScene(uiScene);
 
 			enemy = new Enemy[20];
 			
@@ -164,9 +162,20 @@ namespace MonochromeRainbow
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
 			
+			if(level == 1)
+			{
+				uiSceneManager.uiScenes[1].RootWidget.Visible = true;
+				
+				if ((gamePadData.Buttons & GamePadButtons.Start) != 0)
+        		{
+        			AppMain.levelManager.SetLevel(5);
+					uiSceneManager.uiScenes[1].RootWidget.Visible = false;
+        		}	
+			}
+			
 			if(level == 5)
 			{
-			
+
 				//Collectible update
 				if (collectibleActive)
 				{
@@ -230,14 +239,7 @@ namespace MonochromeRainbow
 		{		
 			//for spawning a new enemy if one is dead.
 			enemy[whichEnemy].isAlive = true;
-			enemy[whichEnemy].Load (gameScene);
-			
-						
-			
-		}
-		
-		public static void CheckLevel()
-		{
+			enemy[whichEnemy].Load (gameScene);				
 		}
 		
 		public static void CheckCollision()

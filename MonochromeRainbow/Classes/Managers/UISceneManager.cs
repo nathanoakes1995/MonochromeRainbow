@@ -17,18 +17,24 @@ namespace MonochromeRainbow
         public UISceneManager()
         {
             Initialize();
+			
+			for(int i = 0; i < 5; i++)
+			{
+				uiScenes[i].RootWidget.AddChildLast(AppMain.panel);
+				uiScenes[i].RootWidget.Visible = false;
+				UISystem.SetScene(uiScenes[i]);
+			}
         }
 
         public void Initialize ()
         {
             // Create scene
-			uiScenes = new Sce.PlayStation.HighLevel.UI.Scene[6];
-			uiScenes[0] = AppMain.uiScene;
-			uiScenes[1] = new Screen.MainMenu();
-			uiScenes[2] = new Screen.Tutorial();
-			uiScenes[3] = new Screen.Options();
-			uiScenes[4] = new Screen.HighScores();
-			uiScenes[5] = new Screen.Confirmation();
+			uiScenes = new Sce.PlayStation.HighLevel.UI.Scene[5];
+			uiScenes[0] = new Screen.MainMenu();
+			uiScenes[1] = new Screen.Tutorial();
+			uiScenes[2] = new Screen.Options();
+			uiScenes[3] = new Screen.HighScores();
+			uiScenes[4] = new Screen.Confirmation();
         }
 
         public void Update (Scene scene)
@@ -41,10 +47,6 @@ namespace MonochromeRainbow
 
             // Update UI Toolkit
             UISystem.Update(touchDataList);
-        }
-
-        public void Render ()
-        {
         }
     }
 }

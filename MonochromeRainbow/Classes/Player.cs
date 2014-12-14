@@ -163,11 +163,16 @@ namespace MonochromeRainbow
         		}
         	}	
 			
+			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && AppMain.levelManager.level == 5)
+        	{
+        		AppMain.levelManager.SetLevel(1);
+        	}					
+			
 			//Left movement.
         	if ((gamePadData.Buttons & GamePadButtons.Left) != 0)
         	{
-        		xVelocity = -4.0f;
-				facingDirection = 4;
+				xVelocity = -4.0f;
+				facingDirection = 0;
         	}
 			
 			//Right movement.
