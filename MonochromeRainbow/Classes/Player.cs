@@ -22,6 +22,8 @@ namespace MonochromeRainbow
 		public float			coolTime;
 		public int 				ammo;
 		public int 				facingDirection;
+		public int				playerWidth;
+		public int				playerHeight;
 		public float			xVelocity;
 		public float			yVelocity;
 		public bool				mayJumpAgain;
@@ -33,15 +35,19 @@ namespace MonochromeRainbow
 		public Bullet			bullet;
 		public bool 			bulletActive;
 		public bool 			isPressed;
+		public Vector2i[]		tileIndex;
 		public bool 			aiming;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
-			textureInfo		= new TextureInfo("/Application/textures/Player.png");
+			playerWidth = 32;
+			playerHeight = 64;
+			
+			textureInfo		= new TextureInfo("/Application/textures/playerSheet.png");
+			SetTileIndex();
 			timer = new Timer();
 			previousTime = (float)timer.Milliseconds();
-			player			= new SpriteUV(textureInfo);	
-			player.Quad.S 	= textureInfo.TextureSizef;
+			player			= new SpriteTile(textureInfo,tileIndex[0]); 
 			playerPos = playerPosition;
 			bounds = new Bounds2();
 			health = 10;
@@ -55,22 +61,16 @@ namespace MonochromeRainbow
 			scene.AddChild(player);
 		}
 
-		//public void SetTextureArray()
-		//{
-		//	textures = new TextureInfo[12];
-		//	textures[0]		= new TextureInfo("/Application/textures/MenuScreen.png");
-		//	textures[1]		= new TextureInfo("/Application/textures/background(-100%).png");
-		//	textures[2]		= new TextureInfo("/Application/textures/background(-90%).png");
-		//	textures[3]		= new TextureInfo("/Application/textures/background(-80%).png");	
-		//	textures[4]		= new TextureInfo("/Application/textures/background(-70%).png");	
-		//	textures[5]		= new TextureInfo("/Application/textures/background(-60%).png");	
-		//	textures[6]		= new TextureInfo("/Application/textures/background(-50%).png");
-		//	textures[7]		= new TextureInfo("/Application/textures/background(-40%).png");	
-		//	textures[8]		= new TextureInfo("/Application/textures/background(-30%).png");	
-		//	textures[9]		= new TextureInfo("/Application/textures/background(-20%).png");	
-		//	textures[10]	= new TextureInfo("/Application/textures/background(-10%).png");	
-		//	textures[11]	= new TextureInfo("/Application/textures/background(0%).png");
-		//}
+		public void SetTileIndex()
+		{
+			int x = playerWidth;
+			int y = playerHeight;
+			
+			tileIndex = new Vector2i[3];
+			tileIndex[0]	= new Vector2i(0,0);
+			tileIndex[1]	= new Vector2i(0,0);
+			tileIndex[2]	= new Vector2i(0,0);
+		}
 		
 		public void Update(Scene gameScene)
 		{
