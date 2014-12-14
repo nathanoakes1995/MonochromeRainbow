@@ -460,14 +460,14 @@ namespace MonochromeRainbow
 			
 				//Load audio manager
 				audioManager = new AudioManager();
+				
+				//Create the background.
+				background = new Background(gameScene);
 			
 				//uiSceneManager = new UISceneManager();
 			}
 			else
-			{
-				//Create the background.
-				background = new Background(gameScene);
-				
+			{				
 				//Hardcoded platform locations
 				platforms = new Platform[9];
 				platforms[0] = new Platform(gameScene, new Vector2(0, 136));
