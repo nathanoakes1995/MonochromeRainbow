@@ -144,10 +144,10 @@ namespace MonochromeRainbow
 			level = 5;
 			multiplier = 1;
 			
-			AppMain.audioManager.SetBGM(level);
-			AppMain.audioManager.PlayBGM();
-			
 			LoadLevel(level);
+			
+			audioManager.SetBGM(level);
+			audioManager.PlayBGM();
 			
 			//Run the scene.
 			Director.Instance.RunWithScene(gameScene, true);
