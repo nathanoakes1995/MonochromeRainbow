@@ -11,10 +11,11 @@ namespace MonochromeRainbow
 {
 	public class Bullet
 	{
-		private 	SpriteUV 	sprite;
+		public 	SpriteUV 	sprite;
 		private	 	TextureInfo	textureInfo;
 		public 		int 		bulletDirection;
 		public 		Vector2		bulletPosition;
+				public Bounds2		bounds;
 		
 		public Bullet (Scene scene, Vector2 position, int direction)
 		{
