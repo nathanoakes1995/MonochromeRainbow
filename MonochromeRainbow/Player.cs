@@ -178,16 +178,6 @@ namespace MonochromeRainbow
 				facingDirection = 0;
         	}
 			
-			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && level == 0)
-			{
-				AppMain.levelManager.SetLevel(4);
-			}
-			
-			if ((gamePadData.Buttons & GamePadButtons.Select) != 0 && level == 5)
-			{
-				AppMain.levelManager.SetLevel(4);
-			}
-			
 			//Check if player is off the ground.
 			if (!onGround)
 			{

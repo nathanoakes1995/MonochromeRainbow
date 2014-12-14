@@ -140,7 +140,7 @@ namespace MonochromeRainbow
 			enemy = new Enemy[20];
 			
 			score = 0;
-			level = 4;
+			level = 0;
 			multiplier = 1;
 			
 			LoadLevel(level);		
@@ -163,7 +163,7 @@ namespace MonochromeRainbow
 			//Get gamepad input.
 			gamePadData = GamePad.GetData(0);
 			
-			if(level == 4)
+			if(level == 5)
 			{
 			
 				//Collectible update
@@ -376,9 +376,11 @@ namespace MonochromeRainbow
 			if(level == 0)
 			{
 				screen = new Screen(gameScene, level);
+							
+				levelManager.SetLevel(5);
 			}
 			
-			if(level == 4)
+			if(level == 5)
 			{
 				//Create the background.
 				background = new Background(gameScene);

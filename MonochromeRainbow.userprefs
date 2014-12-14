@@ -2,11 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\AppMain.cs">
     <Files>
-      <File FileName="MonochromeRainbow\AppMain.cs" Line="34" Column="37" />
+      <File FileName="MonochromeRainbow\AppMain.cs" Line="372" Column="4" />
       <File FileName="MonochromeRainbow\Background.cs" Line="19" Column="30" />
-      <File FileName="MonochromeRainbow\Screen.cs" Line="19" Column="27" />
-      <File FileName="MonochromeRainbow\AudioManager.cs" Line="16" Column="4" />
-      <File FileName="MonochromeRainbow\LevelManager.cs" Line="11" Column="3" />
+      <File FileName="MonochromeRainbow\Screen.cs" Line="21" Column="32" />
+      <File FileName="MonochromeRainbow\AudioManager.cs" Line="26" Column="17" />
+      <File FileName="MonochromeRainbow\LevelManager.cs" Line="7" Column="27" />
+      <File FileName="MonochromeRainbow\Player.cs" Line="173" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
