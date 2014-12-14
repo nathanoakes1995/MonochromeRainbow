@@ -64,8 +64,9 @@ namespace MonochromeRainbow
 			player = new SpriteTile(textureInfo);
 			playerRec = new Vector2(32,64);
 			player.Quad.S = playerRec;
-			isAlive = true;
 			playerPos = playerPosition;
+			
+			isAlive = true;
 			bounds = new Bounds2();
 			health = 10;
 			ammo = 50;
@@ -80,7 +81,7 @@ namespace MonochromeRainbow
 				bullet[i] = new Bullet(scene, new Vector2(-100.0f,-100.0f),0); 
 			}
 
-			facingDirection = 0;
+			facingDirection = 4;
 			aiming = false;
 			canShoot = true;
 			
@@ -164,8 +165,8 @@ namespace MonochromeRainbow
 								canShoot = false;
 							}
 							checkCount++;
-						} while(bulletNotActive == false);
-
+						} 
+						while(bulletNotActive == false);
 					}
 
 				}
