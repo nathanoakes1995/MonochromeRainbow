@@ -11,8 +11,10 @@ namespace MonochromeRainbow
 {
 	public class Player
 	{
-		private	TextureInfo		textureInfo;
+		private TextureInfo		textureInfo;
+		private TextureInfo[]	textures;
 		private GamePadData		gamePadData;
+		
 		public bool 			canBeHit;
 		public int				health;
 		public Timer			timer;
@@ -23,8 +25,6 @@ namespace MonochromeRainbow
 		public float			shootCoolTime;
 		public int 				ammo;
 		public int 				facingDirection;
-		public int				playerWidth;
-		public int				playerHeight;
 		public float			xVelocity;
 		public float			yVelocity;
 		public bool				mayJumpAgain;
@@ -41,18 +41,27 @@ namespace MonochromeRainbow
 		public bool 			aiming;
 		public bool				canShoot;
 		public bool isAlive;
+		
+		/*
+		DIRECTIONS:
+		LEFT			= 0
+		DIAGONAL-LEFT	= 1
+		UP				= 2
+		DIAGONAL-RIGHT	= 3
+		RIGHT			= 4
+		*/
+			
 		public Player (Scene scene, Vector2 playerPosition)
 		{
-			playerWidth = 32;
-			playerHeight = 64;
+			SetSpriteArray();
 			
-			textureInfo		= new TextureInfo("/Application/textures/player/Player.png");
-			SetTileIndex();
+			textureInfo = new TextureInfo();
+			textureInfo = textures[3];
+			
 			timer = new Timer();
 			previousTime = (float)timer.Milliseconds();
 			
-			player			= new SpriteTile(textureInfo);
-			player.TileIndex2D = tileIndex[0];
+			player = new SpriteTile(textureInfo);
 			playerRec = new Vector2(32,64);
 			player.Quad.S = playerRec;
 			isAlive = true;
@@ -64,6 +73,7 @@ namespace MonochromeRainbow
 			onGround = true;
 			bulletActive = new bool[20];
 			bullet = new Bullet[20];
+			
 			for (int i = 0; i < 20; i++)
 			{
 				bulletActive[i] = false;
@@ -76,16 +86,16 @@ namespace MonochromeRainbow
 			
 			scene.AddChild(player);
 		}
-
-		public void SetTileIndex()
+		
+		public void SetSpriteArray()
 		{
-			int x = playerWidth;
-			int y = playerHeight;
-			
-			tileIndex = new Vector2i[3];
-			tileIndex[0]	= new Vector2i(0,0);
-			tileIndex[1]	= new Vector2i(0,0);
-			tileIndex[2]	= new Vector2i(0,0);
+			textures = new TextureInfo[6];
+			textures[0]		= new TextureInfo("/Application/textures/player/sprites/standingLeft.png");
+			textures[1]		= new TextureInfo("/Application/textures/player/sprites/standingRight.png");
+			textures[2]		= new TextureInfo("/Application/textures/player/sprites/coffeeLeft.png");
+			textures[3]		= new TextureInfo("/Application/textures/player/sprites/coffeeRight.png");	
+			textures[4]		= new TextureInfo("/Application/textures/player/sprites/jumpingLeft.png");
+			textures[5]		= new TextureInfo("/Application/textures/player/sprites/jumpingRight.png");
 		}
 		
 		public void Update(Scene gameScene)
@@ -165,7 +175,18 @@ namespace MonochromeRainbow
 			//Check if player is on ground.
         	if (onGround)
 			{
-        		yVelocity = 0;
+				if (facingDirection < 2)
+				{
+					textureInfo	= textures[0];
+					player.TextureInfo = textureInfo;
+				}
+				if (facingDirection > 2)
+				{
+					textureInfo	= textures[1];
+					player.TextureInfo = textureInfo;
+				}
+				
+				yVelocity = 0;
 				
 				xVelocity *= 0.9f;
 				
@@ -212,7 +233,7 @@ namespace MonochromeRainbow
         		{
 					xVelocity = -4.0f;
 					//Aim Left
-					facingDirection = 4;
+					facingDirection = 0;
         		}
 			
 				//Right movement.
@@ -220,7 +241,7 @@ namespace MonochromeRainbow
         		{
 					xVelocity = 4.0f;
 					//Aim Right
-					facingDirection = 0;
+					facingDirection = 4;
         		}
 			}
 			if ((gamePadData.Buttons & GamePadButtons.R) != 0)
@@ -244,12 +265,12 @@ namespace MonochromeRainbow
 				if (((gamePadData.Buttons & GamePadButtons.Up) != 0) & ((gamePadData.Buttons & GamePadButtons.Right) != 0))
 				{
 					//Aim up-right
-					facingDirection = 1;
+					facingDirection = 3;
 				}
 				if (((gamePadData.Buttons & GamePadButtons.Up) != 0) & ((gamePadData.Buttons & GamePadButtons.Left) != 0))
 				{
 					//Aim up-left
-					facingDirection = 3;
+					facingDirection = 1;
 				}
 				if ((gamePadData.Buttons & GamePadButtons.Left) != 0 & !((gamePadData.Buttons & GamePadButtons.Up) != 0))
         		{
@@ -274,6 +295,17 @@ namespace MonochromeRainbow
 			{
 				//Player loses vertical speed tue to gravity.
 				yVelocity -= 0.5f;
+				
+				if (facingDirection < 2)
+				{
+					textureInfo	= textures[4];
+					player.TextureInfo = textureInfo;
+				}
+				if (facingDirection > 2)
+				{
+					textureInfo	= textures[5];
+					player.TextureInfo = textureInfo;
+				}
 			}
 
 			//Player shouldn't fall too fast. [Terminal Velocity]
@@ -309,13 +341,15 @@ namespace MonochromeRainbow
 				playerPos.X = 0.0f;
 			}
 			
-			player.Position = playerPos;
-			
 			if(health == 0)	
 			{
 				isAlive = false;
 			}
+			
+			player.Position = playerPos;
+			player.Draw();
 		}
+		
 		public bool enemyBulletCollision(Enemy enemy, Scene scene)
 		{
 			for (int i = 0; i < 20; i++)
