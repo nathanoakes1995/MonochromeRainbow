@@ -1,13 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\AppMain.cs">
     <Files>
-      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="265" Column="31" />
-      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="252" Column="24" />
-      <File FileName="MonochromeRainbow\Classes\Managers\AudioManager.cs" Line="73" Column="5" />
+      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="278" Column="32" />
+      <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="203" Column="21" />
+      <File FileName="MonochromeRainbow\Classes\Player.cs" Line="103" Column="6" />
+      <File FileName="MonochromeRainbow\Classes\Managers\AudioManager.cs" Line="164" Column="14" />
       <File FileName="MonochromeRainbow\Classes\Managers\LevelManager.cs" Line="33" Column="39" />
       <File FileName="MonochromeRainbow\Classes\Collectible.cs" Line="152" Column="4" />
-      <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="219" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

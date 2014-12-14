@@ -160,9 +160,6 @@ namespace MonochromeRainbow
 				
 				PlayBGM();
 			}
-			
-			Console.WriteLine ("Game Time:" + gameTime);
-			Console.WriteLine ("Pause Time:" + pauseTime);
 					
 			PlayBGM();
 		}
