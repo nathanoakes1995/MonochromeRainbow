@@ -316,6 +316,29 @@ namespace MonochromeRainbow
 				//isAlive = false;
 			}
 		}
+		public bool enemyBulletCollision(Enemy enemy)
+		{
+			for (int i = 0; i < 20; i++)
+			{
+				if (bulletActive[i] == true)
+				{
+					enemy.sprite.GetContentWorldBounds (ref enemy.bounds);
+					bullet[i].sprite.GetContentWorldBounds (ref bullet[i].bounds);
+					if (enemy.bounds.Overlaps (bullet[i].bounds))
+					{
+						bullet[i].bulletPosition = new Vector2(-100.0f, -100.0f);
+						bulletActive[i] = false;
+						return true;
+					}
+					else
+					{
+						return false;	
+					}
+				}
+				return false;
+			}
+			return false;
+		}
 	}
 }
 

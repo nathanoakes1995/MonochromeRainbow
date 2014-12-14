@@ -263,6 +263,10 @@ namespace MonochromeRainbow
 				{
 					for(int k = 0; k < 9; k++)
 					{
+						if (player.enemyBulletCollision(enemy[i]))
+						{
+							enemy[i].isAlive = false;	
+						}
 						enemy[i].sprite.GetContentWorldBounds(ref enemy[i].bounds);	
 						platforms[k].sprite.GetContentWorldBounds (ref platforms[k].bounds);
 						
