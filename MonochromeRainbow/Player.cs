@@ -11,8 +11,8 @@ namespace MonochromeRainbow
 {
 	public class Player
 	{
-		private	TextureInfo	textureInfo;
-		private GamePadData	gamePadData;
+		private	TextureInfo		textureInfo;
+		private GamePadData		gamePadData;
 		public bool 			canBeHit;
 		public int				health;
 		public Timer			timer;
@@ -22,6 +22,7 @@ namespace MonochromeRainbow
 		public float			coolTime;
 		public int 				ammo;
 		public int				level;
+		public int 				facingDirection;
 		public float			xVelocity;
 		public float			yVelocity;
 		public bool				mayJumpAgain;
@@ -47,6 +48,7 @@ namespace MonochromeRainbow
 			mayJumpAgain = true;
 			onGround = true;
 			bulletActive = false;
+			facingDirection = 0;
 			
 			scene.AddChild(player);
 		}
@@ -123,7 +125,7 @@ namespace MonochromeRainbow
 					ammo --;
 					Console.WriteLine(ammo);
 					//bullet[bulletCount] = new Bullet(gameScene, new Vector2(playerPos.X + 28,playerPos.Y + 32), 0);
-					bullet = new Bullet(gameScene, new Vector2(playerPos.X + 28,playerPos.Y + 32), 0);
+					bullet = new Bullet(gameScene, new Vector2(playerPos.X + 28,playerPos.Y + 32), facingDirection);
 					bulletActive = true;
 //					bulletCount++;
 //					if (bulletCount > 19)
@@ -166,12 +168,14 @@ namespace MonochromeRainbow
         	if ((gamePadData.Buttons & GamePadButtons.Left) != 0)
         	{
         		xVelocity = -4.0f;
+				facingDirection = 4;
         	}
 			
 			//Right movement.
         	if ((gamePadData.Buttons & GamePadButtons.Right) != 0)
         	{
-        		xVelocity = 4.0f;
+				xVelocity = 4.0f;
+				facingDirection = 0;
         	}
 			
 			if ((gamePadData.Buttons & GamePadButtons.Start) != 0 && level == 0)

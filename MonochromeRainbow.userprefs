@@ -3,7 +3,7 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Player.cs">
     <Files>
       <File FileName="MonochromeRainbow\AppMain.cs" Line="144" Column="4" />
-      <File FileName="MonochromeRainbow\Player.cs" Line="46" Column="12" />
+      <File FileName="MonochromeRainbow\Player.cs" Line="123" Column="18" />
       <File FileName="MonochromeRainbow\Bullet.cs" Line="72" Column="4" />
       <File FileName="MonochromeRainbow\Background.cs" Line="18" Column="3" />
       <File FileName="MonochromeRainbow\LevelManager.cs" Line="33" Column="4" />
