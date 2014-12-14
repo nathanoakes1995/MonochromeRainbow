@@ -40,9 +40,6 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\Monochro
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\collectibles\rainbow\5-B.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\collectibles\rainbow\6-O.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\collectibles\rainbow\7-W.png
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\Enemytex.png
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\Flyer.png
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\tank.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\other\bullet.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\other\Platform.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\player\playerSheet.png
@@ -94,9 +91,6 @@ D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\Monochro
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\collectibles\rainbow\5-B.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\collectibles\rainbow\6-O.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\collectibles\rainbow\7-W.png
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\Enemytex.png
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\Flyer.png
-D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\tank.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\other\bullet.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\other\Platform.png
 D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\player\playerSheet.png
@@ -379,3 +373,9 @@ C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeR
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\flyingEnemy.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\heavyEnemy.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\textures\enemy\regularEnemy.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\flyingEnemy.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\heavyEnemy.png
+D:\Users\Vincent Tenebrae\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\textures\enemy\regularEnemy.png

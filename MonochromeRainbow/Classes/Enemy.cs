@@ -66,7 +66,7 @@ namespace MonochromeRainbow
 				behavior = 1;
 				health = 5;
 				damage = 1;
-				textures[0] = new TextureInfo("/Application/textures/enemy/Flyer.png");
+				textures[0] = new TextureInfo("/Application/textures/enemy/flyingEnemy.png");
 			}
 			//Normal enemy
 			else if(randomNumber() <= 85)
@@ -75,15 +75,15 @@ namespace MonochromeRainbow
 				health = 3;
 				damage = 1;	
 				
-				textures[0] = new TextureInfo("/Application/textures/enemy/Enemytex.png");
+				textures[0] = new TextureInfo("/Application/textures/enemy/regularEnemy.png");
 			}
 			//Tanky Enemy
-			else(randomNumber() <= 49)
+			else
 			{
 				behavior = 2;
 				health = 7;
 				damage = 3;
-				textures[0] = new TextureInfo("/Application/textures/enemy/tank.png");
+				textures[0] = new TextureInfo("/Application/textures/enemy/heavyEnemy.png");
 			}	
 		}
 		
