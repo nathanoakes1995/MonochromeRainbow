@@ -80,13 +80,16 @@ namespace MonochromeRainbow
 			{
 				if(youSuckText.Position.Y != 272.0f)
 				{
-					youSuckPos.Y -= 5.0f;
+					youSuckPos.Y -= 1.0f;
 					youSuckText.Position += youSuckPos;
+					
+					youSuckText.Draw();
 				}
 				else
 				{
 					stop = true;
 				}
+				Console.WriteLine (youSuckPos.Y);
 			}
 				
 		}

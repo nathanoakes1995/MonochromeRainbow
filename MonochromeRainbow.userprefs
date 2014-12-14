@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\AppMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MonochromeRainbow\Classes\Background.cs">
     <Files>
-      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="452" Column="28" />
-      <File FileName="MonochromeRainbow\Classes\Background.cs" Line="75" Column="27" />
+      <File FileName="MonochromeRainbow\Classes\AppMain.cs" Line="441" Column="24" />
+      <File FileName="MonochromeRainbow\Classes\Background.cs" Line="65" Column="58" />
       <File FileName="MonochromeRainbow\Classes\Enemy.cs" Line="87" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
