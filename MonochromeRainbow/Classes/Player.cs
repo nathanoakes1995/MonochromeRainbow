@@ -21,7 +21,7 @@ namespace MonochromeRainbow
 		public float			elapsedTime;
 		public float			coolTime;
 		public int 				ammo;
-		int num;
+
 		public int 				facingDirection;
 		public int				playerWidth;
 		public int				playerHeight;

@@ -227,6 +227,30 @@ namespace MonochromeRainbow
 				position.X -= 0.9f;	
 				sprite.Position = position;
 			}
+			
+			if(position.Y > 500)
+			{
+				position.Y = 500;	
+			}
+			if(position.Y < 500)
+			{
+				yVelocity += 0.5f;	
+			}
+			
+			if(playerLocation.Y > 380)
+			{
+				if(position.X < (playerLocation.X - 1))
+				{
+					yVelocity -= 1.0f;
+				}
+			}
+			
+			
+			
+			
+			
+			
+			position.Y += yVelocity;
 		}
 		
 		public void RunAIType3(Vector2 playerLocation)
