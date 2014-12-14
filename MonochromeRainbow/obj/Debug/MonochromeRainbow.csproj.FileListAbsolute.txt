@@ -208,7 +208,6 @@ C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\obj\Debug\
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
 C:\Users\Zac\Documents\Monochrome\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
-C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\shaders\shaders\Texture.cgx
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.info
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\shaders\Texture.cgx
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-unsigned\Application\app.exe
@@ -310,6 +309,7 @@ C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeR
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Doh De Oh.mp3
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow-signed\Application\sounds\bgm\Hackbeat.mp3
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\bin\Debug\MonochromeRainbow.psdp
+C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\shaders\shaders\Texture.cgx
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\convertedpdb\app.exe.mdb
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.exe
 C:\Users\nathan\Documents\GitHub\MonochromeRainbow\MonochromeRainbow\MonochromeRainbow\obj\Debug\app.pdb
