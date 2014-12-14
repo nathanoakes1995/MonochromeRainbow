@@ -20,8 +20,8 @@ namespace MonochromeRainbow
 		public float			currentTime;
 		public float			elapsedTime;
 		public float			coolTime;
+		public float			shootCoolTime;
 		public int 				ammo;
-
 		public int 				facingDirection;
 		public int				playerWidth;
 		public int				playerHeight;
@@ -33,12 +33,13 @@ namespace MonochromeRainbow
 		public Bounds2 			bounds;
 		public Vector2			playerPos; 
 		public SpriteTile			player;
-		public Bullet			bullet;
-		public bool 			bulletActive;
+		public Bullet[]			bullet;
+		public bool[] 			bulletActive;
 		public Vector2 			playerRec;
 		public bool 			isPressed;
 		public Vector2i[]		tileIndex;
 		public bool 			aiming;
+		public bool				canShoot;
 		
 		public Player (Scene scene, Vector2 playerPosition)
 		{
@@ -61,9 +62,17 @@ namespace MonochromeRainbow
 			ammo = 50;
 			mayJumpAgain = true;
 			onGround = true;
-			bulletActive = false;
+			bulletActive = new bool[20];
+			bullet = new Bullet[20];
+			for (int i = 0; i < 20; i++)
+			{
+				bulletActive[i] = false;
+				bullet[i] = new Bullet(scene, new Vector2(-100.0f,-100.0f),0); 
+			}
+
 			facingDirection = 0;
 			aiming = false;
+			canShoot = true;
 			
 			scene.AddChild(player);
 		}
@@ -87,6 +96,7 @@ namespace MonochromeRainbow
 			elapsedTime = currentTime - previousTime;
 			previousTime = currentTime;
 			coolTime+= elapsedTime;
+			shootCoolTime += elapsedTime;
 			
 			
 			if (!canBeHit)
@@ -97,50 +107,59 @@ namespace MonochromeRainbow
 						canBeHit= true;
 					}
 				}
+			if (!canShoot)
+			{
+				if (shootCoolTime >= 1000)
+				{
+					shootCoolTime = 0.0f;
+					canShoot = true;
+				}
+			}
 				
 			if(health < 0)
 			{
 				health = 0;	
 			}
 			
-			if (bulletActive)
+			for (int i = 0; i < 20; i++)
 			{
-				//for (int i = 0; i < bulletCount; i++)
-				//{
-//					bullet[i].Update();
-//					if(bullet[i].bulletPosition.X < 0 || bullet[i].bulletPosition.X > 960)
-//					{
-//						bullet[i].delete(gameScene);
-//						bullet[i] = null;
-//					}
-					bullet.Update();
-					if(bullet.bulletPosition.X < 0 || bullet.bulletPosition.X > 960)
+				if (bulletActive[i] == true)
+				{
+					bullet[i].Update();
+					if(bullet[i].bulletPosition.X < -10 || bullet[i].bulletPosition.X > 970 || bullet[i].bulletPosition.Y < -10 || bullet[i].bulletPosition.Y > 554)
 					{
-						bullet.delete(gameScene);
-						bullet = null;
-						bulletActive = false;
+						bullet[i].bulletPosition = new Vector2(-100.0f, -100.0f);
+						bulletActive[i] = false;
 					}
-				//}
-			}
-
-			
+				}
+			}			
 			//Shooting.
         	if ((gamePadData.Buttons & GamePadButtons.Square) != 0)
         	{
         		//shoot;
-				//Create a bullet
-				if (ammo > 0)
+				if (canShoot)
 				{
-					ammo --;
-					Console.WriteLine(ammo);
-					//bullet[bulletCount] = new Bullet(gameScene, new Vector2(playerPos.X + 28,playerPos.Y + 32), 0);
-					bullet = new Bullet(gameScene, new Vector2(playerPos.X + 28,playerPos.Y + 32), facingDirection);
-					bulletActive = true;
-//					bulletCount++;
-//					if (bulletCount > 19)
-//					{
-//						bulletCount = 0;	
-//					}
+					if (ammo > 0)
+					{
+						ammo --;
+						Console.WriteLine(ammo);
+						bool bulletNotActive = false;
+						int checkCount = 0;
+						do
+						{
+							if (bulletActive[checkCount] == false)
+							{
+								bullet[checkCount].bulletDirection = facingDirection;
+								bullet[checkCount].bulletPosition = new Vector2(playerPos.X + 28,playerPos.Y + 32);
+								bulletActive[checkCount] = true;
+								bulletNotActive = true;
+								canShoot = false;
+							}
+							checkCount++;
+						} while(bulletNotActive == false);
+
+					}
+
 				}
         	}
 			
@@ -230,12 +249,12 @@ namespace MonochromeRainbow
 					//Aim up-left
 					facingDirection = 3;
 				}
-				if ((gamePadData.Buttons & GamePadButtons.Left) != 0)
+				if ((gamePadData.Buttons & GamePadButtons.Left) != 0 & !((gamePadData.Buttons & GamePadButtons.Up) != 0))
         		{
 					//Aim Left
 					facingDirection = 4;
         		}
-        		if ((gamePadData.Buttons & GamePadButtons.Right) != 0)
+        		if ((gamePadData.Buttons & GamePadButtons.Right) != 0 & !((gamePadData.Buttons & GamePadButtons.Up) != 0))
         		{
 					//Aim Right
 					facingDirection = 0;
